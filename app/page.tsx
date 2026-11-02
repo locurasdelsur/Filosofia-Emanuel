@@ -21,7 +21,20 @@ import {
   Upload,
   Video,
   Volume2,
-  AlertTriangle
+  AlertTriangle,
+  Factory,
+  Users,
+  Clock,
+  TrendingUp,
+  Cpu,
+  Flame,
+  CheckCircle2,
+  DollarSign,
+  Package,
+  Layers,
+  Maximize2,
+  Minimize2,
+  X
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -107,7 +120,7 @@ const authors: Author[] = [
     theme: 'from-amber-500/20 to-orange-950/30',
     image: '/philosophers/schopenhauer.png',
     accent: 'text-amber-300',
-    video: 'FjC55_P6k6U',
+    video: 'zLvGW_vMzxQ',
     excerpt: 'Toda volición nace de una necesidad, de una carencia, es decir, de un sufrimiento... la vida oscila como un péndulo de derecha a izquierda, entre el dolor y el aburrimiento.',
     citation: 'El mundo como voluntad y representación, Libro IV, §56–57',
     takeaways: [
@@ -120,110 +133,110 @@ const authors: Author[] = [
         step: 1,
         title: 'El Banquete y el Deseo Inmediato',
         context: 'Frente a vos hay un banquete repleto de manjares exquisitos. Tu cuerpo siente una carencia urgente que te empuja a consumirlo todo de inmediato.',
-        videoContextId: 'FjC55_P6k6U',
+        videoContextId: 'zLvGW_vMzxQ',
         options: [
-          { text: 'Comer hasta saciarte esperando alcanzar la felicidad permanente.', correct: false, explanation: 'La saciedad dura apenas segundos antes de dar paso al aburrimiento y a una nueva sed insaciable.', videoFeedbackId: 'U3dM6d2o3_E' },
-          { text: 'Reconocer que el deseo es una carencia infinita y distanciarte para contemplar el impulso.', correct: true, explanation: 'Comprendés que el querer en sí mismo es sufrimiento; suspender la avidez es el primer paso lúcido.', videoFeedbackId: 'FjC55_P6k6U' },
-          { text: 'Destruir la mesa con furia porque ningún alimento te dejará satisfecho.', correct: false, explanation: 'La violencia ciega no es negación de la Voluntad, sino una afirmación exacerbada de su frustración.', videoFeedbackId: 'U3dM6d2o3_E' }
+          { text: 'Comer hasta saciarte esperando alcanzar la felicidad permanente.', correct: false, explanation: 'La saciedad dura apenas segundos antes de dar paso al aburrimiento y a una nueva sed insaciable.', videoFeedbackId: 'Sexv0CFvUB4' },
+          { text: 'Reconocer que el deseo es una carencia infinita y distanciarte para contemplar el impulso.', correct: true, explanation: 'Comprendés que el querer en sí mismo es sufrimiento; suspender la avidez es el primer paso lúcido.', videoFeedbackId: 'zLvGW_vMzxQ' },
+          { text: 'Destruir la mesa con furia porque ningún alimento te dejará satisfecho.', correct: false, explanation: 'La violencia ciega no es negación de la Voluntad, sino una afirmación exacerbada de su frustración.', videoFeedbackId: 'Sexv0CFvUB4' }
         ]
       },
       {
         step: 2,
         title: 'El Arcón de las Riquezas',
         context: 'Aparece un cofre rebosante de monedas de oro con la promesa: "Acumula todo lo que puedas para asegurar tu tranquilidad futura".',
-        videoContextId: 'FjC55_P6k6U',
+        videoContextId: 'zLvGW_vMzxQ',
         options: [
-          { text: 'Llenarte los bolsillos creyendo que la seguridad material calma la angustia vital.', correct: false, explanation: 'Schopenhauer compara la riqueza con el agua salada: cuanta más bebes, más sed te da.', videoFeedbackId: 'U3dM6d2o3_E' },
-          { text: 'Examinar el cofre y comprender que ningún objeto alcanzado procura una satisfacción inalterable.', correct: true, explanation: 'El logro exterior es como la limosna que salva hoy al mendigo para prolongar su miseria mañana.', videoFeedbackId: 'FjC55_P6k6U' },
-          { text: 'Repartir el oro buscando reconocimiento y fama entre los presentes.', correct: false, explanation: 'La vanidad social multiplica los temores al juicio ajeno, atándote con mayor fuerza al sufrimiento.', videoFeedbackId: 'U3dM6d2o3_E' }
+          { text: 'Llenarte los bolsillos creyendo que la seguridad material calma la angustia vital.', correct: false, explanation: 'Schopenhauer compara la riqueza con el agua salada: cuanta más bebes, más sed te da.', videoFeedbackId: 'Sexv0CFvUB4' },
+          { text: 'Examinar el cofre y comprender que ningún objeto alcanzado procura una satisfacción inalterable.', correct: true, explanation: 'El logro exterior es como la limosna que salva hoy al mendigo para prolongar su miseria mañana.', videoFeedbackId: 'zLvGW_vMzxQ' },
+          { text: 'Repartir el oro buscando reconocimiento y fama entre los presentes.', correct: false, explanation: 'La vanidad social multiplica los temores al juicio ajeno, atándote con mayor fuerza al sufrimiento.', videoFeedbackId: 'Sexv0CFvUB4' }
         ]
       },
       {
         step: 3,
         title: 'La Trampa del Reconocimiento Social',
         context: 'Una multitud en los balcones aplaude con entusiasmo si adoptás posturas solemnes y representás el rol de un triunfador.',
-        videoContextId: 'FjC55_P6k6U',
+        videoContextId: 'zLvGW_vMzxQ',
         options: [
-          { text: 'Reclamar aplausos constantes para alimentar tu autoestima.', correct: false, explanation: 'Vivir pendiente de la opinión ajena es la cumbre de la servidumbre subjetiva en el mundo de la representación.', videoFeedbackId: 'U3dM6d2o3_E' },
-          { text: 'Dar la espalda al estrado reconociendo la vacuidad del estatus en el teatro de apariencias.', correct: true, explanation: 'El sabio busca el sosiego interior en vez del eco hueco y efímero de las multitudes.', videoFeedbackId: 'FjC55_P6k6U' },
-          { text: 'Insultar a los espectadores para demostrar que no te importan.', correct: false, explanation: 'La hostilidad reactiva sigue demostrando dependencia afectiva del juicio exterior.', videoFeedbackId: 'U3dM6d2o3_E' }
+          { text: 'Reclamar aplausos constantes para alimentar tu autoestima.', correct: false, explanation: 'Vivir pendiente de la opinión ajena es la cumbre de la servidumbre subjetiva en el mundo de la representación.', videoFeedbackId: 'Sexv0CFvUB4' },
+          { text: 'Dar la espalda al estrado reconociendo la vacuidad del estatus en el teatro de apariencias.', correct: true, explanation: 'El sabio busca el sosiego interior en vez del eco hueco y efímero de las multitudes.', videoFeedbackId: 'zLvGW_vMzxQ' },
+          { text: 'Insultar a los espectadores para demostrar que no te importan.', correct: false, explanation: 'La hostilidad reactiva sigue demostrando dependencia afectiva del juicio exterior.', videoFeedbackId: 'Sexv0CFvUB4' }
         ]
       },
       {
         step: 4,
         title: 'El Espejo Velado',
         context: 'En el centro del salón hay un gran espejo cubierto por un velo de seda con inscripciones orientales.',
-        videoContextId: 'FjC55_P6k6U',
+        videoContextId: 'zLvGW_vMzxQ',
         options: [
-            { text: 'Romper el espejo para no ver la realidad que oculta.', correct: false, explanation: 'Destruir el fenómeno no altera la cosa en sí; es solo un impulso ciego.', videoFeedbackId: 'U3dM6d2o3_E' },
-            { text: 'Retirar con serenidad el velo para confrontar la naturaleza de la representación.', correct: true, explanation: 'Te atrevés a rasgar el Velo de Maya que separa engañosamente al sujeto del objeto.', videoFeedbackId: 'FjC55_P6k6U' },
-            { text: 'Colocarle más capas de tela para mantener la ilusión reconfortante.', correct: false, explanation: 'El autoengaño es el camino del optimismo superficial que Schopenhauer consideraba una burla amarga.', videoFeedbackId: 'U3dM6d2o3_E' }
+          { text: 'Romper el espejo para no ver la realidad que oculta.', correct: false, explanation: 'Destruir el fenómeno no altera la cosa en sí; es solo un impulso ciego.', videoFeedbackId: 'Sexv0CFvUB4' },
+          { text: 'Retirar con serenidad el velo para confrontar la naturaleza de la representación.', correct: true, explanation: 'Te atrevés a rasgar el Velo de Maya que separa engañosamente al sujeto del objeto.', videoFeedbackId: 'zLvGW_vMzxQ' },
+          { text: 'Colocarle más capas de tela para mantener la ilusión reconfortante.', correct: false, explanation: 'El autoengaño es el camino del optimismo superficial que Schopenhauer consideraba una burla amarga.', videoFeedbackId: 'Sexv0CFvUB4' }
         ]
       },
       {
         step: 5,
         title: 'El Enigma: Tat Tvam Asi',
         context: 'En el reflejo del espejo no aparece tu cara, sino imágenes de seres sufrientes: un mendigo, un animal herido, un prisionero.',
-        videoContextId: 'FjC55_P6k6U',
+        videoContextId: 'zLvGW_vMzxQ',
         options: [
-            { text: 'Apartar la mirada alegando que sus desventuras no tienen nada que ver con vos.', correct: false, explanation: 'Ese es el error del Principium individuationis: creer que el dolor del otro es ajeno a tu propia esencia.', videoFeedbackId: 'U3dM6d2o3_E' },
-            { text: 'Comprender la sentencia "Tat Tvam Asi" (Tú eres eso): todos comparten la misma Voluntad doliente.', correct: true, explanation: 'Al superar la separación ilusoria del espacio-tiempo, reconocés que herir al otro es herirte a vos mismo.', videoFeedbackId: 'FjC55_P6k6U' },
-            { text: 'Sentir lástima condescendiente considerándote superior a ellos.', correct: false, explanation: 'La piedad arrogante preserva el egoísmo; la compasión genuina implica identidad ontológica.', videoFeedbackId: 'U3dM6d2o3_E' }
+          { text: 'Apartar la mirada alegando que sus desventuras no tienen nada que ver con vos.', correct: false, explanation: 'Ese es el error del Principium individuationis: creer que el dolor del otro es ajeno a tu propia esencia.', videoFeedbackId: 'Sexv0CFvUB4' },
+          { text: 'Comprender la sentencia "Tat Tvam Asi" (Tú eres eso): todos comparten la misma Voluntad doliente.', correct: true, explanation: 'Al superar la separación ilusoria del espacio-tiempo, reconocés que herir al otro es herirte a vos mismo.', videoFeedbackId: 'zLvGW_vMzxQ' },
+          { text: 'Sentir lástima condescendiente considerándote superior a ellos.', correct: false, explanation: 'La piedad arrogante preserva el egoísmo; la compasión genuina implica identidad ontológica.', videoFeedbackId: 'Sexv0CFvUB4' }
         ]
       },
       {
         step: 6,
         title: 'El Despertar de la Compasión (Mitleid)',
         context: 'Un guardia herido custodia la puerta. Te pide auxilio pero tiene la llave colgada al cuello.',
-        videoContextId: 'FjC55_P6k6U',
+        videoContextId: 'zLvGW_vMzxQ',
         options: [
-            { text: 'Arrebatarle la llave a la fuerza y dejarlo desamparado.', correct: false, explanation: 'El egoísmo depredador intensifica el ciclo de violencia donde la Voluntad se devora a sí misma.', videoFeedbackId: 'U3dM6d2o3_E' },
-            { text: 'Curar sus heridas antes de pensar en tu escape, compartiendo su dolor de manera desinteresada.', correct: true, explanation: 'La ética schopenhaueriana nace aquí: la compasión auténtica suprime el egoísmo y desarma el conflicto.', videoFeedbackId: 'FjC55_P6k6U' },
-            { text: 'Ofrecerle ayuda únicamente a cambio de que te firme un contrato de lealtad.', correct: false, explanation: 'El cálculo utilitarista no es virtud moral; es comercio de conveniencias.', videoFeedbackId: 'U3dM6d2o3_E' }
+          { text: 'Arrebatarle la llave a la fuerza y dejarlo desamparado.', correct: false, explanation: 'El egoísmo depredador intensifica el ciclo de violencia donde la Voluntad se devora a sí misma.', videoFeedbackId: 'Sexv0CFvUB4' },
+          { text: 'Curar sus heridas antes de pensar en tu escape, compartiendo su dolor de manera desinteresada.', correct: true, explanation: 'La ética schopenhaueriana nace aquí: la compasión auténtica suprime el egoísmo y desarma el conflicto.', videoFeedbackId: 'zLvGW_vMzxQ' },
+          { text: 'Ofrecerle ayuda únicamente a cambio de que te firme un contrato de lealtad.', correct: false, explanation: 'El cálculo utilitarista no es virtud moral; es comercio de conveniencias.', videoFeedbackId: 'Sexv0CFvUB4' }
         ]
       },
       {
         step: 7,
         title: 'El Fonógrafo Desarmado',
         context: 'El camino se bloquea por un cerrojo armónico. Hay una vitrola antigua con piezas sueltas y discos al lado.',
-        videoContextId: 'FjC55_P6k6U',
+        videoContextId: 'zLvGW_vMzxQ',
         options: [
-            { text: 'Golpear el mecanismo con una piedra para forzarlo.', correct: false, explanation: 'El esfuerzo mecánico solo produce ruidos discordantes y bloquea la cerradura.', videoFeedbackId: 'U3dM6d2o3_E' },
-            { text: 'Reparar la aguja y colocar un disco de sinfonía orquestal pura.', correct: true, explanation: 'La música es la cumbre del arte: no copia las Ideas del mundo, sino que expresa a la Voluntad misma.', videoFeedbackId: 'FjC55_P6k6U' },
-            { text: 'Poner un disco con marchas marciales de conquista militar.', correct: false, explanation: 'La música ligada a pasiones bélicas reanima los impulsos egoístas en vez de aquietar el intelecto.', videoFeedbackId: 'U3dM6d2o3_E' }
+          { text: 'Golpear el mecanismo con una piedra para forzarlo.', correct: false, explanation: 'El esfuerzo mecánico solo produce ruidos discordantes y bloquea la cerradura.', videoFeedbackId: 'Sexv0CFvUB4' },
+          { text: 'Reparar la aguja y colocar un disco de sinfonía orquestal pura.', correct: true, explanation: 'La música es la cumbre del arte: no copia las Ideas del mundo, sino que expresa a la Voluntad misma.', videoFeedbackId: 'zLvGW_vMzxQ' },
+          { text: 'Poner un disco con marchas marciales de conquista militar.', correct: false, explanation: 'La música ligada a pasiones bélicas reanima los impulsos egoístas en vez de aquietar el intelecto.', videoFeedbackId: 'Sexv0CFvUB4' }
         ]
       },
       {
         step: 8,
         title: 'La Contemplación Estética Desinteresada',
         context: 'Al sonar la melodía clásica, el salón se transforma: el tiempo parece detenerse y los deseos callan.',
-        videoContextId: 'FjC55_P6k6U',
+        videoContextId: 'zLvGW_vMzxQ',
         options: [
-            { text: 'Aprovechar el trance para calcular cuánto dinero vale la obra que estás escuchando.', correct: false, explanation: 'Interesar el arte económicamente destruye la pureza del conocimiento estético.', videoFeedbackId: 'U3dM6d2o3_E' },
-            { text: 'Abandonar toda pretensión personal y convertirte en el sujeto puro y libre de voluntad.', correct: true, explanation: 'La experiencia estética te libera transitoriamente de la rueda de Ixión y de las cadenas del deseo.', videoFeedbackId: 'FjC55_P6k6U' },
-            { text: 'Frustrarte porque la música no te da una respuesta científica empírica.', correct: false, explanation: 'La ciencia se sujeta al principio de razón; el arte capta la esencia intuitiva.', videoFeedbackId: 'U3dM6d2o3_E' }
+          { text: 'Aprovechar el trance para calcular cuánto dinero vale la obra que estás escuchando.', correct: false, explanation: 'Interesar el arte económicamente destruye la pureza del conocimiento estético.', videoFeedbackId: 'Sexv0CFvUB4' },
+          { text: 'Abandonar toda pretensión personal y convertirte en el sujeto puro y libre de voluntad.', correct: true, explanation: 'La experiencia estética te libera transitoriamente de la rueda de Ixión y de las cadenas del deseo.', videoFeedbackId: 'zLvGW_vMzxQ' },
+          { text: 'Frustrarte porque la música no te da una respuesta científica empírica.', correct: false, explanation: 'La ciencia se sujeta al principio de razón; el arte capta la esencia intuitiva.', videoFeedbackId: 'Sexv0CFvUB4' }
         ]
       },
       {
         step: 9,
         title: 'La Balanza Ascética',
         context: 'Ante la última puerta hay una balanza de dos platos que exige entregar aquello que te mantiene encadenado al ciclo existencial.',
-        videoContextId: 'FjC55_P6k6U',
+        videoContextId: 'zLvGW_vMzxQ',
         options: [
-            { text: 'Depositar un puñado de joyas para pagar el peaje.', correct: false, explanation: 'La balanza no pesa materia: pesa apego al mundo de la representación.', videoFeedbackId: 'U3dM6d2o3_E' },
-            { text: 'Colocar simbólicamente la renuncia a la ambición y la mortificación del egoísmo individual.', correct: true, explanation: 'La ascesis es la redención definitiva: el querer voluntariamente deja de quererse a sí mismo.', videoFeedbackId: 'FjC55_P6k6U' },
-            { text: 'Intentar saltar por encima de la balanza con imprudencia.', correct: false, explanation: 'No se puede evadir la verdad ética mediante atajos físicos.', videoFeedbackId: 'U3dM6d2o3_E' }
+          { text: 'Depositar un puñado de joyas para pagar el peaje.', correct: false, explanation: 'La balanza no pesa materia: pesa apego al mundo de la representación.', videoFeedbackId: 'Sexv0CFvUB4' },
+          { text: 'Colocar simbólicamente la renuncia a la ambición y la mortificación del egoísmo individual.', correct: true, explanation: 'La ascesis es la redención definitiva: el querer voluntariamente deja de quererse a sí mismo.', videoFeedbackId: 'zLvGW_vMzxQ' },
+          { text: 'Intentar saltar por encima de la balanza con imprudencia.', correct: false, explanation: 'No se puede evadir la verdad ética mediante atajos físicos.', videoFeedbackId: 'Sexv0CFvUB4' }
         ]
       },
       {
         step: 10,
         title: 'La Detención del Péndulo Cósmico',
         context: 'El péndulo central detiene su marcha. Para cruzar el umbral definitivo, debes formular el veredicto del sabio.',
-        videoContextId: 'FjC55_P6k6U',
+        videoContextId: 'zLvGW_vMzxQ',
         options: [
-            { text: '"Buscaré nuevos placeres en el mundo exterior para no aburrirme jamás".', correct: false, explanation: 'Reiniciarías la oscilación del péndulo directo hacia el sufrimiento y la frustración.', videoFeedbackId: 'U3dM6d2o3_E' },
-            { text: '"Reconozco la nulidad del esfuerzo egoísta; elijo la serenidad de la renuncia y la paz compasiva".', correct: true, explanation: 'Completaste el recorrido: el péndulo se detiene y alcanzás la serenidad del espíritu emancipado.', videoFeedbackId: 'FjC55_P6k6U' },
-            { text: '"El mundo es perfecto tal como fue diseñado por la razón providencial".', correct: false, explanation: 'El optimismo racionalista es para Schopenhauer una contradicción dolorosa frente a la miseria del mundo vivo.', videoFeedbackId: 'U3dM6d2o3_E' }
+          { text: '"Buscaré nuevos placeres en el mundo exterior para no aburrirme jamás".', correct: false, explanation: 'Reiniciarías la oscilación del péndulo directo hacia el sufrimiento y la frustración.', videoFeedbackId: 'Sexv0CFvUB4' },
+          { text: '"Reconozco la nulidad del esfuerzo egoísta; elijo la serenidad de la renuncia y la paz compasiva".', correct: true, explanation: 'Completaste el recorrido: el péndulo se detiene y alcanzás la serenidad del espíritu emancipado.', videoFeedbackId: 'zLvGW_vMzxQ' },
+          { text: '"El mundo es perfecto tal como fue diseñado por la razón providencial".', correct: false, explanation: 'El optimismo racionalista es para Schopenhauer una contradicción dolorosa frente a la miseria del mundo vivo.', videoFeedbackId: 'Sexv0CFvUB4' }
         ]
       }
     ],
@@ -243,7 +256,7 @@ const authors: Author[] = [
     theme: 'from-rose-500/20 to-red-950/30',
     image: '/philosophers/marx.png',
     accent: 'text-rose-300',
-    video: 'XhS6U01M8eE',
+    video: 'JwmnpGUlsqU',
     excerpt: 'El trabajador se vuelve tanto más pobre cuanta más riqueza produce... Lo animal se convierte en lo humano y lo humano en lo animal.',
     citation: 'Manuscritos económico-filosóficos de 1844',
     takeaways: [
@@ -251,118 +264,7 @@ const authors: Author[] = [
       'La plusvalía es el valor no remunerado del trabajo vivo apropiado por el capital.',
       'La solidaridad y la organización transforman a la clase en sí en clase para sí.'
     ],
-    gameSteps: [
-      {
-        step: 1,
-        title: 'Compra de Fuerza de Trabajo',
-        context: 'Administras los costos de una fábrica. El mercado exige maximizar la tasa de ganancia sobre el salario.',
-        videoContextId: 'XhS6U01M8eE',
-        options: [
-          { text: 'Pagar a los operarios el valor total de las mercancías producidas.', correct: false, explanation: 'Bajo la lógica del capital, pagar el valor total eliminaría la ganancia del empresario.', videoFeedbackId: '8q2w3hY1F8g' },
-          { text: 'Comprar la fuerza de trabajo como una mercancía cuyo costo es solo el de su subsistencia.', correct: true, explanation: 'Descubrís la base del sistema: la fuerza de trabajo es la única mercancía capaz de generar más valor del que cuesta.', videoFeedbackId: 'XhS6U01M8eE' },
-          { text: 'Cerrar la fábrica y repartir las máquinas entre los vecinos.', correct: false, explanation: 'Sin organización productiva colectiva, el reparto aislado no supera las leyes del mercado.', videoFeedbackId: '8q2w3hY1F8g' }
-        ]
-      },
-      {
-        step: 2,
-        title: 'Plusvalía Absoluta: Extender la Jornada',
-        context: 'Para duplicar la producción podés forzar el límite físico de los trabajadores durante el día.',
-        videoContextId: 'XhS6U01M8eE',
-        options: [
-          { text: 'Aumentar la jornada laboral de 10 a 14 horas manteniendo el mismo jornal.', correct: true, explanation: 'Has aplicado la plusvalía absoluta: incrementar el tiempo de trabajo excedente por prolongación horaria.', videoFeedbackId: 'XhS6U01M8eE' },
-          { text: 'Reducir la jornada a 6 horas y duplicar los sueldos.', correct: false, explanation: 'Esa medida reduciría la cuota de plusvalía y provocaría la quiebra frente a los competidores.', videoFeedbackId: '8q2w3hY1F8g' },
-          { text: 'Darles café gratis para que no se cansen.', correct: false, explanation: 'Un paliativo que no resuelve la contradicción material de la explotación horaria.', videoFeedbackId: '8q2w3hY1F8g' }
-        ]
-      },
-      {
-        step: 3,
-        title: 'Plusvalía Relativa: La Máquina a Vapor',
-        context: 'Llega un nuevo telar industrial que reduce a la mitad el tiempo necesario para fabricar cada prenda.',
-        videoContextId: 'XhS6U01M8eE',
-        options: [
-          { text: 'Destruir la máquina porque amenaza el esfuerzo artesanal de los obreros.', correct: false, explanation: 'El ludismo confunde el medio técnico con la relación social capitalista que lo explota.', videoFeedbackId: '8q2w3hY1F8g' },
-          { text: 'Incorporar la tecnología para abaratar el tiempo de trabajo socialmente necesario.', correct: true, explanation: 'Comprendés la plusvalía relativa: la máquina eleva la productividad reduciendo el valor del trabajo necesario.', videoFeedbackId: 'XhS6U01M8eE' },
-          { text: 'Usar la máquina únicamente como adorno en la entrada de la fábrica.', correct: false, explanation: 'El capital exige la valorización continua de sus inversiones en capital constante.', videoFeedbackId: '8q2w3hY1F8g' }
-        ]
-      },
-      {
-        step: 4,
-        title: 'Giro de Perspectiva: En la Cinta de Montaje',
-        context: 'La pantalla cambia: ahora sos el operario frente a la máquina. El ritmo mecánico marca cada segundo de tu vida.',
-        videoContextId: 'XhS6U01M8eE',
-        options: [
-          { text: 'Acelerar el paso creyendo que el dueño te premiará con la copropiedad de la fábrica.', correct: false, explanation: 'Falsa conciencia: el aumento de tu rendimiento solo incrementa la acumulación ajena.', videoFeedbackId: '8q2w3hY1F8g' },
-          { text: 'Experimentar cómo tu propia energía vital se convierte en un apéndice de la máquina.', correct: true, explanation: 'Vivenciás la alienación en el acto productivo: el trabajo no es libre afirmación sino mortificación física.', videoFeedbackId: 'XhS6U01M8eE' },
-          { text: 'Cantar canciones alegres para olvidar la monotonía del trabajo.', correct: false, explanation: 'El consuelo subjetivo enmascara la enajenación material objetiva.', videoFeedbackId: '8q2w3hY1F8g' }
-        ]
-      },
-      {
-        step: 5,
-        title: 'Alienación del Producto Terminado',
-        context: 'Terminás un par de botas perfectas. Intentás guardarlas para abrigar a tu familia en invierno.',
-        videoContextId: 'XhS6U01M8eE',
-        options: [
-          { text: 'Un capataz te arrebata las botas: el producto no te pertenece y cuesta más que tu sueldo mensual.', correct: true, explanation: 'Alienación del objeto: cuanto más valor produce el obrero, más desvalorizado y desposeído resulta.', videoFeedbackId: 'XhS6U01M8eE' },
-          { text: 'Aceptar que las botas deben pertenecer al capataz porque él tiene mejor gusto.', correct: false, explanation: 'Sumisión ideológica que naturaliza la apropiación privada de la riqueza social.', videoFeedbackId: '8q2w3hY1F8g' },
-          { text: 'Esconder una bota en tu bolsillo para venderla en secreto.', correct: false, explanation: 'La salida individual ilegal no transforma las relaciones de producción.', videoFeedbackId: '8q2w3hY1F8g' }
-        ]
-      },
-      {
-        step: 6,
-        title: 'El Fetichismo de la Mercancía',
-        context: 'En el escaparate de la tienda, las mercancías parecen tener vida propia y relacionarse entre sí mediante precios.',
-        videoContextId: 'XhS6U01M8eE',
-        options: [
-          { text: 'Creer que el precio es una propiedad mágica natural que brota de las cosas mismas.', correct: false, explanation: 'Caíste en el fetichismo: borrar el trabajo humano que dio origen a la mercancía.', videoFeedbackId: '8q2w3hY1F8g' },
-          { text: 'Descubrir que detrás de los precios de mercado hay relaciones sociales de explotación entre personas.', correct: true, explanation: 'Excelente: desarmás el fetichismo revelando el trabajo abstracto cristalizado en el valor.', videoFeedbackId: 'XhS6U01M8eE' },
-          { text: 'Rezarle a las mercancías para que bajen de precio.', correct: false, explanation: 'El misticismo religioso refuerza la pasividad frente a las leyes económicas materiales.', videoFeedbackId: '8q2w3hY1F8g' }
-        ]
-      },
-      {
-        step: 7,
-        title: 'Pérdida del Ser Genérico (Gattungswesen)',
-        context: 'Al finalizar la extenuante jornada laboral, sentís que solo sos libre al comer, beber y dormir.',
-        videoContextId: 'XhS6U01M8eE',
-        options: [
-          { text: 'Conformarte con esa vida animal alegando que los humanos no necesitan nada más.', correct: false, explanation: 'Renunciás a la esencia humana creativa reduciendo la existencia a pura subsistencia biológica.', videoFeedbackId: '8q2w3hY1F8g' },
-          { text: 'Comprender que el capitalismo invirtió lo humano y lo animal: el trabajo creativo se convirtió en castigo.', correct: true, explanation: 'Cita clave de 1844: el ser humano queda despojado de su capacidad consciente y universal de transformar el mundo.', videoFeedbackId: 'XhS6U01M8eE' },
-          { text: 'Dormir 16 horas seguidas para no pensar.', correct: false, explanation: 'El agotamiento extremo perpetúa el ciclo de reproducción de la fuerza de trabajo.', videoFeedbackId: '8q2w3hY1F8g' }
-        ]
-      },
-      {
-        step: 8,
-        title: 'La Trampa de la Competencia Individual',
-        context: 'El patrón ofrece un bono de $2 al que trabaje más rápido que su compañero; el más lento será despedido.',
-        videoContextId: 'XhS6U01M8eE',
-        options: [
-          { text: 'Sabotear la máquina de tu compañero para asegurar tu puesto y cobrar el premio.', correct: false, explanation: 'Alienación respecto al prójimo: el sistema enfrenta a los trabajadores entre sí convirtiéndolos en rivales.', videoFeedbackId: '8q2w3hY1F8g' },
-          { text: 'Rechazar la competencia fratricida y advertir a tu compañero sobre la trampa patronal.', correct: true, explanation: 'Nace la solidaridad de clase: comprender que el interés del colega es idéntico al tuyo.', videoFeedbackId: 'XhS6U01M8eE' },
-          { text: 'Pedir que despidan a ambos para evitar discusiones.', correct: false, explanation: 'Derrotismo pasivo que amplía el ejército industrial de reserva.', videoFeedbackId: '8q2w3hY1F8g' }
-        ]
-      },
-      {
-        step: 9,
-        title: 'Diálogo y Solidaridad Obrera',
-        context: 'Reunidos en el taller durante el cambio de turno, los obreros debaten qué camino seguir ante los abusos.',
-        videoContextId: 'XhS6U01M8eE',
-        options: [
-          { text: 'Pedirle al dueño que tenga piedad y sea un poco más generoso por caridad cristiana.', correct: false, explanation: 'El socialismo utópico e ingenuo apela a la buena voluntad de la clase opresora sin tocar las bases materiales.', videoFeedbackId: '8q2w3hY1F8g' },
-          { text: 'Construir una organización sindical autónoma y un pliego de reivindicaciones colectivas.', correct: true, explanation: 'Paso decisivo: la organización colectiva supera la dispersión individual de los asalariados.', videoFeedbackId: 'XhS6U01M8eE' },
-          { text: 'Emigrar solos a otra ciudad esperando que allí los capitalistas no busquen plusvalía.', correct: false, explanation: 'El mercado mundial replica las mismas relaciones de producción en cualquier latitud.', videoFeedbackId: '8q2w3hY1F8g' }
-        ]
-      },
-      {
-        step: 10,
-        title: 'Paro de Máquinas: Clase para Sí',
-        context: 'Suena la sirena de inicio. Es el momento de la decisión histórica entre la sumisión o la huelga.',
-        videoContextId: 'XhS6U01M8eE',
-        options: [
-          { text: 'Bajar la cabeza y volver a operar la cinta de montaje en silencio.', correct: false, explanation: 'Permanecés como mera clase en sí: una masa sometida a las leyes del capital sin conciencia política.', videoFeedbackId: '8q2w3hY1F8g' },
-          { text: 'Tirar de la palanca de paro general, detener los telares y asumir el control colectivo de la producción.', correct: true, explanation: '¡Victoria emancipatoria! El proletariado se constituye como clase para sí, sujeto consciente de la historia.', videoFeedbackId: 'XhS6U01M8eE' },
-          { text: 'Prender fuego el edificio y escapar corriendo.', correct: false, explanation: 'La destrucción anárquica de los medios no socializa la riqueza; la emancipa la autogestión de los productores.', videoFeedbackId: '8q2w3hY1F8g' }
-        ]
-      }
-    ],
+    gameSteps: [],
     questions: [
       { q: 'Según el materialismo histórico, ¿qué constituye la base o infraestructura?', options: ['Las leyes y la religión', 'Las relaciones sociales de producción y fuerzas productivas', 'El arte y la filosofía', 'La moral de los gobernantes'], correct: 1, rationale: 'La base económica material condiciona la superestructura ideológica y jurídica.' },
       { q: '¿Qué es la plusvalía?', options: ['El costo de desgaste de las máquinas', 'El valor no remunerado del trabajo del cual se apropia el capitalista', 'El impuesto que cobra el Estado', 'La ganancia surgida de la astucia comercial'], correct: 1, rationale: 'Es el excedente de valor generado por el trabajo vivo no pagado en el salario.' },
@@ -379,7 +281,7 @@ const authors: Author[] = [
     theme: 'from-fuchsia-500/20 to-purple-950/30',
     image: '/philosophers/nietzsche.png',
     accent: 'text-fuchsia-300',
-    video: 'vV7V5Q8s1e4',
+    video: 'VBBu-7xos0Y',
     excerpt: '¿Adónde fue Dios? ¡Nosotros lo hemos matado!... Cómo el espíritu se transforma en camello, el camello en león y el león en niño.',
     citation: 'La gaya ciencia, §125; Así habló Zaratustra',
     takeaways: [
@@ -392,110 +294,110 @@ const authors: Author[] = [
         step: 1,
         title: 'El Peso de los Mandatos Heredados',
         context: 'Caminás por una ciudad en ruinas donde sacerdotes y moralistas te entregan pesadas losas de piedra con órdenes grabadas.',
-        videoContextId: 'vV7V5Q8s1e4',
+        videoContextId: 'VBBu-7xos0Y',
         options: [
-          { text: 'Aceptar todas las losas sobre tus hombros creyendo que sufrir te hace virtuoso.', correct: true, explanation: 'Encarnás la primera figura: el Camello, espíritu de carga que se arrodilla ante el "¡Tú debes!".', videoFeedbackId: '7uK8m4gJ5sE' },
-          { text: 'Fingir que obedecés mientras por dentro planeás vengarte en secreto.', correct: false, explanation: 'El resentimiento es la raíz de la moral de esclavos; no emancipa al espíritu.', videoFeedbackId: '9jD4Z8eW3yI' },
-          { text: 'Sentarte a llorar en la vereda esperando que un milagro te salve.', correct: false, explanation: 'La resignación pasiva es el síntoma de debilidad vital que Nietzsche critica en la decadencia.', videoFeedbackId: '9jD4Z8eW3yI' }
+          { text: 'Aceptar todas las losas sobre tus hombros creyendo que sufrir te hace virtuoso.', correct: true, explanation: 'Encarnás la primera figura: el Camello, espíritu de carga que se arrodilla ante el "¡Tú debes!".', videoFeedbackId: 'VBBu-7xos0Y' },
+          { text: 'Fingir que obedecés mientras por dentro planeás vengarte en secreto.', correct: false, explanation: 'El resentimiento es la raíz de la moral de esclavos; no emancipa al espíritu.', videoFeedbackId: 'QXC0ytoMQ6E' },
+          { text: 'Sentarte a llorar en la vereda esperando que un milagro te salve.', correct: false, explanation: 'La resignación pasiva es el síntoma de debilidad vital que Nietzsche critica en la decadencia.', videoFeedbackId: 'QXC0ytoMQ6E' }
         ]
       },
       {
         step: 2,
         title: 'La Carga del Camello en el Desierto',
         context: 'Cargas las losas del "Tú debes" a través de un desierto ardiente hasta que las rodillas comienzan a flaquear.',
-        videoContextId: '7uK8m4gJ5sE',
+        videoContextId: 'VBBu-7xos0Y',
         options: [
-          { text: 'Pedir que te agreguen más peso para demostrar tu capacidad de sumisión.', correct: false, explanation: 'La mortificación ascética enferma los instintos vitales desvalorizando el cuerpo.', videoFeedbackId: '9jD4Z8eW3yI' },
-          { text: 'Sentir el peso asfixiante de los valores ajenos y advertir que no te pertenecen.', correct: true, explanation: 'El camello llega a su límite: en la soledad más profunda del desierto se gesta la gran crisis.', videoFeedbackId: '7uK8m4gJ5sE' },
-          { text: 'Culpar a la arena del desierto por ser demasiado caliente.', correct: false, explanation: 'Desviar la mirada hacia factores externos elude la confrontación con los mandatos que aceptaste.', videoFeedbackId: '9jD4Z8eW3yI' }
+          { text: 'Pedir que te agreguen más peso para demostrar tu capacidad de sumisión.', correct: false, explanation: 'La mortificación ascética enferma los instintos vitales desvalorizando el cuerpo.', videoFeedbackId: 'QXC0ytoMQ6E' },
+          { text: 'Sentir el peso asfixiante de los valores ajenos y advertir que no te pertenecen.', correct: true, explanation: 'El camello llega a su límite: en la soledad más profunda del desierto se gesta la gran crisis.', videoFeedbackId: 'VBBu-7xos0Y' },
+          { text: 'Culpar a la arena del desierto por ser demasiado caliente.', correct: false, explanation: 'Desviar la mirada hacia factores externos elude la confrontación con los mandatos que aceptaste.', videoFeedbackId: 'QXC0ytoMQ6E' }
         ]
       },
       {
         step: 3,
         title: 'Agotamiento del Rebaño y el Último Hombre',
         context: 'Una comunidad de hombres satisfechos te invita a descansar: "Aquí nadie sufre, todos somos iguales, nadie manda ni ambiciona nada grande".',
-        videoContextId: 'vV7V5Q8s1e4',
+        videoContextId: 'VBBu-7xos0Y',
         options: [
-          { text: 'Acomodarte en su confort mediocre celebrando la ausencia de pasiones y riesgos.', correct: false, explanation: 'Caíste en la ciénaga del "Último Hombre": el nihilismo pasivo que busca solo un bienestar tibio y mezquino.', videoFeedbackId: '9jD4Z8eW3yI' },
-          { text: 'Sentir náusea ante esa mediocridad y rechazar la comodidad del rebaño conformista.', correct: true, explanation: 'Elegís el peligro de la superación antes que la felicidad empequeñecedora del último hombre.', videoFeedbackId: 'vV7V5Q8s1e4' },
-          { text: 'Pedir que te nombren rey de los mediocres.', correct: false, explanation: 'Gobernar el rebaño con sus propios valores decadentes sigue siendo moral sacerdotal.', videoFeedbackId: '9jD4Z8eW3yI' }
+          { text: 'Acomodarte en su confort mediocre celebrando la ausencia de pasiones y riesgos.', correct: false, explanation: 'Caíste en la ciénaga del "Último Hombre": el nihilismo pasivo que busca solo un bienestar tibio y mezquino.', videoFeedbackId: 'QXC0ytoMQ6E' },
+          { text: 'Sentir náusea ante esa mediocridad y rechazar la comodidad del rebaño conformista.', correct: true, explanation: 'Elegís el peligro de la superación antes que la felicidad empequeñecedora del último hombre.', videoFeedbackId: 'VBBu-7xos0Y' },
+          { text: 'Pedir que te nombren rey de los mediocres.', correct: false, explanation: 'Gobernar el rebaño con sus propios valores decadentes sigue siendo moral sacerdotal.', videoFeedbackId: 'QXC0ytoMQ6E' }
         ]
       },
       {
         step: 4,
         title: 'Mutación en León: La Gran Negación',
         context: 'En el confín del desierto, te sacudís las losas y tu piel ruge. El espíritu se niega a seguir cargando.',
-        videoContextId: '7uK8m4gJ5sE',
+        videoContextId: 'VBBu-7xos0Y',
         options: [
-          { text: 'El camello se transforma en León: el conquistador de su propia libertad que dice "¡Yo Quiero!".', correct: true, explanation: 'Segunda transformación: el león rompe la servidumbre y reclama señorío sobre su propio desierto.', videoFeedbackId: '7uK8m4gJ5sE' },
-          { text: 'Volver gateando a pedir perdón a los sacerdotes de la ciudad.', correct: false, explanation: 'La regresión por miedo a la soledad traiciona el impulso de autosuperación.', videoFeedbackId: '9jD4Z8eW3yI' },
-          { text: 'Convertirte en una estatua de mármol que no se mueve.', correct: false, explanation: 'La inmovilidad petrificada es la parálisis de la voluntad de poder.', videoFeedbackId: '9jD4Z8eW3yI' }
+          { text: 'El camello se transforma en León: el conquistador de su propia libertad que dice "¡Yo Quiero!".', correct: true, explanation: 'Segunda transformación: el león rompe la servidumbre y reclama señorío sobre su propio desierto.', videoFeedbackId: 'VBBu-7xos0Y' },
+          { text: 'Volver gateando a pedir perdón a los sacerdotes de la ciudad.', correct: false, explanation: 'La regresión por miedo a la soledad traiciona el impulso de autosuperación.', videoFeedbackId: 'QXC0ytoMQ6E' },
+          { text: 'Convertirte en una estatua de mármol que no se mueve.', correct: false, explanation: 'La inmovilidad petrificada es la parálisis de la voluntad de poder.', videoFeedbackId: 'QXC0ytoMQ6E' }
         ]
       },
       {
         step: 5,
         title: 'El Combate contra el Gran Dragón ("Tú Debes")',
         context: 'Aparece una bestia dorada con mil escamas. Cada escama centellea con una ley grabada: "¡Tú debes obedecer!".',
-        videoContextId: '7uK8m4gJ5sE',
+        videoContextId: 'VBBu-7xos0Y',
         options: [
-          { text: 'Pactar con el dragón para cumplir la mitad de sus mandatos a cambio de paz.', correct: false, explanation: 'El término medio burgués es una capitulación ante la moral gregaria.', videoFeedbackId: '9jD4Z8eW3yI' },
-          { text: 'Rugir con ferocidad y asestar el golpe dialéctico: "¡Yo quiero, y mis instintos afirman la vida!".', correct: true, explanation: 'El León vence al dragón milenario conquistando la libertad negativa: el sagrado "No" al deber impuesto.', videoFeedbackId: '7uK8m4gJ5sE' },
-          { text: 'Esperar a que el dragón envejezca y muera solo.', correct: false, explanation: 'Los ídolos no caen solos; requieren el martillo crítico del filósofo intempestivo.', videoFeedbackId: '9jD4Z8eW3yI' }
+          { text: 'Pactar con el dragón para cumplir la mitad de sus mandatos a cambio de paz.', correct: false, explanation: 'El término medio burgués es una capitulación ante la moral gregaria.', videoFeedbackId: 'QXC0ytoMQ6E' },
+          { text: 'Rugir con ferocidad y asestar el golpe dialéctico: "¡Yo quiero, y mis instintos afirman la vida!".', correct: true, explanation: 'El León vence al dragón milenario conquistando la libertad negativa: el sagrado "No" al deber impuesto.', videoFeedbackId: 'VBBu-7xos0Y' },
+          { text: 'Esperar a que el dragón envejezca y muera solo.', correct: false, explanation: 'Los ídolos no caen solos; requieren el martillo crítico del filósofo intempestivo.', videoFeedbackId: 'QXC0ytoMQ6E' }
         ]
       },
       {
         step: 6,
         title: 'Filosofía a Martillazos',
         context: 'Frente a los altares de las supuestas verdades eternas y absolutas, empuñás el martillo genealógico.',
-        videoContextId: 'vV7V5Q8s1e4',
+        videoContextId: 'VBBu-7xos0Y',
         options: [
-          { text: 'Golpear los ídolos culturales y metafísicos comprobando que están huecos por dentro.', correct: true, explanation: 'Método nietzscheano: el martillo es un diapasón que ausculta los falsos valores decadentes.', videoFeedbackId: 'vV7V5Q8s1e4' },
-          { text: 'Limpiar los altares para que queden prolijos y relucientes.', correct: false, explanation: 'El respeto reverencial por los dogmas marchitos sostiene el nihilismo decadente.', videoFeedbackId: '9jD4Z8eW3yI' },
-          { text: 'Construir un altar idéntico pero con tu propio nombre.', correct: false, explanation: 'Sustituir a Dios por un ídolo personal repite el error dogmático de la metafísica.', videoFeedbackId: '9jD4Z8eW3yI' }
+          { text: 'Golpear los ídolos culturales y metafísicos comprobando que están huecos por dentro.', correct: true, explanation: 'Método nietzscheano: el martillo es un diapasón que ausculta los falsos valores decadentes.', videoFeedbackId: 'VBBu-7xos0Y' },
+          { text: 'Limpiar los altares para que queden prolijos y relucientes.', correct: false, explanation: 'El respeto reverencial por los dogmas marchitos sostiene el nihilismo decadente.', videoFeedbackId: 'QXC0ytoMQ6E' },
+          { text: 'Construir un altar idéntico pero con tu propio nombre.', correct: false, explanation: 'Sustituir a Dios por un ídolo personal repite el error dogmático de la metafísica.', videoFeedbackId: 'QXC0ytoMQ6E' }
         ]
       },
       {
         step: 7,
         title: 'Superación del Resentimiento',
         context: 'El león victorioso mira hacia atrás y siente rabia por todos los años de sometimiento que padeció.',
-        videoContextId: '9jD4Z8eW3yI',
+        videoContextId: 'VBBu-7xos0Y',
         options: [
-          { text: 'Consumirte en el odio y la sed de venganza contra tus antiguos opresores.', correct: false, explanation: 'El resentimiento te convierte en esclavo de tu pasado y envenena la fuerza vital afirmativa.', videoFeedbackId: '9jD4Z8eW3yI' },
-          { text: 'Superar la reactividad: la fuerza noble no guarda rencor, se autodesborda en creación y salud.', correct: true, explanation: 'La moral de señores brota de una triunfal afirmación de sí misma, no de la reacción contra otros.', videoFeedbackId: '9jD4Z8eW3yI' },
-          { text: 'Escribir cartas de queja al diario local.', correct: false, explanation: 'La queja burocrática es el síntoma supremo de la mezquindad reactiva.', videoFeedbackId: '9jD4Z8eW3yI' }
+          { text: 'Consumirte en el odio y la sed de venganza contra tus antiguos opresores.', correct: false, explanation: 'El resentimiento te convierte en esclavo de tu pasado y envenena la fuerza vital afirmativa.', videoFeedbackId: 'QXC0ytoMQ6E' },
+          { text: 'Superar la reactividad: la fuerza noble no guarda rencor, se autodesborda en creación y salud.', correct: true, explanation: 'La moral de señores brota de una triunfal afirmación de sí misma, no de la reacción contra otros.', videoFeedbackId: 'VBBu-7xos0Y' },
+          { text: 'Escribir cartas de queja al diario local.', correct: false, explanation: 'La queja burocrática es el síntoma supremo de la mezquindad reactiva.', videoFeedbackId: 'QXC0ytoMQ6E' }
         ]
       },
       {
         step: 8,
         title: 'Transformación en Niño Creador',
         context: 'El león comprende que solo sabe destruir, pero que para vivir se necesita fundar nuevos sentidos.',
-        videoContextId: '7uK8m4gJ5sE',
+        videoContextId: 'VBBu-7xos0Y',
         options: [
-          { text: 'Quedarte como fiera salvaje que devora todo lo que encuentra.', correct: false, explanation: 'El nihilismo activo que solo destruye se ahoga en su propia violencia estéril.', videoFeedbackId: '9jD4Z8eW3yI' },
-          { text: 'El espíritu se convierte en Niño: inocencia, olvido, un nuevo comienzo, un juego, un santo decir Sí.', correct: true, explanation: 'Tercera transformación: el niño crea valores propios con la ligereza del juego artístico.', videoFeedbackId: '7uK8m4gJ5sE' },
-          { text: 'Buscar a tus padres para que te digan qué jugar.', correct: false, explanation: 'El niño de Zaratustra no es inmadurez biológica; es autonomía poética y soberanía creadora.', videoFeedbackId: '9jD4Z8eW3yI' }
+          { text: 'Quedarte como fiera salvaje que devora todo lo que encuentra.', correct: false, explanation: 'El nihilismo activo que solo destruye se ahoga en su propia violencia estéril.', videoFeedbackId: 'QXC0ytoMQ6E' },
+          { text: 'El espíritu se convierte en Niño: inocencia, olvido, un nuevo comienzo, un juego, un santo decir Sí.', correct: true, explanation: 'Tercera transformación: el niño crea valores propios con la ligereza del juego artístico.', videoFeedbackId: 'VBBu-7xos0Y' },
+          { text: 'Buscar a tus padres para que te digan qué jugar.', correct: false, explanation: 'El niño de Zaratustra no es inmadurez biológica; es autonomía poética y soberanía creadora.', videoFeedbackId: 'QXC0ytoMQ6E' }
         ]
       },
       {
         step: 9,
         title: 'El Demonio del Eterno Retorno',
         context: 'Bajo la luna solitaria, un demonio susurra: "¿Deseas que cada dolor, cada placer y cada instante de tu vida se repita exactamente igual infinitas veces?".',
-        videoContextId: 'vV7V5Q8s1e4',
+        videoContextId: 'VBBu-7xos0Y',
         options: [
-          { text: 'Maldecir al demonio con terror porque tu vida contiene heridas que querés olvidar.', correct: false, explanation: 'El rechazo del instante demuestra que aún no afirmás la existencia terrenal con plenitud.', videoFeedbackId: '9jD4Z8eW3yI' },
-          { text: 'Responder con exaltación: "¡Nunca escuché nada más divino! Deseo este instante y cada uno eternamente".', correct: true, explanation: 'La prueba existencial suprema: vivir de modo que desees la repetición infinita de tus elecciones.', videoFeedbackId: 'vV7V5Q8s1e4' },
-          { text: 'Negociar para que se repitan solo las vacaciones y los días soleados.', correct: false, explanation: 'El Eterno Retorno no admite censuras: afirma la totalidad de la vida con sus luces y abismos.', videoFeedbackId: '9jD4Z8eW3yI' }
+          { text: 'Maldecir al demonio con terror porque tu vida contiene heridas que querés olvidar.', correct: false, explanation: 'El rechazo del instante demuestra que aún no afirmás la existencia terrenal con plenitud.', videoFeedbackId: 'QXC0ytoMQ6E' },
+          { text: 'Responder con exaltación: "¡Nunca escuché nada más divino! Deseo este instante y cada uno eternamente".', correct: true, explanation: 'La prueba existencial suprema: vivir de modo que desees la repetición infinita de tus elecciones.', videoFeedbackId: 'VBBu-7xos0Y' },
+          { text: 'Negociar para que se repitan solo las vacaciones y los días soleados.', correct: false, explanation: 'El Eterno Retorno no admite censuras: afirma la totalidad de la vida con sus luces y abismos.', videoFeedbackId: 'QXC0ytoMQ6E' }
         ]
       },
       {
         step: 10,
         title: 'Coronación del Amor Fati',
         context: 'Llegas a la cumbre de la montaña. El horizonte no tiene dioses ni verdades escritas en el cielo: el sentido depende de tu propia creación.',
-        videoContextId: 'vV7V5Q8s1e4',
+        videoContextId: 'VBBu-7xos0Y',
         options: [
-          { text: 'Rogar que aparezca un nuevo dogma religioso para no sentir el vértigo de las alturas.', correct: false, explanation: 'Recaída en el consuelo ultraterreno del platonismo decadente.', videoFeedbackId: '9jD4Z8eW3yI' },
-          { text: 'Consagrarte al Amor Fati (amor al destino) y ser fiel al sentido de la Tierra como Superhombre.', correct: true, explanation: '¡Victoria zaratustriana! Superás el nihilismo, asumís la muerte de Dios y te erigís en creador de tus propios valores.', videoFeedbackId: 'vV7V5Q8s1e4' },
-          { text: 'Bajar corriendo de la montaña y encerrarte en un sótano.', correct: false, explanation: 'El repliegue temeroso niega la gran salud del espíritu libre.', videoFeedbackId: '9jD4Z8eW3yI' }
+          { text: 'Rogar que aparezca un nuevo dogma religioso para no sentir el vértigo de las alturas.', correct: false, explanation: 'Recaída en el consuelo ultraterreno del platonismo decadente.', videoFeedbackId: 'QXC0ytoMQ6E' },
+          { text: 'Consagrarte al Amor Fati (amor al destino) y ser fiel al sentido de la Tierra como Superhombre.', correct: true, explanation: '¡Victoria zaratustriana! Superás el nihilismo, asumís la muerte de Dios y te erigís en creador de tus propios valores.', videoFeedbackId: 'VBBu-7xos0Y' },
+          { text: 'Bajar corriendo de la montaña y encerrarte en un sótano.', correct: false, explanation: 'El repliegue temeroso niega la gran salud del espíritu libre.', videoFeedbackId: 'QXC0ytoMQ6E' }
         ]
       }
     ],
@@ -515,7 +417,7 @@ const authors: Author[] = [
     theme: 'from-sky-500/20 to-cyan-950/30',
     image: '/philosophers/freud.png',
     accent: 'text-sky-300',
-    video: '8mG5T8y1V8e',
+    video: 'v2hDEhQnCzA',
     excerpt: 'El ser humano no es un ser manso... Homo homini lupus: la cultura tiene que movilizarlo todo para poner límites a las pulsiones agresivas del hombre.',
     citation: 'El malestar en la cultura, Cap. II–III',
     takeaways: [
@@ -528,110 +430,110 @@ const authors: Author[] = [
         step: 1,
         title: 'La Demanda Visceral del Ello',
         context: 'En un examen decisivo, tu compañero te hace un gesto despectivo. Desde lo profundo de tu mente surge una pulsión agresiva feroz.',
-        videoContextId: '8mG5T8y1V8e',
+        videoContextId: 'v2hDEhQnCzA',
         options: [
-          { text: 'Lanzarle el pupitre por la cabeza para descargar la furia de inmediato.', correct: false, explanation: 'El principio de placer ciego del Ello no mide consecuencias sociales: serías expulsado.', videoFeedbackId: '4uV8e1k2V9s' },
-          { text: 'Registrar la fuerza del impulso agresivo sin actuarlo impulsivamente.', correct: true, explanation: 'El Yo toma nota del empuje pulsional (Drang) sin dejarse desbordar por el Ello.', videoFeedbackId: '8mG5T8y1V8e' },
-          { text: 'Fingir que no sentís nada y que sos un ángel sin instintos.', correct: false, explanation: 'Negar la pulsión prepara el terreno para la represión patógena.', videoFeedbackId: '4uV8e1k2V9s' }
+          { text: 'Lanzarle el pupitre por la cabeza para descargar la furia de inmediato.', correct: false, explanation: 'El principio de placer ciego del Ello no mide consecuencias sociales: serías expulsado.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Registrar la fuerza del impulso agresivo sin actuarlo impulsivamente.', correct: true, explanation: 'El Yo toma nota del empuje pulsional (Drang) sin dejarse desbordar por el Ello.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Fingir que no sentís nada y que sos un ángel sin instintos.', correct: false, explanation: 'Negar la pulsión prepara el terreno para la represión patógena.', videoFeedbackId: 'v2hDEhQnCzA' }
         ]
       },
       {
         step: 2,
         title: 'La Reprobación Punitiva del Superyó',
         context: 'Una voz severa con tono patriarcal retumba en tu cabeza: "¡Sos un monstruo por haber sentido bronca! Merecés fracasar en todo".',
-        videoContextId: '8mG5T8y1V8e',
+        videoContextId: 'v2hDEhQnCzA',
         options: [
-          { text: 'Aceptar el castigo del Superyó y romper tu propia hoja de examen por culpa.', correct: false, explanation: 'El Superyó sádico somete al Yo a una culpa desmedida e irracional.', videoFeedbackId: '4uV8e1k2V9s' },
-          { text: 'Reconocer que el Superyó es la introyección de normas y mandatos, no una verdad divina.', correct: true, explanation: 'Comprendés la génesis del heredero del complejo de Edipo y limitás su tiranía interna.', videoFeedbackId: '8mG5T8y1V8e' },
-          { text: 'Pedir que el profesor te aplique castigos corporales.', correct: false, explanation: 'El masoquismo moral busca la expiación infinita para satisfacer al Superyó.', videoFeedbackId: '4uV8e1k2V9s' }
+          { text: 'Aceptar el castigo del Superyó y romper tu propia hoja de examen por culpa.', correct: false, explanation: 'El Superyó sádico somete al Yo a una culpa desmedida e irracional.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Reconocer que el Superyó es la introyección de normas y mandatos, no una verdad divina.', correct: true, explanation: 'Comprendés la génesis del heredero del complejo de Edipo y limitás su tiranía interna.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Pedir que el profesor te aplique castigos corporales.', correct: false, explanation: 'El masoquismo moral busca la expiación infinita para satisfacer al Superyó.', videoFeedbackId: 'v2hDEhQnCzA' }
         ]
       },
       {
         step: 3,
         title: 'El Colapso de la Represión Somática',
         context: 'Intentás tragar el enojo a la fuerza. A los diez minutos empezás con una jaqueca insoportable y la mano acalambrada.',
-        videoContextId: '8mG5T8y1V8e',
+        videoContextId: 'v2hDEhQnCzA',
         options: [
-          { text: 'Creer que te picó un mosquito exótico y no hacer nada.', correct: false, explanation: 'Ignorás el lenguaje del cuerpo y la conversión somática del síntoma.', videoFeedbackId: '4uV8e1k2V9s' },
-          { text: 'Comprender que lo reprimido siempre retorna disfrazado como síntoma neurótico.', correct: true, explanation: 'Excelente diagnóstico: la energía pulsional no tramitada psíquicamente busca descarga en el cuerpo.', videoFeedbackId: '8mG5T8y1V8e' },
-          { text: 'Tomar diez analgésicos para seguir tapando el conflicto.', correct: false, explanation: 'La medicación sin elaboración no resuelve el conflicto intrapsíquico reprimido.', videoFeedbackId: '4uV8e1k2V9s' }
+          { text: 'Creer que te picó un mosquito exótico y no hacer nada.', correct: false, explanation: 'Ignorás el lenguaje del cuerpo y la conversión somática del síntoma.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Comprender que lo reprimido siempre retorna disfrazado como síntoma neurótico.', correct: true, explanation: 'Excelente diagnóstico: la energía pulsional no tramitada psíquicamente busca descarga en el cuerpo.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Tomar diez analgésicos para seguir tapando el conflicto.', correct: false, explanation: 'La medicación sin elaboración no resuelve el conflicto intrapsíquico reprimido.', videoFeedbackId: 'v2hDEhQnCzA' }
         ]
       },
       {
         step: 4,
         title: 'Interpretación del Lapsus Linguae',
         context: 'Al pedirle una hoja al profesor, en vez de decirle "Estimado profesor" pronunciás: "Estimado opresor".',
-        videoContextId: '8mG5T8y1V8e',
+        videoContextId: 'v2hDEhQnCzA',
         options: [
-          { text: 'Decir que fue solo un error de cansancio en las cuerdas vocales sin sentido.', correct: false, explanation: 'La medicina positivista cree que son fallas mecánicas; Freud demostró que tienen sentido inconsciente.', videoFeedbackId: '4uV8e1k2V9s' },
-          { text: 'Analizar el acto fallido: una formación de compromiso donde el deseo reprimido burló la censura.', correct: true, explanation: 'El lapsus devela la verdad sofocada: tu crítica a la autoridad se filtró en el habla cotidiana.', videoFeedbackId: '8mG5T8y1V8e' },
-          { text: 'Prometer no volver a hablar durante seis meses.', correct: false, explanation: 'El silenciamiento forzado no cura; intensifica la inhibición neurótica.', videoFeedbackId: '4uV8e1k2V9s' }
+          { text: 'Decir que fue solo un error de cansancio en las cuerdas vocales sin sentido.', correct: false, explanation: 'La medicina positivista cree que son fallas mecánicas; Freud demostró que tienen sentido inconsciente.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Analizar el acto fallido: una formación de compromiso donde el deseo reprimido burló la censura.', correct: true, explanation: 'El lapsus devela la verdad sofocada: tu crítica a la autoridad se filtró en el habla cotidiana.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Prometer no volver a hablar durante seis meses.', correct: false, explanation: 'El silenciamiento forzado no cura; intensifica la inhibición neurótica.', videoFeedbackId: 'v2hDEhQnCzA' }
         ]
       },
       {
         step: 5,
         title: 'Descodificación del Sueño',
         context: 'Recordás un sueño recurrente: "Ibas descalzo persiguiendo un reloj de oro que se derretía en el mar mientras una campana sonaba".',
-        videoContextId: '8mG5T8y1V8e',
+        videoContextId: 'v2hDEhQnCzA',
         options: [
-          { text: 'Pensar que el sueño predice el número que va a salir en la quiniela.', correct: false, explanation: 'El pensamiento mágico adivinatorio desconoce los mecanismos del inconsciente.', videoFeedbackId: '4uV8e1k2V9s' },
-          { text: 'Separar el contenido manifiesto de las ideas latentes mediante la asociación libre.', correct: true, explanation: 'El sueño es la realización alucinatoria de deseos reprimidos transformada por condensación y desplazamiento.', videoFeedbackId: '8mG5T8y1V8e' },
-          { text: 'Comprar un atrapasueños y colgarlo del techo.', correct: false, explanation: 'La superstición no reemplaza la labor analítica del recuerdo.', videoFeedbackId: '4uV8e1k2V9s' }
+          { text: 'Pensar que el sueño predice el número que va a salir en la quiniela.', correct: false, explanation: 'El pensamiento mágico adivinatorio desconoce los mecanismos del inconsciente.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Separar el contenido manifiesto de las ideas latentes mediante la asociación libre.', correct: true, explanation: 'El sueño es la realización alucinatoria de deseos reprimidos transformada por condensación y desplazamiento.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Comprar un atrapasueños y colgarlo del techo.', correct: false, explanation: 'La superstición no reemplaza la labor analítica del recuerdo.', videoFeedbackId: 'v2hDEhQnCzA' }
         ]
       },
       {
         step: 6,
         title: 'El Peligro de la Proyección',
         context: 'Sentís una envidia intensa por el éxito de tu mejor amigo, pero te descubrís diciendo: "¡Él me tiene una envidia tremenda a mí!".',
-        videoContextId: '8mG5T8y1V8e',
+        videoContextId: 'v2hDEhQnCzA',
         options: [
-          { text: 'Convencerte de que tu amigo es una persona malvada y romper la amistad.', correct: false, explanation: 'Consolidás la proyección paranoide destruyendo tus vínculos reales.', videoFeedbackId: '4uV8e1k2V9s' },
-          { text: 'Frenar y admitir la proyección: atribuís al otro los sentimientos propios que tu Yo se niega a aceptar.', correct: true, explanation: 'Mecanismo de defensa descubierto: asumir los propios afectos desactiva la paranoia persecutoria.', videoFeedbackId: '8mG5T8y1V8e' },
-          { text: 'Contratar a un detective para que espíe a tu amigo.', correct: false, explanation: 'Alimentar la fantasía proyectiva deteriora el criterio de realidad.', videoFeedbackId: '4uV8e1k2V9s' }
+          { text: 'Convencerte de que tu amigo es una persona malvada y romper la amistad.', correct: false, explanation: 'Consolidás la proyección paranoide destruyendo tus vínculos reales.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Frenar y admitir la proyección: atribuís al otro los sentimientos propios que tu Yo se niega a aceptar.', correct: true, explanation: 'Mecanismo de defensa descubierto: asumir los propios afectos desactiva la paranoia persecutoria.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Contratar a un detective para que espíe a tu amigo.', correct: false, explanation: 'Alimentar la fantasía proyectiva deteriora el criterio de realidad.', videoFeedbackId: 'v2hDEhQnCzA' }
         ]
       },
       {
         step: 7,
         title: 'Superación de la Angustia de Castración',
         context: 'El miedo a equivocarte y ser juzgado te paraliza ante la hoja en blanco como si arriesgaras tu integridad misma.',
-        videoContextId: '8mG5T8y1V8e',
+        videoContextId: 'v2hDEhQnCzA',
         options: [
-          { text: 'Entregar la hoja en blanco y declararte incapaz para siempre.', correct: false, explanation: 'La inhibición síntoma se apodera de tu autonomía psíquica.', videoFeedbackId: '4uV8e1k2V9s' },
-          { text: 'Comprender el origen infantil de la angustia y tolerar la falta sin esperar perfección narcisista.', correct: true, explanation: 'Aceptar la castración simbólica es la condición de posibilidad de la madurez psíquica.', videoFeedbackId: '8mG5T8y1V8e' },
-          { text: 'Hacer trampa copiándote del alumno de adelante.', correct: false, explanation: 'La conducta perversa desmiente la regla pero refuerza la culpa inconsciente posterior.', videoFeedbackId: '4uV8e1k2V9s' }
+          { text: 'Entregar la hoja en blanco y declararte incapaz para siempre.', correct: false, explanation: 'La inhibición síntoma se apodera de tu autonomía psíquica.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Comprender el origen infantil de la angustia y tolerar la falta sin esperar perfección narcisista.', correct: true, explanation: 'Aceptar la castración simbólica es la condición de posibilidad de la madurez psíquica.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Hacer trampa copiándote del alumno de adelante.', correct: false, explanation: 'La conducta perversa desmiente la regla pero refuerza la culpa inconsciente posterior.', videoFeedbackId: 'v2hDEhQnCzA' }
         ]
       },
       {
         step: 8,
         title: 'Sublimación Creadora',
         context: 'Tenés acumulada una enorme carga de energía pulsional agresiva y erótica que busca salida.',
-        videoContextId: '8mG5T8y1V8e',
+        videoContextId: 'v2hDEhQnCzA',
         options: [
-          { text: 'Buscar una pelea callejera a la salida de la escuela para descargarla físicamente.', correct: false, explanation: 'La descarga pulsional descontrolada destruye la convivencia civilizada.', videoFeedbackId: '4uV8e1k2V9s' },
-          { text: 'Canalizar esa energía en la redacción de un ensayo filosófico brillante y en la práctica deportiva.', correct: true, explanation: '¡Sublimación alcanzada! Desviás la energía hacia metas culturales y sociales valoradas sin reprimir.', videoFeedbackId: '8mG5T8y1V8e' },
-          { text: 'Encerrarte en tu pieza a jugar videojuegos 20 horas sin comer.', correct: false, explanation: 'La fijación regresiva aísla al sujeto empobreciendo el desarrollo de su Yo.', videoFeedbackId: '4uV8e1k2V9s' }
+          { text: 'Buscar una pelea callejera a la salida de la escuela para descargarla físicamente.', correct: false, explanation: 'La descarga pulsional descontrolada destruye la convivencia civilizada.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Canalizar esa energía en la redacción de un ensayo filosófico brillante y en la práctica deportiva.', correct: true, explanation: '¡Sublimación alcanzada! Desviás la energía hacia metas culturales y sociales valoradas sin reprimir.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Encerrarte en tu pieza a jugar videojuegos 20 horas sin comer.', correct: false, explanation: 'La fijación regresiva aísla al sujeto empobreciendo el desarrollo de su Yo.', videoFeedbackId: 'v2hDEhQnCzA' }
         ]
       },
       {
         step: 9,
         title: 'El Principio de Realidad',
         context: 'Llega la hora de entregar el examen. No podés quedarte fantaseando eternamente con una nota mágica.',
-        videoContextId: '8mG5T8y1V8e',
+        videoContextId: 'v2hDEhQnCzA',
         options: [
-          { text: 'Exigir que te aprueben por decreto porque vos lo deseás con mucha fuerza.', correct: false, explanation: 'Omnipotencia infantil del pensamiento: el principio de placer choca contra la realidad.', videoFeedbackId: '4uV8e1k2V9s' },
-          { text: 'Aceptar los límites de la situación real, revisar tus respuestas y entregar con serenidad.', correct: true, explanation: 'El Yo se afianza: posterga la satisfacción inmediata para lograr un fin viable en el mundo exterior.', videoFeedbackId: '8mG5T8y1V8e' },
-          { text: 'Prender fuego el examen y salir corriendo del aula.', correct: false, explanation: 'Ruptura psicótica con la realidad objetiva.', videoFeedbackId: '4uV8e1k2V9s' }
+          { text: 'Exigir que te aprueben por decreto porque vos lo deseás con mucha fuerza.', correct: false, explanation: 'Omnipotencia infantil del pensamiento: el principio de placer choca contra la realidad.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Aceptar los límites de la situación real, revisar tus respuestas y entregar con serenidad.', correct: true, explanation: 'El Yo se afianza: posterga la satisfacción inmediata para lograr un fin viable en el mundo exterior.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: 'Prender fuego el examen y salir corriendo del aula.', correct: false, explanation: 'Ruptura psicótica con la realidad objetiva.', videoFeedbackId: 'v2hDEhQnCzA' }
         ]
       },
       {
         step: 10,
         title: 'Soberanía del Yo: "Wo Es war, soll Ich werden"',
         context: 'Salís del aula. Has atravesado el conflicto entre pulsiones, mandatos de culpa y demandas de la realidad.',
-        videoContextId: '8mG5T8y1V8e',
+        videoContextId: 'v2hDEhQnCzA',
         options: [
-          { text: '"Declararé que no tengo inconsciente y que mi mente es pura razón consciente transparente".', correct: false, explanation: 'La ilusión cartesiana que el psicoanálisis vino a fracturar como la tercera herida narcisista de la humanidad.', videoFeedbackId: '4uV8e1k2V9s' },
-          { text: '"Donde el Ello era, el Yo debe advenir: ampliaré el dominio consciente sin sofocar la vida pulsional".', correct: true, explanation: '¡Meta analítica cumplida! Conquistás el equilibrio dinámico entre el placer, la norma y la realidad.', videoFeedbackId: '8mG5T8y1V8e' },
-          { text: '"Dejaré que el Superyó me juzgue y me torture todos los días de mi vida".', correct: false, explanation: 'La entrega neurótica a la culpa destruye la felicidad y la capacidad productiva del sujeto.', videoFeedbackId: '4uV8e1k2V9s' }
+          { text: '"Declararé que no tengo inconsciente y que mi mente es pura razón consciente transparente".', correct: false, explanation: 'La ilusión cartesiana que el psicoanálisis vino a fracturar como la tercera herida narcisista de la humanidad.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: '"Donde el Ello era, el Yo debe advenir: ampliaré el dominio consciente sin sofocar la vida pulsional".', correct: true, explanation: '¡Meta analítica cumplida! Conquistás el equilibrio dinámico entre el placer, la norma y la realidad.', videoFeedbackId: 'v2hDEhQnCzA' },
+          { text: '"Dejaré que el Superyó me juzgue y me torture todos los días de mi vida".', correct: false, explanation: 'La entrega neurótica a la culpa destruye la felicidad y la capacidad productiva del sujeto.', videoFeedbackId: 'v2hDEhQnCzA' }
         ]
       }
     ],
@@ -651,7 +553,7 @@ const authors: Author[] = [
     theme: 'from-emerald-500/20 to-teal-950/30',
     image: '/philosophers/sartre.png',
     accent: 'text-emerald-300',
-    video: '6rG7h2u1V8e',
+    video: 'ZrRSZsbLbvI',
     excerpt: 'El hombre empieza por existir... no hay naturaleza humana porque no hay Dios para concebirla. Estamos condenados a ser libres.',
     citation: 'El existencialismo es un humanismo',
     takeaways: [
@@ -664,44 +566,44 @@ const authors: Author[] = [
         step: 1,
         title: 'La Sala sin Espejos ni Salida Visible',
         context: 'Despertás en un salón con sillones de terciopelo ajado. Hay tres personas sentadas que evitan mirarte a los ojos.',
-        videoContextId: '6rG7h2u1V8e',
+        videoContextId: 'ZrRSZsbLbvI',
         options: [
-          { text: 'Buscar guardias armados o cadenas que expliquen por qué nadie sale.', correct: false, explanation: 'Esperás una coacción física exterior; en el existencialismo la trampa es interior y moral.', videoFeedbackId: '7hK8m4gJ5sE' },
-          { text: 'Examinar a los ocupantes y advertir que están atrapados por sus propias excusas.', correct: true, explanation: 'Inspirado en "A puerta cerrada": no hay verdugos externos, el encierro es el juicio mutuo y la mala fe.', videoFeedbackId: '6rG7h2u1V8e' },
-          { text: 'Romper los muebles para prender fuego la habitación.', correct: false, explanation: 'El vandalismo reactivo busca una salida mágica eludiendo el examen existencial.', videoFeedbackId: '7hK8m4gJ5sE' }
+          { text: 'Buscar guardias armados o cadenas que expliquen por qué nadie sale.', correct: false, explanation: 'Esperás una coacción física exterior; en el existencialismo la trampa es interior y moral.', videoFeedbackId: 'YfmUm5Kkj6M' },
+          { text: 'Examinar a los ocupantes y advertir que están atrapados por sus propias excusas.', correct: true, explanation: 'Inspirado en "A puerta cerrada": no hay verdugos externos, el encierro es el juicio mutuo y la mala fe.', videoFeedbackId: 'ZrRSZsbLbvI' },
+          { text: 'Romper los muebles para prender fuego la habitación.', correct: false, explanation: 'El vandalismo reactivo busca una salida mágica eludiendo el examen existencial.', videoFeedbackId: 'YfmUm5Kkj6M' }
         ]
       },
       {
         step: 2,
         title: 'Interrogatorio a Gastón: La Obediencia Debida',
         context: 'Gastón, un militar, declara: "Yo ejecuté órdenes atroces, pero yo no soy culpable: el reglamento me obligaba. No tenía otra opción".',
-        videoContextId: '6rG7h2u1V8e',
+        videoContextId: 'ZrRSZsbLbvI',
         options: [
-          { text: 'Darle la razón: "La ley militar lo exime de toda responsabilidad individual".', correct: false, explanation: 'Caíste en la complicidad de la mala fe: ningún código anula tu libertad de desobedecer.', videoFeedbackId: '7hK8m4gJ5sE' },
-          { text: 'Confrontarlo: "Usted eligió obedecer; negarse también era una opción con sus riesgos. Usted es sus actos".', correct: true, explanation: 'Desarmás la mala fe: inventar que una orden te priva de libertad es una mentira para calmar la angustia.', videoFeedbackId: '6rG7h2u1V8e' },
-          { text: 'Consolarlo diciéndole que Dios perdonará a los soldados.', correct: false, explanation: 'Sartre señala que si Dios no existe, el hombre está desamparado y no encuentra disculpas a las que aferrarse.', videoFeedbackId: '7hK8m4gJ5sE' }
+          { text: 'Darle la razón: "La ley militar lo exime de toda responsabilidad individual".', correct: false, explanation: 'Caíste en la complicidad de la mala fe: ningún código anula tu libertad de desobedecer.', videoFeedbackId: 'YfmUm5Kkj6M' },
+          { text: 'Confrontarlo: "Usted eligió obedecer; negarse también era una opción con sus riesgos. Usted es sus actos".', correct: true, explanation: 'Desarmás la mala fe: inventar que una orden te priva de libertad es una mentira para calmar la angustia.', videoFeedbackId: 'ZrRSZsbLbvI' },
+          { text: 'Consolarlo diciéndole que Dios perdonará a los soldados.', correct: false, explanation: 'Sartre señala que si Dios no existe, el hombre está desamparado y no encuentra disculpas a las que aferrarse.', videoFeedbackId: 'YfmUm5Kkj6M' }
         ]
       },
       {
         step: 3,
         title: 'Deconstrucción del Determinismo del Pasado',
         context: 'Gastón insiste: "Mi padre me educó con mano dura, estaba predestinado en mi sangre ser así".',
-        videoContextId: '6rG7h2u1V8e',
+        videoContextId: 'ZrRSZsbLbvI',
         options: [
-          { text: 'Aceptar que la herencia genética y familiar determina el destino sin remedio.', correct: false, explanation: 'El determinismo biológico es la coartada predilecta de la mala fe para negar la libertad.', videoFeedbackId: '7hK8m4gJ5sE' },
-          { text: 'Recordarle la frase de Sartre: "Lo importante no es lo que hicieron de nosotros, sino lo que hacemos con lo que hicieron de nosotros".', correct: true, explanation: 'La facticidad del pasado existe, pero cada persona decide libremente el sentido y el proyecto sobre esos datos.', videoFeedbackId: '6rG7h2u1V8e' },
-          { text: 'Sugerirle que consulte su carta astral para ver si la culpa es de los astros.', correct: false, explanation: 'Delegar la responsabilidad ética en planetas es el colmo del autoengaño.', videoFeedbackId: '7hK8m4gJ5sE' }
+          { text: 'Aceptar que la herencia genética y familiar determina el destino sin remedio.', correct: false, explanation: 'El determinismo biológico es la coartada predilecta de la mala fe para negar la libertad.', videoFeedbackId: 'YfmUm5Kkj6M' },
+          { text: 'Recordarle la frase de Sartre: "Lo importante no es lo que hicieron de nosotros, sino lo que hacemos con lo que hicieron de nosotros".', correct: true, explanation: 'La facticidad del pasado existe, pero cada persona decide libremente el sentido y el proyecto sobre esos datos.', videoFeedbackId: 'ZrRSZsbLbvI' },
+          { text: 'Sugerirle que consulte su carta astral para ver si la culpa es de los astros.', correct: false, explanation: 'Delegar la responsabilidad ética en planetas es el colmo del autoengaño.', videoFeedbackId: 'YfmUm5Kkj6M' }
         ]
       },
       {
         step: 4,
         title: 'Interrogatorio a Elena: La Esencia Femenina Falsa',
         context: 'Elena afirma: "Yo soporté humillaciones de mi marido durante 20 años porque la naturaleza femenina exige sumisión y abnegación".',
-        videoContextId: '6rG7h2u1V8e',
+        videoContextId: 'ZrRSZsbLbvI',
         options: [
-          { text: 'Felicitarla por cumplir su esencia natural de mujer paciente.', correct: false, explanation: 'El existencialismo demostró que no hay esencias previas: la esencia es una construcción social e histórica.', videoFeedbackId: '7hK8m4gJ5sE' },
-          { text: 'Señalarle que la existencia precede a la esencia: no hay naturaleza dada; ella eligió tolerar para no afrontar la soledad.', correct: true, explanation: 'La liberación comienza cuando se reconoce que ninguna norma metafísica obliga a aceptar la opresión.', videoFeedbackId: '6rG7h2u1V8e' },
-          { text: 'Decirle que las mujeres nacieron para sufrir en silencio.', correct: false, explanation: 'Prejuicio patriarcal que naturaliza relaciones contingentes de dominación.', videoFeedbackId: '7hK8m4gJ5sE' }
+          { text: 'Felicitarla por cumplir su esencia natural de mujer paciente.', correct: false, explanation: 'El existencialismo demostró que no hay esencias previas: la esencia es una construcción social e histórica.', videoFeedbackId: 'YfmUm5Kkj6M' },
+          { text: 'Señalarle que la existencia precede a la esencia: no hay naturaleza dada; ella eligió tolerar para no afrontar la soledad.', correct: true, explanation: 'La liberación comienza cuando se reconoce que ninguna norma metafísica obliga a aceptar la opresión.', videoFeedbackId: 'ZrRSZsbLbvI' },
+          { text: 'Decirle que las mujeres nacieron para sufrir en silencio.', correct: false, explanation: 'Prejuicio patriarcal que naturaliza relaciones contingentes de dominación.', videoFeedbackId: 'YfmUm5Kkj6M' }
         ]
       },
       {
@@ -710,64 +612,64 @@ const authors: Author[] = [
         context: 'Un mozo camina con movimientos rígidos, mecánicos y exagerados: "Yo no elijo nada, yo soy simplemente un mozo en sí".',
         videoContextId: '7hK8m4gJ5sE',
         options: [
-          { text: 'Admirar su profesionalismo y pedirle que te sirva un café rápido.', correct: false, explanation: 'Reforzás su juego: tratás al hombre como a un autómata que coincide consigo mismo como una piedra.', videoFeedbackId: '7hK8m4gJ5sE' },
-          { text: 'Desarmar su actuación: "Jugás a ser mozo para convertir tu conciencia libre (Para-sí) en una cosa sólida e inerte (En-sí)".', correct: true, explanation: 'Ejemplo célebre de "El ser y la nada": el mozo imita a un objeto para evadir la incertidumbre de su libertad.', videoFeedbackId: '7hK8m4gJ5sE' },
-          { text: 'Dejarle una propina miserable para que se enoje.', correct: false, explanation: 'La provocación no desmonta la categoría ontológica de la mala fe.', videoFeedbackId: '7hK8m4gJ5sE' }
+          { text: 'Admirar su profesionalismo y pedirle que te sirva un café rápido.', correct: false, explanation: 'Reforzás su juego: tratás al hombre como a un autómata que coincide consigo mismo como una piedra.', videoFeedbackId: 'YfmUm5Kkj6M' },
+          { text: 'Desarmar su actuación: "Jugás a ser mozo para convertir tu conciencia libre (Para-sí) en una cosa sólida e inerte (En-sí)".', correct: true, explanation: 'Ejemplo célebre de "El ser y la nada": el mozo imita a un objeto para evadir la incertidumbre de su libertad.', videoFeedbackId: 'ZrRSZsbLbvI' },
+          { text: 'Dejarle una propina miserable para que se enoje.', correct: false, explanation: 'La provocación no desmonta la categoría ontológica de la mala fe.', videoFeedbackId: 'YfmUm5Kkj6M' }
         ]
       },
       {
         step: 6,
         title: 'El Terror a la Mirada Ajena',
         context: 'De pronto, los tres personajes se giran al unísono y clavan sus ojos en vos, juzgando cada uno de tus defectos.',
-        videoContextId: '6rG7h2u1V8e',
+        videoContextId: 'ZrRSZsbLbvI',
         options: [
-          { text: 'Paralizarte de vergüenza y permitir que su mirada te defina para siempre.', correct: false, explanation: 'Caés en la trampa del Ser-para-otro: permitís que la mirada ajena te cosifique y te robe tu libertad.', videoFeedbackId: '7hK8m4gJ5sE' },
-          { text: 'Comprender que "el infierno son los otros" cuando delegás en sus ojos la potestad de juzgar tu propio valor.', correct: true, explanation: 'La frase de "A puerta cerrada" desmitificada: el infierno es la dependencia absoluta de la mirada ajena.', videoFeedbackId: '6rG7h2u1V8e' },
-          { text: 'Ponerte una careta de payaso para que no te vean.', correct: false, explanation: 'La máscara cómica es otra forma de huida ante la confrontación intersubjetiva.', videoFeedbackId: '7hK8m4gJ5sE' }
+          { text: 'Paralizarte de vergüenza y permitir que su mirada te defina para siempre.', correct: false, explanation: 'Caés en la trampa del Ser-para-otro: permitís que la mirada ajena te cosifique y te robe tu libertad.', videoFeedbackId: 'YfmUm5Kkj6M' },
+          { text: 'Comprender que "el infierno son los otros" cuando delegás en sus ojos la potestad de juzgar tu propio valor.', correct: true, explanation: 'La frase de "A puerta cerrada" desmitificada: el infierno es la dependencia absoluta de la mirada ajena.', videoFeedbackId: 'ZrRSZsbLbvI' },
+          { text: 'Ponerte una careta de payaso para que no te vean.', correct: false, explanation: 'La máscara cómica es otra forma de huida ante la confrontación intersubjetiva.', videoFeedbackId: 'YfmUm5Kkj6M' }
         ]
       },
       {
         step: 7,
         title: 'El Dilema del Estudiante Durante la Guerra',
         context: 'Un joven entra llorando al salón: debe elegir entre cuidar a su madre enferma o escapar a Londres a unirse a la Resistencia.',
-        videoContextId: '6rG7h2u1V8e',
+        videoContextId: 'ZrRSZsbLbvI',
         options: [
-          { text: 'Decirle que abra un manual de moral tradicional para encontrar la respuesta correcta.', correct: false, explanation: 'No hay señales en el mundo que dicten la respuesta: cualquier doctrina moral abstracta es insuficiente ante el dilema real.', videoFeedbackId: '7hK8m4gJ5sE' },
-          { text: 'Decirle la verdad de Sartre: "Estás libre, inventa; ninguna moral puede decidir por ti, debes elegir y comprometerte".', correct: true, explanation: 'Dilema real de 1945: elegir a quién consultar ya es una elección orientada; el hombre está forzado a inventar su camino.', videoFeedbackId: '6rG7h2u1V8e' },
-          { text: 'Tirar una moneda al aire para que el azar decida la vida de la madre.', correct: false, explanation: 'Dejar la decisión al azar es una cobardía de mala fe para no hacerse cargo del resultado.', videoFeedbackId: '7hK8m4gJ5sE' }
+          { text: 'Decirle que abra un manual de moral tradicional para encontrar la respuesta correcta.', correct: false, explanation: 'No hay señales en el mundo que dicten la respuesta: cualquier doctrina moral abstracta es insuficiente ante el dilema real.', videoFeedbackId: 'YfmUm5Kkj6M' },
+          { text: 'Decirle la verdad de Sartre: "Estás libre, inventa; ninguna moral puede decidir por ti, debes elegir y comprometerte".', correct: true, explanation: 'Dilema real de 1945: elegir a quién consultar ya es una elección orientada; el hombre está forzado a inventar su camino.', videoFeedbackId: 'ZrRSZsbLbvI' },
+          { text: 'Tirar una moneda al aire para que el azar decida la vida de la madre.', correct: false, explanation: 'Dejar la decisión al azar es una cobardía de mala fe para no hacerse cargo del resultado.', videoFeedbackId: 'YfmUm5Kkj6M' }
         ]
       },
       {
         step: 8,
         title: 'La Apertura Espontánea de la Puerta',
         context: 'Al desarmar las tres coartadas de mala fe, el cerrojo hace clic y la puerta principal se abre de par en par.',
-        videoContextId: '6rG7h2u1V8e',
+        videoContextId: 'ZrRSZsbLbvI',
         options: [
-          { text: 'Aterrorizarte porque afuera hay una niebla densa y preferir quedarte adentro discutiendo para siempre.', correct: false, explanation: 'Es el final de "A puerta cerrada": Garcin tiene la puerta abierta pero se queda porque prefiere el infierno conocido de los otros.', videoFeedbackId: '7hK8m4gJ5sE' },
-          { text: 'Comprender que la puerta siempre estuvo abierta: sólo tus propias excusas te mantenían encerrado.', correct: true, explanation: 'Revelación existencial: la prisión no era el cuarto, sino la cobardía de huir de tu propia autonomía.', videoFeedbackId: '6rG7h2u1V8e' },
-          { text: 'Cerrar la puerta con llave y tirar la llave por la ventana.', correct: false, explanation: 'El encierro voluntario es la claudicación total del proyecto existencial.', videoFeedbackId: '7hK8m4gJ5sE' }
+          { text: 'Aterrorizarte porque afuera hay una niebla densa y preferir quedarte adentro discutiendo para siempre.', correct: false, explanation: 'Es el final de "A puerta cerrada": Garcin tiene la puerta abierta pero se queda porque prefiere el infierno conocido de los otros.', videoFeedbackId: 'YfmUm5Kkj6M' },
+          { text: 'Comprender que la puerta siempre estuvo abierta: sólo tus propias excusas te mantenían encerrado.', correct: true, explanation: 'Revelación existencial: la prisión no era el cuarto, sino la cobardía de huir de tu propia autonomía.', videoFeedbackId: 'ZrRSZsbLbvI' },
+          { text: 'Cerrar la puerta con llave y tirar la llave por la ventana.', correct: false, explanation: 'El encierro voluntario es la claudicación total del proyecto existencial.', videoFeedbackId: 'YfmUm5Kkj6M' }
         ]
       },
       {
         step: 9,
         title: 'La Niebla de la Incertidumbre',
         context: 'Frente al umbral se extiende el porvenir sin recetas, sin Dios y sin garantías de éxito.',
-        videoContextId: '6rG7h2u1V8e',
+        videoContextId: 'ZrRSZsbLbvI',
         options: [
-          { text: 'Reclamar que el Estado o una iglesia te garanticen que no vas a fracasar.', correct: false, explanation: 'La búsqueda de certezas absolutas niega la contingencia originaria de la existencia humana.', videoFeedbackId: '7hK8m4gJ5sE' },
-          { text: 'Asumir la angustia de la libertad: elegir sabiendo que al elegirte estás comprometiendo a toda la humanidad.', correct: true, explanation: 'El humanismo sartreano: la responsabilidad es universal porque cada acto crea una imagen de lo que debe ser el hombre.', videoFeedbackId: '6rG7h2u1V8e' },
-          { text: 'Esperar sentado en el umbral a que la niebla se disipe.', correct: false, explanation: 'No elegir ya es una elección: elegiste la inacción y sos responsable de tu silencio.', videoFeedbackId: '7hK8m4gJ5sE' }
+          { text: 'Reclamar que el Estado o una iglesia te garanticen que no vas a fracasar.', correct: false, explanation: 'La búsqueda de certezas absolutas niega la contingencia originaria de la existencia humana.', videoFeedbackId: 'YfmUm5Kkj6M' },
+          { text: 'Asumir la angustia de la libertad: elegir sabiendo que al elegirte estás comprometiendo a toda la humanidad.', correct: true, explanation: 'El humanismo sartreano: la responsabilidad es universal porque cada acto crea una imagen de lo que debe ser el hombre.', videoFeedbackId: 'ZrRSZsbLbvI' },
+          { text: 'Esperar sentado en el umbral a que la niebla se disipe.', correct: false, explanation: 'No elegir ya es una elección: elegiste la inacción y sos responsable de tu silencio.', videoFeedbackId: 'YfmUm5Kkj6M' }
         ]
       },
       {
         step: 10,
         title: 'El Salto al Compromiso (L\'Engagement)',
         context: 'Das el paso hacia afuera. Has asumido tu condena de ser libre.',
-        videoContextId: '6rG7h2u1V8e',
+        videoContextId: 'ZrRSZsbLbvI',
         options: [
-          { text: '"Buscaré un empleo cómodo y no me involucraré jamás en ningún problema político ni social".', correct: false, explanation: 'La deserción individualista reproduce la serialidad pasiva y el conformismo burgués.', videoFeedbackId: '7hK8m4gJ5sE' },
-          { text: '"Asumo mi libertad y me comprometo activamente con mi tiempo histórico: el hombre es la suma de sus proyectos".', correct: true, explanation: '¡Completaste el existencialismo! Te hacés cargo de tu proyecto vital sin coartadas, con autenticidad y compromiso.', videoFeedbackId: '6rG7h2u1V8e' },
-          { text: '"Declararé que nada importa porque todo es absurdo y me dedicaré a dormir".', correct: false, explanation: 'El nihilismo cínico confunde la falta de sentido predeterminado con la imposibilidad de crear sentido.', videoFeedbackId: '7hK8m4gJ5sE' }
+          { text: '"Buscaré un empleo cómodo y no me involucraré jamás en ningún problema político ni social".', correct: false, explanation: 'La deserción individualista reproduce la serialidad pasiva y el conformismo burgués.', videoFeedbackId: 'YfmUm5Kkj6M' },
+          { text: '"Asumo mi libertad y me comprometo activamente con mi tiempo histórico: el hombre es la suma de sus proyectos".', correct: true, explanation: '¡Completaste el existencialismo! Te hacés cargo de tu proyecto vital sin coartadas, con autenticidad y compromiso.', videoFeedbackId: 'ZrRSZsbLbvI' },
+          { text: '"Declararé que nada importa porque todo es absurdo y me dedicaré a dormir".', correct: false, explanation: 'El nihilismo cínico confunde la falta de sentido predeterminado con la imposibilidad de crear sentido.', videoFeedbackId: 'YfmUm5Kkj6M' }
         ]
       }
     ],
@@ -787,7 +689,7 @@ const authors: Author[] = [
     theme: 'from-violet-500/20 to-indigo-950/30',
     image: '/philosophers/foucault.png',
     accent: 'text-violet-300',
-    video: '5rK7h2u1V8e',
+    video: 'v9CK1aRifrU',
     excerpt: 'El efecto mayor del Panóptico es inducir en el detenido un estado consciente y permanente de visibilidad que garantiza el funcionamiento automático del poder.',
     citation: 'Vigilar y castigar, "El panoptismo"',
     takeaways: [
@@ -800,110 +702,110 @@ const authors: Author[] = [
         step: 1,
         title: 'El Fracaso del Castigo Soberano',
         context: 'Te nombran director de una institución convulsionada por huelgas y desorden. Tus asesores sugieren castigos corporales ejemplares en el patio.',
-        videoContextId: '5rK7h2u1V8e',
+        videoContextId: 'v9CK1aRifrU',
         options: [
-          { text: 'Aplicar el suplicio físico visible frente a todos para aterrorizar a la población.', correct: false, explanation: 'El poder soberano antiguo fracasa en la modernidad: el espectáculo violento despierta rebelión y solidaridad con el reo.', videoFeedbackId: '9uV8k2m1V4s' },
-          { text: 'Comprender que el suplicio es aparatoso pero ineficaz; se necesita una tecnología que actúe sobre el alma y los hábitos.', correct: true, explanation: 'Paso histórico de "Vigilar y castigar": la penalidad moderna abandona el cuerpo torturado para moldear la conducta.', videoFeedbackId: '5rK7h2u1V8e' },
-          { text: 'Contratar a un payaso para que haga reír a los rebeldes.', correct: false, explanation: 'La distracción banal no resuelve la crisis estructural del dispositivo institucional.', videoFeedbackId: '9uV8k2m1V4s' }
+          { text: 'Aplicar el suplicio físico visible frente a todos para aterrorizar a la población.', correct: false, explanation: 'El poder soberano antiguo fracasa en la modernidad: el espectáculo violento despierta rebelión y solidaridad con el reo.', videoFeedbackId: 'pP4p2vWx1wc' },
+          { text: 'Comprender que el suplicio es aparatoso pero ineficaz; se necesita una tecnología que actúe sobre el alma y los hábitos.', correct: true, explanation: 'Paso histórico de "Vigilar y castigar": la penalidad moderna abandona el cuerpo torturado para moldear la conducta.', videoFeedbackId: 'v9CK1aRifrU' },
+          { text: 'Contratar a un payaso para que haga reír a los rebeldes.', correct: false, explanation: 'La distracción banal no resuelve la crisis estructural del dispositivo institucional.', videoFeedbackId: 'pP4p2vWx1wc' }
         ]
       },
       {
         step: 2,
         title: 'Cuadriculación del Espacio: Fin del Amontonamiento',
         context: 'En las aulas los estudiantes se sientan en mesas redondas grupales conversando y distrayéndose mutuamente.',
-        videoContextId: '5rK7h2u1V8e',
+        videoContextId: 'v9CK1aRifrU',
         options: [
-          { text: 'Dejarlos amontonados esperando que el desorden se organice mágicamente solo.', correct: false, explanation: 'El amontonamiento facilita la confabulación y la indisciplina colectiva.', videoFeedbackId: '9uV8k2m1V4s' },
-          { text: 'Distribuir bancos individuales fijos en filas alineadas donde todos miren hacia el frente.', correct: true, explanation: 'Técnica disciplinaria espacial: cuadricular el espacio para aislar, vigilar, comparar y evitar confabulaciones.', videoFeedbackId: '5rK7h2u1V8e' },
-          { text: 'Poner colchonetas en el suelo para que duerman la siesta.', correct: false, explanation: 'La ociosidad es considerada por la disciplina como la madre de todas las desviaciones.', videoFeedbackId: '9uV8k2m1V4s' }
+          { text: 'Dejarlos amontonados esperando que el desorden se organice mágicamente solo.', correct: false, explanation: 'El amontonamiento facilita la confabulación y la indisciplina colectiva.', videoFeedbackId: 'pP4p2vWx1wc' },
+          { text: 'Distribuir bancos individuales fijos en filas alineadas donde todos miren hacia el frente.', correct: true, explanation: 'Técnica disciplinaria espacial: cuadricular el espacio para aislar, vigilar, comparar y evitar confabulaciones.', videoFeedbackId: 'v9CK1aRifrU' },
+          { text: 'Poner colchonetas en el suelo para que duerman la siesta.', correct: false, explanation: 'La ociosidad es considerada por la disciplina como la madre de todas las desviaciones.', videoFeedbackId: 'pP4p2vWx1wc' }
         ]
       },
       {
         step: 3,
         title: 'Cronometración Minuciosa del Tiempo',
         context: 'Los tiempos de entrada, recreo y estudio son laxos y dependen de las ganas de cada grupo.',
-        videoContextId: '5rK7h2u1V8e',
+        videoContextId: 'v9CK1aRifrU',
         options: [
-          { text: 'Instalar timbres sincronizados al segundo que fraccionen la jornada en bloques rígidos de 40 minutos.', correct: true, explanation: 'Control temporal disciplinario: penetrar el ritmo biológico para asegurar la máxima utilidad del tiempo útil.', videoFeedbackId: '5rK7h2u1V8e' },
-          { text: 'Tirar todos los relojes para que el tiempo sea libre y poético.', correct: false, explanation: 'La institución productiva moderna no tolera tiempos vacíos sin rendimiento.', videoFeedbackId: '9uV8k2m1V4s' },
-          { text: 'Hacer sonar una trompeta solo cuando el director tiene hambre.', correct: false, explanation: 'La disciplina sustituye el capricho arbitrario del soberano por una regla continua y anónima.', videoFeedbackId: '9uV8k2m1V4s' }
+          { text: 'Instalar timbres sincronizados al segundo que fraccionen la jornada en bloques rígidos de 40 minutos.', correct: true, explanation: 'Control temporal disciplinario: penetrar el ritmo biológico para asegurar la máxima utilidad del tiempo útil.', videoFeedbackId: 'v9CK1aRifrU' },
+          { text: 'Tirar todos los relojes para que el tiempo sea libre y poético.', correct: false, explanation: 'La institución productiva moderna no tolera tiempos vacíos sin rendimiento.', videoFeedbackId: 'pP4p2vWx1wc' },
+          { text: 'Hacer sonar una trompeta solo cuando el director tiene hambre.', correct: false, explanation: 'La disciplina sustituye el capricho arbitrario del soberano por una regla continua y anónima.', videoFeedbackId: 'pP4p2vWx1wc' }
         ]
       },
       {
         step: 4,
         title: 'La Torre Central Panóptica',
         context: 'Diseñas el patio central del establecimiento. Bentham propone una torre en el medio con vidrios oscuros polarizados.',
-        videoContextId: '5rK7h2u1V8e',
+        videoContextId: 'v9CK1aRifrU',
         options: [
-          { text: 'Hacer la torre de cristal transparente para que los presos vean si el guardia está durmiendo.', correct: false, explanation: 'Si el preso sabe cuándo NO lo miran, la vigilancia pierde su efecto continuo.', videoFeedbackId: '9uV8k2m1V4s' },
-          { text: 'Instalar la torre con persianas oscuras para que el vigilado nunca sepa en qué instante exacto lo observan.', correct: true, explanation: 'Principio supremo del Panóptico: visibilidad permanente que automatiza el poder sin necesidad de fuerza física.', videoFeedbackId: '5rK7h2u1V8e' },
-          { text: 'Poner un tanque de agua en la torre para regar las plantas.', correct: false, explanation: 'Ignorás la arquitectura del poder como máquina óptica de control.', videoFeedbackId: '9uV8k2m1V4s' }
+          { text: 'Hacer la torre de cristal transparente para que los presos vean si el guardia está durmiendo.', correct: false, explanation: 'Si el preso sabe cuándo NO lo miran, la vigilancia pierde su efecto continuo.', videoFeedbackId: 'pP4p2vWx1wc' },
+          { text: 'Instalar la torre con persianas oscuras para que el vigilado nunca sepa en qué instante exacto lo observan.', correct: true, explanation: 'Principio supremo del Panóptico: visibilidad permanente que automatiza el poder sin necesidad de fuerza física.', videoFeedbackId: 'v9CK1aRifrU' },
+          { text: 'Poner un tanque de agua en la torre para regar las plantas.', correct: false, explanation: 'Ignorás la arquitectura del poder como máquina óptica de control.', videoFeedbackId: 'pP4p2vWx1wc' }
         ]
       },
       {
         step: 5,
         title: 'Interiorización de la Mirada Vigilante',
         context: 'El vigilante de la torre se toma el día libre y la torre queda completamente vacía.',
-        videoContextId: '5rK7h2u1V8e',
+        videoContextId: 'v9CK1aRifrU',
         options: [
-          { text: 'Los estudiantes saltan los muros porque se enteraron por megáfono de que no hay nadie.', correct: false, explanation: 'Falla técnica: el panóptico perfecto no avisa de su presencia ni de su ausencia.', videoFeedbackId: '9uV8k2m1V4s' },
-          { text: 'Los estudiantes caminan derechos y corrigen su postura por el solo hecho de saberse potencialmente observados.', correct: true, explanation: '¡Efecto panóptico consumado! El poder se vuelve permanente en sus efectos aunque sea discontinuo en su acción.', videoFeedbackId: '5rK7h2u1V8e' },
-          { text: 'Los estudiantes se ponen a cantar canciones de cuna.', correct: false, explanation: 'No tiene relación con los mecanismos de docilidad corporal.', videoFeedbackId: '9uV8k2m1V4s' }
+          { text: 'Los estudiantes saltan los muros porque se enteraron por megáfono de que no hay nadie.', correct: false, explanation: 'Falla técnica: el panóptico perfecto no avisa de su presencia ni de su ausencia.', videoFeedbackId: 'pP4p2vWx1wc' },
+          { text: 'Los estudiantes caminan derechos y corrigen su postura por el solo hecho de saberse potencialmente observados.', correct: true, explanation: '¡Efecto panóptico consumado! El poder se vuelve permanente en sus efectos aunque sea discontinuo en su acción.', videoFeedbackId: 'v9CK1aRifrU' },
+          { text: 'Los estudiantes se ponen a cantar canciones de cuna.', correct: false, explanation: 'No tiene relación con los mecanismos de docilidad corporal.', videoFeedbackId: 'pP4p2vWx1wc' }
         ]
       },
       {
         step: 6,
         title: 'Fabricación de Cuerpos Dóciles',
         context: 'En los talleres y gimnasios se exige que cada movimiento, inclinación del torso y sujeción de herramientas siga un manual estricto.',
-        videoContextId: '2hK8m4gJ5sE',
+        videoContextId: 'v9CK1aRifrU',
         options: [
-          { text: 'Dejar que cada uno use el martillo con la mano que prefiera sin técnica alguna.', correct: false, explanation: 'La anatomopolítica no tolera gestos espontáneos ineficientes.', videoFeedbackId: '9uV8k2m1V4s' },
-          { text: 'Adiestrar la anatomía para volver al cuerpo económicamente útil y políticamente obediente.', correct: true, explanation: 'Definición foucaultiana de "cuerpo dócil": la disciplina descompone los gestos para optimizar su rendimiento.', videoFeedbackId: '2hK8m4gJ5sE' },
-          { text: 'Obligarlos a hacer piruetas circenses para divertir a los inspectores.', correct: false, explanation: 'La disciplina no busca acrobacias inútiles, sino hábitos productivos normalizados.', videoFeedbackId: '9uV8k2m1V4s' }
+          { text: 'Dejar que cada uno use el martillo con la mano que prefiera sin técnica alguna.', correct: false, explanation: 'La anatomopolítica no tolera gestos espontáneos ineficientes.', videoFeedbackId: 'pP4p2vWx1wc' },
+          { text: 'Adiestrar la anatomía para volver al cuerpo económicamente útil y políticamente obediente.', correct: true, explanation: 'Definición foucaultiana de "cuerpo dócil": la disciplina descompone los gestos para optimizar su rendimiento.', videoFeedbackId: 'v9CK1aRifrU' },
+          { text: 'Obligarlos a hacer piruetas circenses para divertir a los inspectores.', correct: false, explanation: 'La disciplina no busca acrobacias inútiles, sino hábitos productivos normalizados.', videoFeedbackId: 'pP4p2vWx1wc' }
         ]
       },
       {
         step: 7,
         title: 'El Examen Continuo y el Legajo',
         context: 'Se crea un sistema donde se registran notas, observaciones de conducta, tests psicotécnicos y antecedentes médicos de cada alumno.',
-        videoContextId: '5rK7h2u1V8e',
+        videoContextId: 'v9CK1aRifrU',
         options: [
-          { text: 'Quemar los papeles a fin de año para no acumular basura en secretaría.', correct: false, explanation: 'El poder moderno se basa en la acumulación documental del saber sobre los individuos.', videoFeedbackId: '9uV8k2m1V4s' },
-          { text: 'Utilizar el examen como dispositivo que combina vigilancia jerárquica y sanción normalizadora, convirtiendo al alumno en un caso.', correct: true, explanation: 'El examen fija a los individuos en una red documental: el nacimiento del saber clínico y psicopedagógico como poder.', videoFeedbackId: '5rK7h2u1V8e' },
-          { text: 'Usar las fichas para jugar al bingo los viernes a la tarde.', correct: false, explanation: 'Banalización de los dispositivos de gubernamentalidad y registro.', videoFeedbackId: '9uV8k2m1V4s' }
+          { text: 'Quemar los papeles a fin de año para no acumular basura en secretaría.', correct: false, explanation: 'El poder moderno se basa en la acumulación documental del saber sobre los individuos.', videoFeedbackId: 'pP4p2vWx1wc' },
+          { text: 'Utilizar el examen como dispositivo que combina vigilancia jerárquica y sanción normalizadora, convirtiendo al alumno en un caso.', correct: true, explanation: 'El examen fija a los individuos en una red documental: el nacimiento del saber clínico y psicopedagógico como poder.', videoFeedbackId: 'v9CK1aRifrU' },
+          { text: 'Usar las fichas para jugar al bingo los viernes a la tarde.', correct: false, explanation: 'Banalización de los dispositivos de gubernamentalidad y registro.', videoFeedbackId: 'pP4p2vWx1wc' }
         ]
       },
       {
         step: 8,
         title: 'La Frontera entre lo Normal y lo Anormal',
         context: 'Un estudiante no se adapta al ritmo de los bancos y prefiere dibujar en silencio.',
-        videoContextId: '5rK7h2u1V8e',
+        videoContextId: 'v9CK1aRifrU',
         options: [
-          { text: 'Llevarlo a la horca pública por haber cometido un crimen de traición al Estado.', correct: false, explanation: 'Confundís el derecho penal del rey con la tecnología de la norma.', videoFeedbackId: '9uV8k2m1V4s' },
-          { text: 'Clasificarlo como "desviado/anormal" y derivarlo a un gabinete ortopédico de corrección psicológica.', correct: true, explanation: 'La modernidad sustituye la ley por la Norma: ya no se castiga el pecado, se cura y reeduca al anormal.', videoFeedbackId: '5rK7h2u1V8e' },
-          { text: 'Nombrarlo vicedirector del colegio.', correct: false, explanation: 'La institución normalizadora no premia la disidencia sin antes disciplinarla.', videoFeedbackId: '9uV8k2m1V4s' }
+          { text: 'Llevarlo a la horca pública por haber cometido un crimen de traición al Estado.', correct: false, explanation: 'Confundís el derecho penal del rey con la tecnología de la norma.', videoFeedbackId: 'pP4p2vWx1wc' },
+          { text: 'Clasificarlo como "desviado/anormal" y derivarlo a un gabinete ortopédico de corrección psicológica.', correct: true, explanation: 'La modernidad sustituye la ley por la Norma: ya no se castiga el pecado, se cura y reeduca al anormal.', videoFeedbackId: 'v9CK1aRifrU' },
+          { text: 'Nombrarlo vicedirector del colegio.', correct: false, explanation: 'La institución normalizadora no premia la disidencia sin antes disciplinarla.', videoFeedbackId: 'pP4p2vWx1wc' }
         ]
       },
       {
         step: 9,
         title: 'La Expansión Biopolítica a la Ciudad',
         context: 'Salís del edificio escolar y observás la ciudad moderna: cámaras urbanas, rastreo de tarjetas y algoritmos de redes sociales.',
-        videoContextId: '2hK8m4gJ5sE',
+        videoContextId: 'v9CK1aRifrU',
         options: [
-          { text: 'Pensar que la vigilancia quedó encerrada exclusivamente en las cárceles de piedra del siglo XIX.', correct: false, explanation: 'Grave error: el panoptismo saltó los muros para convertirse en la sociedad de control y biopolítica.', videoFeedbackId: '9uV8k2m1V4s' },
-          { text: 'Reconocer que el panóptico se digitalizó: la gestión de datos regula a toda la población bajo la fórmula de "hacer vivir y dejar morir".', correct: true, explanation: 'Comprendés la Biopolítica: la tecnología de poder administra la salud, los flujos y las conductas a escala masiva.', videoFeedbackId: '2hK8m4gJ5sE' },
-          { text: 'Apagar tu teléfono creyendo que así destruís toda la economía mundial.', correct: false, explanation: 'El biopoder es capilar e inmanente; no depende de un único dispositivo individual.', videoFeedbackId: '9uV8k2m1V4s' }
+          { text: 'Pensar que la vigilancia quedó encerrada exclusivamente en las cárceles de piedra del siglo XIX.', correct: false, explanation: 'Grave error: el panoptismo saltó los muros para convertirse en la sociedad de control y biopolítica.', videoFeedbackId: 'pP4p2vWx1wc' },
+          { text: 'Reconocer que el panóptico se digitalizó: la gestión de datos regula a toda la población bajo la fórmula de "hacer vivir y dejar morir".', correct: true, explanation: 'Comprendés la Biopolítica: la tecnología de poder administra la salud, los flujos y las conductas a escala masiva.', videoFeedbackId: 'v9CK1aRifrU' },
+          { text: 'Apagar tu teléfono creyendo que así destruís toda la economía mundial.', correct: false, explanation: 'El biopoder es capilar e inmanente; no depende de un único dispositivo individual.', videoFeedbackId: 'pP4p2vWx1wc' }
         ]
       },
       {
         step: 10,
         title: 'El Veredicto: La Microfísica del Poder',
         context: 'El inspector general te pregunta: "¿En qué escritorio o en qué persona reside el poder de esta institución?".',
-        videoContextId: '9uV8k2m1V4s',
+        videoContextId: 'v9CK1aRifrU',
         options: [
-          { text: '"En el director, porque él cobra el sueldo más alto y firma las actas".', correct: false, explanation: 'Concepción jurídica clásica del poder como una sustancia que se posee desde arriba.', videoFeedbackId: '9uV8k2m1V4s' },
-          { text: '"El poder no es una cosa que se posea: es una red capilar, anónima y automática que circula a través de todos nosotros".', correct: true, explanation: '¡Completaste a Foucault! Desarmás la ilusión soberana: el poder es una microfísica inmanente donde todos somos vehículos de su ejercicio.', videoFeedbackId: '9uV8k2m1V4s' },
-          { text: '"En la policía que espera afuera en la esquina".', correct: false, explanation: 'La policía es solo el brazo represivo de emergencia; el poder más eficaz es el que normaliza sin armas.', videoFeedbackId: '9uV8k2m1V4s' }
+          { text: '"En el director, porque él cobra el sueldo más alto y firma las actas".', correct: false, explanation: 'Concepción jurídica clásica del poder como una sustancia que se posee desde arriba.', videoFeedbackId: 'pP4p2vWx1wc' },
+          { text: '"El poder no es una cosa que se posea: es una red capilar, anónima y automática que circula a través de todos nosotros".', correct: true, explanation: '¡Completaste a Foucault! Desarmás la ilusión soberana: el poder es una microfísica inmanente donde todos somos vehículos de su ejercicio.', videoFeedbackId: 'v9CK1aRifrU' },
+          { text: '"En la policía que espera afuera en la esquina".', correct: false, explanation: 'La policía es solo el brazo represivo de emergencia; el poder más eficaz es el que normaliza sin armas.', videoFeedbackId: 'pP4p2vWx1wc' }
         ]
       }
     ],
@@ -959,7 +861,7 @@ export default function Page() {
 
   const overall = useMemo(() => {
     if (!session) return 0
-    const completed = Object.values(session.progreso).filter(p => p.testCompletado).length
+    const completed = Object.values(session.progreso).filter(p => p.testCompletado && p.juegoCompletado).length
     return Math.round((completed / authors.length) * 100)
   }, [session])
 
@@ -1048,14 +950,14 @@ export default function Page() {
     if (!selected) return
     setQuestions(shuffle([...selected.questions, ...selected.questions, ...selected.questions, ...selected.questions]).slice(0, 20))
     setAnswers({})
-    setPhase(2)
+    setPhase(1)
   }
 
   const finishQuiz = () => {
     if (!selected || !questions.length) return
     const score = questions.reduce((sum, q, i) => sum + (answers[i] === q.correct ? 1 : 0), 0)
     updateProgress({ testCompletado: true, puntajeTest: score }, score)
-    setPhase(3)
+    setPhase(2)
   }
 
   const exportCsv = () => {
@@ -1086,8 +988,8 @@ export default function Page() {
             </p>
             <div className="mt-10 flex flex-wrap gap-6 text-sm text-stone-400">
               <span className="flex items-center gap-2"><BookOpen className="size-4 text-amber-300" /> 6 autores</span>
-              <span className="flex items-center gap-2"><Trophy className="size-4 text-amber-300" /> 10 desafíos ramificados</span>
-              <span className="flex items-center gap-2"><CircleHelp className="size-4 text-amber-300" /> 20 preguntas aleatorias</span>
+              <span className="flex items-center gap-2"><CircleHelp className="size-4 text-amber-300" /> 20 preguntas de evaluación</span>
+              <span className="flex items-center gap-2"><Trophy className="size-4 text-amber-300" /> Desafíos inmersivos</span>
             </div>
           </section>
 
@@ -1176,7 +1078,9 @@ export default function Page() {
             <div>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[.25em] text-amber-300">Tu mapa de aprendizaje</p>
               <h1 className="font-serif text-4xl tracking-tight sm:text-5xl">Elegí un autor y empezá a pensar.</h1>
-              <p className="mt-3 max-w-xl text-stone-400">No hay un orden obligatorio. Cada módulo combina teoría, dilemas inmersivos en video y evaluación.</p>
+              <p className="mt-3 max-w-xl text-stone-400">
+                El recorrido te guía a través de la teoría, el cuestionario evaluativo y la simulación inmersiva.
+              </p>
             </div>
             <div className="w-full md:max-w-xs">
               <div className="mb-2 flex justify-between text-sm">
@@ -1190,7 +1094,11 @@ export default function Page() {
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {authors.map((a, i) => {
               const p = session.progreso[a.id]
-              const status = p.testCompletado ? 'Completado' : p.teoriaCompletada || p.pasoJuegoActual > 1 ? 'En progreso' : 'Pendiente'
+              const status = (p.testCompletado && p.juegoCompletado)
+                ? 'Completado'
+                : p.teoriaCompletada || p.testCompletado
+                ? 'En progreso'
+                : 'Pendiente'
               return (
                 <Card key={a.id} className={`group relative overflow-hidden border-stone-800 bg-gradient-to-br ${a.theme} bg-stone-900 transition hover:-translate-y-1 hover:border-stone-500 hover:shadow-2xl hover:shadow-black/30`}>
                   <div className="relative h-48 overflow-hidden">
@@ -1212,12 +1120,12 @@ export default function Page() {
                   <CardContent>
                     <div className="grid grid-cols-2 gap-3 text-sm">
                       <div className="rounded-xl border border-white/10 bg-black/20 p-3">
-                        <p className="text-xs text-stone-500">Desafío Inmersivo</p>
-                        <p className="mt-1 font-semibold text-stone-200">{p.puntajeJuego > 0 ? '10/10' : `${p.pasoJuegoActual - 1}/10`}</p>
-                      </div>
-                      <div className="rounded-xl border border-white/10 bg-black/20 p-3">
                         <p className="text-xs text-stone-500">Cuestionario</p>
                         <p className="mt-1 font-semibold text-stone-200">{p.puntajeTest}/20</p>
+                      </div>
+                      <div className="rounded-xl border border-white/10 bg-black/20 p-3">
+                        <p className="text-xs text-stone-500">Desafío Inmersivo</p>
+                        <p className="mt-1 font-semibold text-stone-200">{p.juegoCompletado ? '10/10' : `${p.pasoJuegoActual - 1}/10`}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -1262,7 +1170,7 @@ export default function Page() {
             <span className="text-sm text-stone-500">{selected.name}</span>
             <ChevronRight className="size-4 text-stone-700" />
             <span className="text-sm text-stone-200">
-              {phase === 0 ? 'Teoría' : phase === 1 ? 'Desafío Inmersivo (10 Pasos)' : phase === 2 ? 'Cuestionario' : 'Resultados'}
+              {phase === 0 ? 'Teoría' : phase === 1 ? 'Cuestionario Evaluativo' : phase === 2 ? 'Desafío Inmersivo' : 'Resultados'}
             </span>
           </div>
           <Badge variant="outline" className="border-emerald-500/30 text-emerald-300">
@@ -1274,7 +1182,7 @@ export default function Page() {
       <div className="mx-auto max-w-6xl px-6 py-8">
         <div className="mb-8 flex items-start justify-between gap-6">
           <div>
-            <p className={`mb-2 text-sm font-medium ${selected.accent}`}>Recorrido: {selected.name}</p>
+            <p className={`mb-2 text-sm font-medium ${selected.accent}`}>Módulo: {selected.name}</p>
             <h1 className="font-serif text-4xl tracking-tight sm:text-5xl">{selected.name}</h1>
             <p className="mt-2 text-stone-400">{selected.short}</p>
           </div>
@@ -1283,8 +1191,9 @@ export default function Page() {
           </div>
         </div>
 
+        {/* Stepper reordenado: Teoría -> Cuestionario -> Desafío Inmersivo -> Resultados */}
         <div className="mb-10 grid grid-cols-4 gap-2">
-          {['Teoría', 'Desafío Inmersivo', 'Cuestionario', 'Resultados'].map((label, i) => (
+          {['Teoría', 'Cuestionario', 'Desafío Inmersivo', 'Resultados'].map((label, i) => (
             <button
               key={label}
               onClick={() => i <= phase && setPhase(i)}
@@ -1301,33 +1210,46 @@ export default function Page() {
           ))}
         </div>
 
+        {/* FASE 0: TEORÍA */}
         {phase === 0 && (
           <Theory
             author={selected}
             onStart={() => {
               updateProgress({ teoriaCompletada: true })
-              setPhase(1)
+              startQuiz() // Pasa primero al cuestionario
             }}
           />
         )}
 
+        {/* FASE 1: CUESTIONARIO */}
         {phase === 1 && (
-          <GameCinema
-            author={selected}
-            step={gameStep}
-            setStep={setGameStep}
-            onComplete={() => {
-              updateProgress({ juegoCompletado: true, puntajeJuego: 10, pasoJuegoActual: 10 })
-              startQuiz()
-            }}
-            onSave={step => updateProgress({ pasoJuegoActual: step })}
-          />
-        )}
-
-        {phase === 2 && (
           <Quiz questions={questions} answers={answers} setAnswers={setAnswers} onFinish={finishQuiz} />
         )}
 
+        {/* FASE 2: DESAFÍO INMERSIVO */}
+        {phase === 2 && (
+          selected.id === 'marx' ? (
+            <MarxTycoonGame
+              onComplete={() => {
+                updateProgress({ juegoCompletado: true, puntajeJuego: 10, pasoJuegoActual: 10 })
+                setPhase(3) // Pasa a los resultados finales
+              }}
+            />
+          ) : (
+            <GameCinema
+              author={selected}
+              step={gameStep}
+              setStep={setGameStep}
+              onComplete={() => {
+                updateProgress({ juegoCompletado: true, puntajeJuego: 10, pasoJuegoActual: 10 })
+                setPhase(3) // Pasa a los resultados finales
+              }}
+              onSave={step => updateProgress({ pasoJuegoActual: step })}
+            />
+          )
+        )}
+
+        {/* FASE 3: RESULTADOS FINALES */}
         {phase === 3 && (
           <Results author={selected} progress={p} onBack={() => setSelected(null)} />
         )}
@@ -1378,16 +1300,90 @@ function Theory({ author, onStart }: { author: Author; onStart: () => void }) {
 
         <div className="rounded-xl border border-stone-800 bg-stone-950/60 p-5 text-sm text-stone-400 leading-relaxed">
           <p className="font-medium text-stone-200 mb-2 flex items-center gap-2">
-            <Volume2 className="size-4 text-amber-300" /> Dinámica del desafío:
+            <Volume2 className="size-4 text-amber-300" /> Dinámica del módulo:
           </p>
-          En el siguiente paso atravesarás 10 dilemas en video. Cada elección que tomes modificará el escenario y desplegará la consecuencia filosófica correspondiente.
+          Primero responderás el cuestionario de 20 preguntas conceptuales sobre el autor y luego ingresarás a la simulación inmersiva interactiva.
         </div>
 
         <Button onClick={onStart} className="mt-auto h-13 justify-between bg-amber-300 px-6 text-stone-950 hover:bg-amber-200 font-medium">
-          Comenzar el desafío inmersivo (10 pasos) <ArrowRight className="size-4" />
+          Pasar al Cuestionario de Evaluación <ArrowRight className="size-4" />
         </Button>
       </div>
     </div>
+  )
+}
+
+function Quiz({
+  questions,
+  answers,
+  setAnswers,
+  onFinish
+}: {
+  questions: QuizQuestion[]
+  answers: Record<number, number>
+  setAnswers: (a: Record<number, number>) => void
+  onFinish: () => void
+}) {
+  const answered = Object.keys(answers).length
+
+  return (
+    <Card className="border-stone-800 bg-stone-900 shadow-2xl">
+      <CardHeader>
+        <div className="flex items-center justify-between">
+          <div>
+            <Badge variant="outline" className="border-violet-400/30 text-violet-200">
+              Evaluación aleatoria
+            </Badge>
+            <CardTitle className="mt-3 font-serif text-3xl">Cuestionario de pensamiento crítico</CardTitle>
+            <CardDescription className="text-stone-400">
+              Respondé las 20 preguntas seleccionadas al azar sobre el autor para desbloquear el desafío inmersivo.
+            </CardDescription>
+          </div>
+          <span className="text-sm font-mono text-stone-400">{answered} / 20</span>
+        </div>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-6">
+        {questions.map((q, i) => (
+          <div key={i} className="rounded-2xl border border-stone-800 bg-stone-950/60 p-5">
+            <p className="font-medium leading-6 text-stone-200">
+              <span className="mr-2 text-amber-300 font-mono">{String(i + 1).padStart(2, '0')}.</span>
+              {q.q}
+            </p>
+            <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
+              {q.options.map((option, j) => (
+                <label
+                  key={option}
+                  className={`flex cursor-pointer items-start gap-3 rounded-xl border p-3 text-sm transition ${
+                    answers[i] === j
+                      ? 'border-amber-300/60 bg-amber-300/10 text-stone-100 font-medium'
+                      : 'border-stone-800 text-stone-400 hover:border-stone-700 hover:bg-stone-900/50'
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name={`q-${i}`}
+                    checked={answers[i] === j}
+                    onChange={() => setAnswers({ ...answers, [i]: j })}
+                    className="mt-1 accent-amber-300"
+                  />
+                  <span>{option}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        ))}
+      </CardContent>
+      <CardFooter className="sticky bottom-0 justify-between border-t border-stone-800 bg-stone-900/95 py-4 backdrop-blur">
+        <span className="text-sm text-stone-400">{answered} de 20 respondidas</span>
+        <Button
+          onClick={onFinish}
+          disabled={answered < questions.length}
+          className="bg-amber-300 text-stone-950 hover:bg-amber-200 px-6 font-medium"
+        >
+          Enviar Cuestionario y Pasar al Desafío Inmersivo <ArrowRight className="ml-2 size-4" />
+        </Button>
+      </CardFooter>
+    </Card>
   )
 }
 
@@ -1554,7 +1550,7 @@ function GameCinema({
             disabled={!isCorrect}
             className="bg-amber-300 text-stone-950 hover:bg-amber-200 font-medium px-6"
           >
-            {step === 10 ? 'Abrir cuestionario evaluativo' : 'Avanzar al siguiente paso'}
+            {step === 10 ? 'Finalizar Desafío' : 'Avanzar al siguiente paso'}
             <ArrowRight className="ml-2 size-4" />
           </Button>
         </div>
@@ -1563,77 +1559,446 @@ function GameCinema({
   )
 }
 
-function Quiz({
-  questions,
-  answers,
-  setAnswers,
-  onFinish
-}: {
-  questions: QuizQuestion[]
-  answers: Record<number, number>
-  setAnswers: (a: Record<number, number>) => void
-  onFinish: () => void
-}) {
-  const answered = Object.keys(answers).length
+// ----------------------------------------------------
+// MINI-JUEGO TYCOON: KARL MARX
+// ----------------------------------------------------
+interface ConceptoModal {
+  id: string
+  titulo: string
+  definicion: string
+  cita: string
+}
+
+const CONCEPTOS_TEORICOS: Record<string, ConceptoModal> = {
+  fuerza_trabajo: {
+    id: 'fuerza_trabajo',
+    titulo: 'La Mercancía Fuerza de Trabajo',
+    definicion: 'Bajo el capitalismo, el trabajador no vende su persona ni su trabajo acabado, sino su capacidad de trabajar durante un tiempo determinado. Es la única mercancía viva que crea más valor del que cuesta reproducirla.',
+    cita: '«Para extraer valor del consumo de una mercancía, nuestro poseedor de dinero tendría que ser tan afortunado como para descubrir en el mercado una mercancía cuyo valor de uso poseyera la peculiar propiedad de ser fuente de valor.» — El Capital'
+  },
+  d_m_d: {
+    id: 'd_m_d',
+    titulo: 'Fórmula General del Capital (D - M - D\')',
+    definicion: 'A diferencia del intercambio simple (M - D - M) donde se vende para comprar un bien útil, el capitalista adelanta Dinero (D) para comprar Mercancías (M) y obtener al final una suma de Dinero acrecentada (D\'). Esa diferencia es la plusvalía.',
+    cita: '«La circulación simple de mercancías tiene como fin el valor de uso; la circulación del dinero como capital lleva en sí misma su propio fin: la valorización incesante del valor.» — El Capital'
+  },
+  plusvalia_absoluta: {
+    id: 'plusvalia_absoluta',
+    titulo: 'Plusvalía Absoluta',
+    definicion: 'Se obtiene prolongando la duración de la jornada laboral más allá del tiempo de trabajo necesario para pagar el salario del obrero. Todo minuto extra de trabajo forzado pasa a engrosar la ganancia patronal.',
+    cita: '«La prolongación de la jornada de trabajo más allá del punto en que el obrero produce el equivalente del valor de su fuerza de trabajo es la producción de plusvalía absoluta.» — El Capital'
+  },
+  plusvalia_relativa: {
+    id: 'plusvalia_relativa',
+    titulo: 'Plusvalía Relativa y Maquinaria',
+    definicion: 'Se logra aumentando la productividad técnica del trabajo mediante máquinas e innovaciones. Al producirse bienes más rápido, disminuye el tiempo de trabajo socialmente necesario para reproducir la vida del obrero, aumentando el excedente.',
+    cita: '«La maquinaria no tiene como objetivo acortar la jornada laboral del obrero; es un medio para abreviar el tiempo de trabajo necesario para producir una mercancía.» — El Capital'
+  },
+  alienacion_producto: {
+    id: 'alienacion_producto',
+    titulo: 'Alienación respecto al Producto',
+    definicion: 'El objeto fabricado con las manos del trabajador no le pertenece; se le enfrenta como un poder hostil, extraño e inalcanzable para su propio bolsillo.',
+    cita: '«El trabajador se vuelve tanto más pobre cuanta más riqueza produce... La desvalorización del mundo humano crece en razón directa del aumento de valor del mundo de las cosas.» — Manuscritos de 1844'
+  },
+  huelga_clase_para_si: {
+    id: 'huelga_clase_para_si',
+    titulo: 'De "Clase en Sí" a "Clase para Sí"',
+    definicion: 'Mientras los trabajadores compiten aislados entre sí, son solo una clase en sí (objeto pasivo de explotación). Al unirse y reconocer sus intereses históricos comunes frente al capital, se transforman en una clase para sí, sujeto consciente de su emancipación.',
+    cita: '«Esta masa es ya una clase frente al capital, pero no todavía para sí misma. En la lucha, esta masa se une y se constituye como clase para sí.» — Miseria de la Filosofía'
+  }
+}
+
+function MarxTycoonGame({ onComplete }: { onComplete?: () => void }) {
+  const [fullscreen, setFullscreen] = useState(false)
+  const [capital, setCapital] = useState(1200)
+  const [obreros, setObreros] = useState(6)
+  const [jornadaHoras, setJornadaHoras] = useState(10)
+  const [nivelMaquinaria, setNivelMaquinaria] = useState(1)
+  const [mercanciasStock, setMercanciasStock] = useState(0)
+  const [plusvaliaAcumulada, setPlusvaliaAcumulada] = useState(0)
+  const [nivelAlienacion, setNivelAlienacion] = useState(20)
+  const [tensionSocial, setTensionSocial] = useState(15)
+  const [huelgaDeclarada, setHuelgaDeclarada] = useState(false)
+  const [fabricaSocializada, setFabricaSocializada] = useState(false)
+  const [conceptosMostrados, setConceptosMostrados] = useState<string[]>([])
+  const [modalActivo, setModalActivo] = useState<ConceptoModal | null>(null)
+
+  const dispararConcepto = (clave: string) => {
+    if (!conceptosMostrados.includes(clave) && CONCEPTOS_TEORICOS[clave]) {
+      setConceptosMostrados(prev => [...prev, clave])
+      setModalActivo(CONCEPTOS_TEORICOS[clave])
+    }
+  }
+
+  useEffect(() => {
+    dispararConcepto('fuerza_trabajo')
+  }, [])
+
+  const precioVentaCamisa = 15
+
+  useEffect(() => {
+    if (huelgaDeclarada || fabricaSocializada) return
+
+    const interval = setInterval(() => {
+      const factorProd = (jornadaHoras / 10) * nivelMaquinaria
+      const nuevasCamisas = Math.round(obreros * factorProd * 0.5)
+
+      setMercanciasStock(prev => prev + nuevasCamisas)
+
+      const valorGenerado = nuevasCamisas * precioVentaCamisa
+      const costoLaboral = obreros * 4
+      const plusvaliaCiclo = Math.max(0, valorGenerado - costoLaboral)
+      setPlusvaliaAcumulada(prev => prev + plusvaliaCiclo)
+
+      setNivelAlienacion(prev => {
+        const nuevo = Math.min(100, prev + (jornadaHoras > 10 ? 1.5 : 0.4))
+        if (nuevo >= 55) {
+          dispararConcepto('alienacion_producto')
+        }
+        return nuevo
+      })
+
+      setTensionSocial(prev => {
+        const incremento = jornadaHoras > 12 ? 3.5 : jornadaHoras > 10 ? 1.8 : 0.5
+        const nuevaTension = prev + incremento
+        if (nuevaTension >= 100) {
+          setHuelgaDeclarada(true)
+          dispararConcepto('huelga_clase_para_si')
+          return 100
+        }
+        return nuevaTension
+      })
+    }, 1200)
+
+    return () => clearInterval(interval)
+  }, [obreros, jornadaHoras, nivelMaquinaria, huelgaDeclarada, fabricaSocializada, conceptosMostrados])
+
+  const venderMercancias = () => {
+    if (mercanciasStock <= 0) return
+    const ingreso = mercanciasStock * precioVentaCamisa
+    setCapital(prev => prev + ingreso)
+    setMercanciasStock(0)
+    dispararConcepto('d_m_d')
+  }
+
+  const aumentarJornada = () => {
+    if (jornadaHoras >= 16) return
+    setJornadaHoras(prev => prev + 2)
+    setTensionSocial(prev => Math.min(100, prev + 18))
+    setNivelAlienacion(prev => Math.min(100, prev + 15))
+    dispararConcepto('plusvalia_absoluta')
+  }
+
+  const comprarMaquinaria = () => {
+    const costo = 500 * nivelMaquinaria
+    if (capital < costo) return
+    setCapital(prev => prev - costo)
+    setNivelMaquinaria(prev => prev + 1)
+    setNivelAlienacion(prev => Math.min(100, prev + 10))
+    dispararConcepto('plusvalia_relativa')
+  }
+
+  const contratarObrero = () => {
+    if (capital < 100) return
+    setCapital(prev => prev - 100)
+    setObreros(prev => prev + 2)
+  }
+
+  const resolverHuelga = () => {
+    setFabricaSocializada(true)
+    setHuelgaDeclarada(false)
+    setNivelAlienacion(0)
+    setTensionSocial(0)
+  }
 
   return (
-    <Card className="border-stone-800 bg-stone-900 shadow-2xl">
-      <CardHeader>
-        <div className="flex items-center justify-between">
-          <div>
-            <Badge variant="outline" className="border-violet-400/30 text-violet-200">
-              Evaluación aleatoria
+    <div
+      className={
+        fullscreen
+          ? 'fixed inset-0 z-50 overflow-y-auto bg-stone-950 p-6 lg:p-10 flex flex-col justify-between'
+          : 'relative bg-stone-950 border border-stone-800 rounded-3xl p-6 lg:p-8 text-stone-100 shadow-2xl space-y-6'
+      }
+    >
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-stone-800 pb-5">
+        <div>
+          <div className="flex items-center gap-2">
+            <Badge className="bg-red-950/70 text-red-300 border-red-800/60">
+              <Factory className="size-3.5 mr-1" /> Simulador Histórico: Karl Marx
             </Badge>
-            <CardTitle className="mt-3 font-serif text-3xl">Cuestionario de pensamiento crítico</CardTitle>
-            <CardDescription className="text-stone-400">
-              Respondé las 20 preguntas seleccionadas al azar sobre el autor para validar tu comprensión.
-            </CardDescription>
+            <span className="text-xs text-stone-500 font-mono">Londres · Siglo XIX</span>
           </div>
-          <span className="text-sm font-mono text-stone-400">{answered} / 20</span>
+          <h2 className="text-2xl lg:text-3xl font-serif font-bold text-stone-100 mt-1.5">
+            Fábrica Textil: El Engranaje del Capital
+          </h2>
+          <p className="text-xs text-stone-400 max-w-xl mt-1">
+            Administrá la producción. Cada decisión que tomes para sostener la ganancia revelará una contradicción material inevitable.
+          </p>
         </div>
-      </CardHeader>
-      <CardContent className="flex flex-col gap-6">
-        {questions.map((q, i) => (
-          <div key={i} className="rounded-2xl border border-stone-800 bg-stone-950/60 p-5">
-            <p className="font-medium leading-6 text-stone-200">
-              <span className="mr-2 text-amber-300 font-mono">{String(i + 1).padStart(2, '0')}.</span>
-              {q.q}
+
+        <div className="flex items-center gap-3 self-end sm:self-center">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setFullscreen(!fullscreen)}
+            className="border-stone-700 bg-stone-900 text-stone-300 hover:text-white"
+          >
+            {fullscreen ? (
+              <>
+                <Minimize2 className="size-4 mr-1.5" /> Salir de Pantalla Completa
+              </>
+            ) : (
+              <>
+                <Maximize2 className="size-4 mr-1.5" /> Pantalla Completa
+              </>
+            )}
+          </Button>
+
+          <div className="bg-stone-900 border border-stone-800 rounded-2xl px-5 py-2.5 text-right">
+            <p className="text-[10px] uppercase tracking-widest text-stone-500 font-semibold">Capital Acumulado (D)</p>
+            <p className="text-2xl font-mono font-bold text-emerald-400 flex items-center justify-end">
+              <DollarSign className="size-5 inline" />{capital.toLocaleString('es-AR')}
             </p>
-            <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
-              {q.options.map((option, j) => (
-                <label
-                  key={option}
-                  className={`flex cursor-pointer items-start gap-3 rounded-xl border p-3 text-sm transition ${
-                    answers[i] === j
-                      ? 'border-amber-300/60 bg-amber-300/10 text-stone-100 font-medium'
-                      : 'border-stone-800 text-stone-400 hover:border-stone-700 hover:bg-stone-900/50'
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name={`q-${i}`}
-                    checked={answers[i] === j}
-                    onChange={() => setAnswers({ ...answers, [i]: j })}
-                    className="mt-1 accent-amber-300"
-                  />
-                  <span>{option}</span>
-                </label>
-              ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="bg-stone-900/60 border border-stone-800 rounded-2xl p-4">
+          <div className="flex items-center justify-between text-stone-400 text-xs mb-1">
+            <span>Fuerza de Trabajo</span>
+            <Users className="size-4 text-sky-400" />
+          </div>
+          <p className="text-xl font-bold font-mono text-stone-100">{obreros} operarios</p>
+          <span className="text-[10px] text-stone-500">Salario fijo de subsistencia</span>
+        </div>
+
+        <div className="bg-stone-900/60 border border-stone-800 rounded-2xl p-4">
+          <div className="flex items-center justify-between text-stone-400 text-xs mb-1">
+            <span>Jornada Laboral</span>
+            <Clock className="size-4 text-amber-400" />
+          </div>
+          <p className="text-xl font-bold font-mono text-stone-100">{jornadaHoras} hs / día</p>
+          <span className="text-[10px] text-stone-500">{jornadaHoras > 10 ? 'Tiempo excedente forzado' : 'Jornada base'}</span>
+        </div>
+
+        <div className="bg-stone-900/60 border border-stone-800 rounded-2xl p-4">
+          <div className="flex items-center justify-between text-stone-400 text-xs mb-1">
+            <span>Stock de Mercancías</span>
+            <Package className="size-4 text-indigo-400" />
+          </div>
+          <p className="text-xl font-bold font-mono text-stone-100">{mercanciasStock} prendas</p>
+          <span className="text-[10px] text-stone-500">Precio mercado: ${precioVentaCamisa} c/u</span>
+        </div>
+
+        <div className="bg-stone-900/60 border border-stone-800 rounded-2xl p-4">
+          <div className="flex items-center justify-between text-stone-400 text-xs mb-1">
+            <span>Plusvalía Extraída</span>
+            <TrendingUp className="size-4 text-emerald-400" />
+          </div>
+          <p className="text-xl font-bold font-mono text-emerald-300">${plusvaliaAcumulada.toLocaleString('es-AR')}</p>
+          <span className="text-[10px] text-stone-500">Trabajo excedente no remunerado</span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-stone-900/40 border border-stone-800/80 rounded-2xl p-5">
+        <div className="space-y-2">
+          <div className="flex justify-between text-xs">
+            <span className="flex items-center gap-1.5 font-medium text-amber-300">
+              <Layers className="size-3.5" /> Nivel de Alienación de los Trabajadores
+            </span>
+            <span className="font-mono text-stone-400">{Math.round(nivelAlienacion)}%</span>
+          </div>
+          <Progress value={nivelAlienacion} className="h-2 bg-stone-800" />
+          <p className="text-[11px] text-stone-500">
+            {nivelAlienacion > 50
+              ? 'El producto se enfrenta al operario como un poder hostil e independiente.'
+              : 'El trabajo rutinario despoja al ser humano de su actividad libre y creativa.'}
+          </p>
+        </div>
+
+        <div className="space-y-2">
+          <div className="flex justify-between text-xs">
+            <span className="flex items-center gap-1.5 font-medium text-red-400">
+              <Flame className="size-3.5" /> Tensión Social (Camino a la Huelga General)
+            </span>
+            <span className="font-mono text-stone-400">{Math.round(tensionSocial)}%</span>
+          </div>
+          <Progress value={tensionSocial} className="h-2 bg-stone-800" />
+          <p className="text-[11px] text-stone-500">
+            {tensionSocial >= 80
+              ? '¡Asambleas obreras en marcha! Se avecina la paralización de las máquinas.'
+              : 'Descontento acumulado bajo la disciplina fabril.'}
+          </p>
+        </div>
+      </div>
+
+      {!huelgaDeclarada && !fabricaSocializada && (
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-wider text-stone-400 font-semibold">
+            Decisiones de Acumulación Capitalista:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <Button
+              onClick={venderMercancias}
+              disabled={mercanciasStock <= 0}
+              className="bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs h-auto py-3.5 px-4 flex flex-col items-start gap-1 rounded-2xl text-left"
+            >
+              <span className="font-bold flex items-center gap-1.5">
+                <DollarSign className="size-4" /> Vender Mercancías (D - M - D')
+              </span>
+              <span className="text-[10px] text-emerald-100/80 font-normal">
+                Realizar valor de {mercanciasStock} prendas
+              </span>
+            </Button>
+
+            <Button
+              onClick={aumentarJornada}
+              disabled={jornadaHoras >= 16}
+              className="bg-amber-600 hover:bg-amber-500 text-white font-medium text-xs h-auto py-3.5 px-4 flex flex-col items-start gap-1 rounded-2xl text-left"
+            >
+              <span className="font-bold flex items-center gap-1.5">
+                <Clock className="size-4" /> Plusvalía Absoluta (+2 hs)
+              </span>
+              <span className="text-[10px] text-amber-100/80 font-normal">
+                Alargar la jornada sin subir sueldo
+              </span>
+            </Button>
+
+            <Button
+              onClick={comprarMaquinaria}
+              disabled={capital < 500 * nivelMaquinaria}
+              className="bg-sky-600 hover:bg-sky-500 text-white font-medium text-xs h-auto py-3.5 px-4 flex flex-col items-start gap-1 rounded-2xl text-left"
+            >
+              <span className="font-bold flex items-center gap-1.5">
+                <Cpu className="size-4" /> Plusvalía Relativa (${500 * nivelMaquinaria})
+              </span>
+              <span className="text-[10px] text-sky-100/80 font-normal">
+                Comprar telares a vapor
+              </span>
+            </Button>
+
+            <Button
+              onClick={contratarObrero}
+              disabled={capital < 100}
+              className="bg-stone-800 hover:bg-stone-700 text-stone-200 font-medium text-xs h-auto py-3.5 px-4 flex flex-col items-start gap-1 rounded-2xl text-left"
+            >
+              <span className="font-bold flex items-center gap-1.5">
+                <Users className="size-4" /> Contratar 2 Obreros ($100)
+              </span>
+              <span className="text-[10px] text-stone-400 font-normal">
+                Comprar más fuerza de trabajo
+              </span>
+            </Button>
+          </div>
+        </div>
+      )}
+
+      {huelgaDeclarada && !fabricaSocializada && (
+        <div className="bg-red-950/40 border-2 border-red-500/70 rounded-3xl p-6 space-y-4 animate-in fade-in">
+          <div className="flex items-center gap-3">
+            <div className="p-3 bg-red-600 text-white rounded-2xl">
+              <AlertTriangle className="size-6" />
+            </div>
+            <div>
+              <Badge className="bg-red-600 text-white">¡CONTRADICCIÓN ANTAGÓNICA EXPLOTADA!</Badge>
+              <h3 className="text-xl font-bold font-serif text-red-200 mt-1">
+                Huelga General: Las Máquinas se Detuvieron
+              </h3>
             </div>
           </div>
+          <p className="text-sm text-stone-300 leading-relaxed">
+            La extracción insaciable de plusvalía colapsó la paciencia del taller. Los obreros rompieron la competencia individual y conformaron una <strong>Clase para Sí</strong>. Ya no piden migajas: exigen la gestión colectiva de la producción.
+          </p>
+          <Button
+            onClick={resolverHuelga}
+            className="w-full bg-red-600 hover:bg-red-500 text-white font-medium py-6 rounded-2xl text-sm"
+          >
+            Aceptar la Socialización: Cooperativa de Productores Libres
+          </Button>
+        </div>
+      )}
+
+      {fabricaSocializada && (
+        <div className="bg-emerald-950/40 border-2 border-emerald-500/70 rounded-3xl p-6 space-y-4 animate-in fade-in">
+          <div className="flex items-center gap-3">
+            <div className="p-3 bg-emerald-500 text-stone-950 rounded-2xl">
+              <CheckCircle2 className="size-6" />
+            </div>
+            <div>
+              <Badge className="bg-emerald-500 text-stone-950 font-bold">DESAFÍO COMPLETADO (10/10)</Badge>
+              <h3 className="text-2xl font-bold font-serif text-emerald-200 mt-1">
+                Producción Socializada y Trabajo Emancipado
+              </h3>
+            </div>
+          </div>
+          <p className="text-sm text-stone-300 leading-relaxed">
+            Se ha abolido la apropiación privada del excedente. El trabajo deja de ser una mercancía sacrificada para el lucro ajeno: las máquinas ahora reducen la fatiga humana y amplían el tiempo libre de toda la sociedad.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <Button
+              onClick={() => {
+                if (fullscreen) setFullscreen(false)
+                if (onComplete) onComplete()
+              }}
+              className="bg-amber-300 text-stone-950 hover:bg-amber-200 font-medium px-8 py-6 rounded-2xl text-sm"
+            >
+              Ver Resultados Finales del Módulo <ArrowRight className="ml-2 size-4" />
+            </Button>
+          </div>
+        </div>
+      )}
+
+      <div className="border-t border-stone-800/80 pt-4 flex flex-wrap items-center gap-2">
+        <span className="text-xs text-stone-400 font-semibold mr-1">Conceptos integrados:</span>
+        {conceptosMostrados.map(key => (
+          <Badge
+            key={key}
+            variant="outline"
+            onClick={() => setModalActivo(CONCEPTOS_TEORICOS[key])}
+            className="cursor-pointer border-red-500/40 bg-red-950/20 text-red-300 hover:bg-red-900/40 text-xs py-1 px-2.5 transition"
+          >
+            <BookOpen className="size-3 mr-1" /> {CONCEPTOS_TEORICOS[key]?.titulo}
+          </Badge>
         ))}
-      </CardContent>
-      <CardFooter className="sticky bottom-0 justify-between border-t border-stone-800 bg-stone-900/95 py-4 backdrop-blur">
-        <span className="text-sm text-stone-400">{answered} de 20 respondidas</span>
-        <Button
-          onClick={onFinish}
-          disabled={answered < questions.length}
-          className="bg-amber-300 text-stone-950 hover:bg-amber-200 px-6 font-medium"
-        >
-          Finalizar y enviar evaluación <Upload className="ml-2 size-4" />
-        </Button>
-      </CardFooter>
-    </Card>
+      </div>
+
+      {modalActivo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-in fade-in">
+          <div className="bg-stone-900 border-2 border-red-500/60 rounded-3xl max-w-lg w-full p-6 text-stone-100 shadow-2xl space-y-4">
+            <div className="flex items-center justify-between border-b border-stone-800 pb-3">
+              <Badge className="bg-red-600 text-white">Concepto Clave Revelado</Badge>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setModalActivo(null)}
+                className="text-stone-400 hover:text-white"
+              >
+                <X className="size-5" />
+              </Button>
+            </div>
+
+            <h3 className="text-xl font-serif font-bold text-red-200">
+              {modalActivo.titulo}
+            </h3>
+
+            <p className="text-sm text-stone-300 leading-relaxed">
+              {modalActivo.definicion}
+            </p>
+
+            <blockquote className="border-l-2 border-red-400/60 pl-4 py-2 bg-black/30 rounded-r text-xs text-stone-400 italic">
+              {modalActivo.cita}
+            </blockquote>
+
+            <Button
+              onClick={() => setModalActivo(null)}
+              className="w-full bg-red-600 hover:bg-red-500 text-white font-medium rounded-xl py-2.5"
+            >
+              Comprendido, continuar el simulador
+            </Button>
+          </div>
+        </div>
+      )}
+    </div>
   )
 }
 
