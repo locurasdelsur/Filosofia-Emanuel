@@ -13,7 +13,6 @@ import {
   ExternalLink,
   GraduationCap,
   LockKeyhole,
-  Play,
   RotateCcw,
   Settings2,
   Sparkles,
@@ -35,9 +34,11 @@ import {
   Maximize2,
   Minimize2,
   X,
-  Cog,
-  Zap,
-  Activity
+  Heart,
+  Briefcase,
+  Home,
+  ShieldAlert,
+  Coins
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -68,21 +69,6 @@ export type Session = {
   progreso: Record<string, ProgressState>
 }
 
-export type GameOption = {
-  text: string
-  correct: boolean
-  explanation: string
-  videoFeedbackId?: string
-}
-
-export type GameStep = {
-  step: number
-  title: string
-  context: string
-  videoContextId?: string
-  options: GameOption[]
-}
-
 export type QuizQuestion = {
   q: string
   options: string[]
@@ -101,7 +87,6 @@ export type Author = {
   excerpt: string
   citation: string
   takeaways: string[]
-  gameSteps: GameStep[]
   questions: QuizQuestion[]
 }
 
@@ -119,7 +104,7 @@ const authors: Author[] = [
   {
     id: 'marx',
     name: 'Karl Marx',
-    short: 'Alienación y plusvalía',
+    short: 'Simulador: Desigualdad Heredada y Plusvalía',
     theme: 'from-rose-500/20 to-red-950/30',
     image: '/philosophers/marx.png',
     accent: 'text-rose-300',
@@ -127,11 +112,10 @@ const authors: Author[] = [
     excerpt: 'El trabajador se vuelve tanto más pobre cuanta más riqueza produce... Lo animal se convierte en lo humano y lo humano en lo animal.',
     citation: 'Manuscritos económico-filosóficos de 1844',
     takeaways: [
-      'El producto del trabajo se enfrenta al trabajador como un poder independiente y extraño.',
-      'La plusvalía es el valor no remunerado del trabajo vivo apropiado por el capital.',
-      'La solidaridad y la organización transforman a la clase en sí en clase para sí.'
+      'La cuna y la propiedad privada de los medios definen las oportunidades reales antes del mérito individual.',
+      'La plusvalía es el trabajo vivo impago que permite al capitalista acumular mientras el obrero sobrevive.',
+      'La salida a la desigualdad estructural no es el esfuerzo solitario, sino la conciencia y organización de clase.'
     ],
-    gameSteps: [],
     questions: [
       { q: 'Según el materialismo histórico, ¿qué elemento constituye la base o infraestructura de una sociedad?', options: ['El derecho y la religión', 'Las relaciones sociales de producción y fuerzas productivas', 'La filosofía y el arte', 'Las leyes morales individuales'], correct: 1, rationale: 'La base económica material condiciona la superestructura ideológica y jurídica.' },
       { q: '¿Qué compone la superestructura ideológica e institucional?', options: ['Las fábricas y las maquinarias', 'El Estado, las leyes, la religión y las ideologías dominantes', 'Las materias primas y la tierra', 'Los salarios y los precios'], correct: 1, rationale: 'La superestructura refleja y legitima las relaciones de dominación material.' },
@@ -151,7 +135,7 @@ const authors: Author[] = [
       { q: '¿Qué define fundamentalmente a una clase social en el marxismo?', options: ['Su nivel de ingresos o prestigio social', 'Su posición respecto a la propiedad de los medios de producción', 'Su preferencia electoral y hábitos de consumo', 'Su nivel de instrucción académica'], correct: 1, rationale: 'Tener o no la propiedad de los medios productivos determina la inserción de clase.' },
       { q: 'El "ejército industrial de reserva" sirve al sistema capitalista para:', options: ['Defender al país de invasiones extranjeras', 'Mantener los salarios bajos debido a la presión constante del desempleo', 'Financiar proyectos estatales de infraestructura', 'Producir artículos de lujo para exportación'], correct: 1, rationale: 'La masa de desocupados presiona a la baja las demandas salariales de los ocupados.' },
       { q: 'En la Tesis 11 sobre Feuerbach, Marx sostiene que los filósofos:', options: ['Han destruido las verdades científicas', 'No han hecho más que interpretar el mundo de diversos modos, pero de lo que se trata es de transformarlo', 'Deben obedecer a los monarcas de turno', 'Deben rezar por el bienestar del pueblo'], correct: 1, rationale: 'La filosofía debe unirse a la praxis revolucionaria para emancipar materialmente a la sociedad.' },
-      { q: 'La dialéctica en Marx se diferencia de la hegeliana en que:', options: ['Niega la contradicción y el cambio', 'Se apoya sobre bases materiales e históricas en vez de sobre el Espíritu Absoluto', 'Es puramente idealista y teológica', 'Rechaza todo tipo de análisis lógico'], correct: 1, rationale: 'Marx "pone de pie" la dialéctica de Hegel situándola sobre la realidad material de la producción.' },
+      { q: 'La dialéctica en Marx se diferencia de la hegeliana en que:', options: ['Niega la contradicción y el cambio', 'Se apoya sobre bases materiales e históricas en vez de sobre el Espíritu Absoluto', 'Es puramente idealista y teológica', 'Rechaza todo tipo de análisis lógico'], correct: 1, rationale: 'Marx pone de pie la dialéctica de Hegel situándola sobre la realidad material de la producción.' },
       { q: 'La frase "la religión es el opio del pueblo" expresa que la religión actúa como:', options: ['Un narcótico artificial diseñado por farmacéuticas', 'Un consuelo ilusorio ante la miseria real que desmoviliza la crítica material', 'La principal causa del crecimiento industrial', 'Un conjunto de doctrinas verdaderas e incuestionables'], correct: 1, rationale: 'Es el suspiro de la criatura oprimida que proyecta en el más allá el alivio a sus penurias terrenales.' },
       { q: 'La diferencia entre "clase en sí" y "clase para sí" radica en:', options: ['El salario cobrado por hora', 'El paso de una posición objetiva en la producción a la conciencia colectiva y organización de lucha', 'El paso de ser campesinos a comerciantes', 'La inscripción formal en un partido político estatal'], correct: 1, rationale: 'Pasan de compartir pasivamente una explotación a ser sujetos conscientes y organizados.' },
       { q: 'La fórmula general del capital en circulación mercantil desarrollada es:', options: ['Mercancía - Dinero - Mercancía (M - D - M)', 'Dinero - Mercancía - Dinero incrementado (D - M - D\')', 'Dinero - Dinero - Mercancía', 'Mercancía - Mercancía - Dinero'], correct: 1, rationale: 'El dinero se adelanta como capital para comprar mercancías y retornar valorizado con plusvalía.' },
@@ -190,9 +174,8 @@ const authors: Author[] = [
       'La contemplación desinteresada y el arte suspenden transitoriamente el péndulo del dolor.',
       'La compasión (Mitleid) supera el Velo de Maya reconociendo que todo sufrimiento comparte la misma raíz.'
     ],
-    gameSteps: [],
     questions: [
-      { q: '¿Qué es el mundo en su dimensión fenoménica para Schopenhauer?', options: ['Una mera representación subjetiva', 'La Voluntad en sí misma', 'Una creación divina perfecta', 'Materia inerte sin leyes'], correct: 0, rationale: 'El mundo que conocemos está mediado por las formas a priori de la representación humana.' },
+      { q: '¿Qué es el mundo en su dimensión fenoménica para Schopenhauer?', options: ['Una mera representación subjetiva', 'La Voluntad en sí misma', 'Una creación divina perfecta', 'Materia inerte sin leyes'], correct: 0, rationale: 'El mundo que conocemos está mediado por las formas de la representación humana.' },
       { q: '¿Qué concepto define la esencia metafísica última de la realidad?', options: ['El Espíritu Absoluto', 'La Razón pura', 'La Voluntad ciega e insaciable', 'El Átomo material'], correct: 2, rationale: 'La Voluntad es el principio único que subyace a todos los seres y fenómenos del cosmos.' },
       { q: 'El "péndulo de la vida" oscila constantemente entre:', options: ['El bien y el mal', 'La razón y la locura', 'El dolor y el aburrimiento', 'El amor y el odio'], correct: 2, rationale: 'Saciada una necesidad surge el tedio; insatisfecha, el sufrimiento.' },
       { q: '¿Por qué Schopenhauer rechaza el suicidio como solución?', options: ['Porque es un delito civil', 'Porque afirma con desesperación el apego a la vida frustrada', 'Porque daña la economía', 'Porque está prohibido por los dogmas'], correct: 1, rationale: 'El suicida quiere vivir, solo rechaza las condiciones desdichadas que le tocaron.' },
@@ -215,7 +198,6 @@ const authors: Author[] = [
       'El león destruye el dogmático "Tú debes"; el niño inaugura el juego creador de nuevos valores.',
       'El Amor fati y el Eterno Retorno son la prueba suprema de afirmación radical de la vida terrenal.'
     ],
-    gameSteps: [],
     questions: [
       { q: 'La proclama "Dios ha muerto" significa que:', options: ['Hubo una guerra militar en el cielo', 'Se derrumbaron los fundamentos metafísicos absolutos de Occidente', 'Nació una nueva secta religiosa', 'La biología demostró la inexistencia del alma'], correct: 1, rationale: 'Cae el horizonte de valores supremos incuestionables de la tradición occidental.' },
       { q: '¿Qué simboliza la primera transformación del espíritu (el Camello)?', options: ['La creación artística inocente', 'El espíritu de carga sumiso al mandato "¡Tú debes!"', 'La violencia destructiva armada', 'El aislamiento egoísta'], correct: 1, rationale: 'El camello se arrodilla y carga pesados fardos de mandatos morales heredados.' },
@@ -240,7 +222,6 @@ const authors: Author[] = [
       'El Yo media entre las exigencias pulsionales, los mandatos morales y la dura realidad.',
       'La sublimación canaliza la energía pulsional reprimida hacia la creación cultural y el saber.'
     ],
-    gameSteps: [],
     questions: [
       { q: 'En la segunda tópica freudiana, la instancia regida por el principio de placer es:', options: ['El Yo', 'El Ello', 'El Superyó', 'El Ideal del Yo'], correct: 1, rationale: 'El Ello es inconsciente y busca la descarga inmediata sin considerar la realidad.' },
       { q: 'El Superyó se estructura fundamentalmente a partir de:', options: ['La digestión biológica', 'La internalización de las normas parentales y culturales tras el Edipo', 'La lectura de libros de leyes', 'Un mandato genético innato'], correct: 1, rationale: 'Es el heredero del complejo de Edipo y actúa como juez moral interior.' },
@@ -265,7 +246,6 @@ const authors: Author[] = [
       'La libertad es incondicional y conlleva la angustia de una responsabilidad total.',
       'La mala fe es la coartada de pretender ser una cosa inerte para evadir la angustia de elegir.'
     ],
-    gameSteps: [],
     questions: [
       { q: 'La tesis fundamental de que "la existencia precede a la esencia" significa que:', options: ['Venimos al mundo con un destino fijado por Dios', 'Primero existimos y solo después nos definimos mediante nuestras elecciones', 'La genética determina nuestro carácter', 'La sociedad nos crea sin que podamos cambiar nada'], correct: 1, rationale: 'No hay naturaleza humana fija; cada quien se construye con sus actos.' },
       { q: '¿Por qué para Sartre "el hombre está condenado a ser libre"?', options: ['Porque puede elegir no haber nacido', 'Porque no se creó a sí mismo, pero una vez en el mundo es responsable de todo lo que hace', 'Porque los gobiernos otorgan la libertad civil', 'Porque no existen las leyes penales'], correct: 1, rationale: 'La libertad es un dato ontológico ineludible del que no podemos desprendernos.' },
@@ -290,7 +270,6 @@ const authors: Author[] = [
       'El panóptico automatiza el poder haciendo que el propio vigilado interiorice la mirada normativa.',
       'El binomio Saber-Poder clasifica a la población entre lo normal y lo patológico.'
     ],
-    gameSteps: [],
     questions: [
       { q: 'La gran mutación penal descrita en "Vigilar y castigar" consiste en:', options: ['El aumento de ejecuciones públicas teatrales', 'El paso del suplicio físico a la disciplina silenciosa del encierro y el control del alma', 'La abolición total de todas las cárceles', 'Juzgar a los reyes por delitos menores'], correct: 1, rationale: 'El poder moderno abandona el castigo corporal aparatoso para moldear hábitos y conductas.' },
       { q: 'El principal efecto arquitectónico y político del Panóptico de Bentham es:', options: ['Permitir que los reclusos conversen entre sí', 'Inducir en el detenido un estado consciente de visibilidad que automatiza el poder', 'Proyectar cine educativo', 'Facilitar las fugas nocturnas'], correct: 1, rationale: 'La posibilidad constante de ser mirado hace que el individuo se autovigile.' },
@@ -426,7 +405,7 @@ export default function Page() {
     setQuestions([])
   }
 
-  // Extrae exactamente 20 preguntas aleatorias SIN REPETICIÓN del banco único
+  // Extrae exactamente 20 preguntas aleatorias SIN REPETICIÓN del banco único de 40 preguntas
   const startQuiz = () => {
     if (!selected) return
     const shuffledUnique = shuffle([...selected.questions])
@@ -439,7 +418,7 @@ export default function Page() {
     if (!selected || !questions.length) return
     const score = questions.reduce((sum, q, i) => sum + (answers[i] === q.correct ? 1 : 0), 0)
     updateProgress({ testCompletado: true, puntajeTest: score }, score)
-    setPhase(2) // Pasa al Desafío Inmersivo
+    setPhase(2) // Pasa al simulador inmersivo
   }
 
   const exportCsv = () => {
@@ -466,12 +445,12 @@ export default function Page() {
               <span className="text-amber-300">Es tomar posición.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-stone-400">
-              Un recorrido interactivo por seis autores para convertir conceptos difíciles en decisiones, simulación fabril en vivo y pensamiento crítico.
+              Un recorrido interactivo para convertir conceptos en decisiones, simulación social y pensamiento crítico.
             </p>
             <div className="mt-10 flex flex-wrap gap-6 text-sm text-stone-400">
               <span className="flex items-center gap-2"><BookOpen className="size-4 text-amber-300" /> 6 autores</span>
               <span className="flex items-center gap-2"><CircleHelp className="size-4 text-amber-300" /> 20 preguntas sin repetición</span>
-              <span className="flex items-center gap-2"><Trophy className="size-4 text-amber-300" /> Simuladores dinámicos</span>
+              <span className="flex items-center gap-2"><Trophy className="size-4 text-amber-300" /> Simuladores interactivos</span>
             </div>
           </section>
 
@@ -512,7 +491,7 @@ export default function Page() {
               <Button
                 onClick={login}
                 disabled={!name.trim() || !course || loading}
-                className="w-full bg-amber-300 text-stone-950 hover:bg-amber-200"
+                className="w-full bg-amber-300 text-stone-950 hover:bg-amber-200 font-medium"
               >
                 {loading ? 'Conectando…' : 'Ingresar al Aula Virtual'} <ArrowRight className="ml-2 size-4" />
               </Button>
@@ -561,7 +540,7 @@ export default function Page() {
               <p className="mb-3 text-xs font-semibold uppercase tracking-[.25em] text-amber-300">Tu mapa de aprendizaje</p>
               <h1 className="font-serif text-4xl tracking-tight sm:text-5xl">Elegí un autor y empezá a pensar.</h1>
               <p className="mt-3 max-w-xl text-stone-400">
-                Cada recorrido inicia con la teoría, continúa con la evaluación diagnóstica de 20 preguntas y concluye con el desafío inmersivo.
+                El recorrido te guía a través de la teoría, el cuestionario evaluativo sin repetición y la simulación inmersiva.
               </p>
             </div>
             <div className="w-full md:max-w-xs">
@@ -708,10 +687,10 @@ export default function Page() {
           <Quiz questions={questions} answers={answers} setAnswers={setAnswers} onFinish={finishQuiz} />
         )}
 
-        {/* FASE 2: DESAFÍO INMERSIVO VISUAL Y TYCOON */}
+        {/* FASE 2: DESAFÍO INMERSIVO ESTILO INHERITED INEQUALITY */}
         {phase === 2 && (
           selected.id === 'marx' ? (
-            <MarxVisualTycoon
+            <MarxInheritedInequalityGame
               onComplete={() => {
                 updateProgress({ juegoCompletado: true, puntajeJuego: 10, pasoJuegoActual: 10 })
                 setPhase(3)
@@ -824,7 +803,7 @@ function Quiz({
             </Badge>
             <CardTitle className="mt-3 font-serif text-3xl">Cuestionario de pensamiento crítico</CardTitle>
             <CardDescription className="text-stone-400">
-              Respondé el cuestionario completo para desbloquear el simulador inmersivo de la fábrica.
+              Respondé el cuestionario completo para desbloquear el simulador inmersivo.
             </CardDescription>
           </div>
           <span className="text-sm font-mono text-stone-400">{answered} / 20</span>
@@ -876,167 +855,206 @@ function Quiz({
 }
 
 // ----------------------------------------------------
-// SIMULADOR FABRIL VISUAL Y TYCOON DE MARX
+// SIMULADOR INMERSIVO DE MARX: "DESIGUALDAD HEREDADA"
 // ----------------------------------------------------
-interface ConceptoModal {
-  id: string
-  titulo: string
-  definicion: string
-  cita: string
+interface DecisionTurno {
+  ronda: number
+  ano: number
+  evento: string
+  contextoObrero: string
+  contextoBurgues: string
+  opcionesObrero: {
+    texto: string
+    impactoDinero: number
+    impactoSalud: number
+    impactoConciencia: number
+    explicacionMarx: string
+    conceptoClaveId: string
+  }[]
 }
 
-const CONCEPTOS_TEORICOS: Record<string, ConceptoModal> = {
-  fuerza_trabajo: {
-    id: 'fuerza_trabajo',
-    titulo: 'La Mercancía Fuerza de Trabajo',
-    definicion: 'Bajo el capitalismo, el trabajador no vende su persona ni su trabajo acabado, sino su capacidad de trabajar durante un tiempo determinado. Es la única mercancía viva que crea más valor del que cuesta reproducirla.',
-    cita: '«Para extraer valor del consumo de una mercancía, nuestro poseedor de dinero tendría que ser tan afortunado como para descubrir en el mercado una mercancía cuyo valor de uso poseyera la peculiar propiedad de ser fuente de valor.» — El Capital'
+const TURNOS_SIMULACION: DecisionTurno[] = [
+  {
+    ronda: 1,
+    ano: 1845,
+    evento: 'La Herencia de Cuna: Medios de Producción vs. Desposesión',
+    contextoObrero: 'Naciste sin tierras ni talleres. Para sobrevivir, debes vender tu única propiedad: tu tiempo y tu fuerza muscular en el mercado.',
+    contextoBurgues: 'Naciste con acciones en el ferrocarril y una fábrica textil heredada de tu familia. Tu patrimonio inicial es de $25.000.',
+    opcionesObrero: [
+      {
+        texto: 'Aceptar un empleo fabril de 12 horas por un salario mínimo de subsistencia ($20/mes).',
+        impactoDinero: 20,
+        impactoSalud: -15,
+        impactoConciencia: 10,
+        explicacionMarx: 'Nace la relación capitalista: vendes tu Fuerza de Trabajo como una mercancía para poder alimentarte.',
+        conceptoClaveId: 'fuerza_trabajo'
+      },
+      {
+        texto: 'Negarte a trabajar alegando que mereces ser dueño de tu tiempo libre.',
+        impactoDinero: -10,
+        impactoSalud: -40,
+        impactoConciencia: 20,
+        explicacionMarx: 'Caes en el Ejército Industrial de Reserva: el hambre te disciplina rápidamente para aceptar cualquier empleo.',
+        conceptoClaveId: 'ejercito_reserva'
+      }
+    ]
   },
-  d_m_d: {
-    id: 'd_m_d',
-    titulo: 'Fórmula General del Capital (D - M - D\')',
-    definicion: 'A diferencia del intercambio simple (M - D - M) donde se vende para comprar un bien útil, el capitalista adelanta Dinero (D) para comprar Mercancías (M) y obtener al final una suma de Dinero acrecentada (D\'). Esa diferencia es la plusvalía.',
-    cita: '«La circulación simple de mercancías tiene como fin el valor de uso; la circulación del dinero como capital lleva en sí misma su propio fin: la valorización incesante del valor.» — El Capital'
+  {
+    ronda: 2,
+    ano: 1848,
+    evento: 'La Jornada Extenuante: Extracción de Plusvalía Absoluta',
+    contextoObrero: 'El patrón alarga la jornada a 14 horas para ganar la competencia. Cobras el mismo jornal mientras tus pulmones aspiran polvo de algodón.',
+    contextoBurgues: 'La ganancia de tu fábrica se dispara un 40% simplemente aumentando las horas de luz de las velas en el taller.',
+    opcionesObrero: [
+      {
+        texto: 'Cumplir las 14 horas callado creyendo que el mérito personal te hará millonario.',
+        impactoDinero: 20,
+        impactoSalud: -25,
+        impactoConciencia: -15,
+        explicacionMarx: 'Falsa conciencia: la Plusvalía Absoluta no premia tu esfuerzo, solo engorda el capital constante y la riqueza ajena.',
+        conceptoClaveId: 'plusvalia_absoluta'
+      },
+      {
+        texto: 'Hablar con otros operarios al salir del turno sobre la injusticia de las horas no remuneradas.',
+        impactoDinero: 20,
+        impactoSalud: -20,
+        impactoConciencia: 30,
+        explicacionMarx: 'Comienzo de la organización obrera: descifras que el excedente generado después de las 4 horas de trabajo necesario es robado como plusvalía.',
+        conceptoClaveId: 'trabajo_necesario_excedente'
+      }
+    ]
   },
-  plusvalia_absoluta: {
-    id: 'plusvalia_absoluta',
-    titulo: 'Plusvalía Absoluta',
-    definicion: 'Se obtiene prolongando la duración de la jornada laboral más allá del tiempo de trabajo necesario para pagar el salario del obrero. Todo minuto extra de trabajo forzado pasa a engrosar la ganancia patronal.',
-    cita: '«La prolongación de la jornada de trabajo más allá del punto en que el obrero produce el equivalente del valor de su fuerza de trabajo es la producción de plusvalía absoluta.» — El Capital'
+  {
+    ronda: 3,
+    ano: 1852,
+    evento: 'La Llegada del Telar a Vapor: Plusvalía Relativa y Alienación',
+    contextoObrero: 'Llegan máquinas modernas. Ahora producís 10 veces más ropa por hora, pero tu salario se reduce porque tu tarea se volvió mecánica y reemplazable.',
+    contextoBurgues: 'La tecnificación abarata tus costos y te permite duplicar tus exportaciones a las colonias.',
+    opcionesObrero: [
+      {
+        texto: 'Trabajar más rápido adaptándote al ritmo de la máquina para no ser despedido.',
+        impactoDinero: 15,
+        impactoSalud: -20,
+        impactoConciencia: -10,
+        explicacionMarx: 'Alienación en el acto de trabajo: te conviertes en un mero apéndice de la máquina. La tecnología, en vez de liberarte, intensifica tu servidumbre.',
+        conceptoClaveId: 'plusvalia_relativa'
+      },
+      {
+        texto: 'Concientizar al taller de que el problema no es la máquina, sino quién es su dueño privado.',
+        impactoDinero: 15,
+        impactoSalud: -10,
+        impactoConciencia: 40,
+        explicacionMarx: 'Superación del ludismo ingenuo: la técnica emancipa solo cuando se socializa su propiedad y su beneficio.',
+        conceptoClaveId: 'alienacion_tecnica'
+      }
+    ]
   },
-  plusvalia_relativa: {
-    id: 'plusvalia_relativa',
-    titulo: 'Plusvalía Relativa y Maquinaria',
-    definicion: 'Se logra aumentando la productividad técnica del trabajo mediante máquinas e innovaciones. Al producirse bienes más rápido, disminuye el tiempo de trabajo socialmente necesario para reproducir la vida del obrero, aumentando el excedente.',
-    cita: '«La maquinaria no tiene como objetivo acortar la jornada laboral del obrero; es un medio para abreviar el tiempo de trabajo necesario para producir una mercancía.» — El Capital'
+  {
+    ronda: 4,
+    ano: 1860,
+    evento: 'El Mercado y el Fetichismo: La Mercancía que te Domina',
+    contextoObrero: 'Pasás frente a las vidrieras del centro. Un traje confeccionado por tus manos cuesta $300; tu sueldo no alcanza ni para comprar un botón.',
+    contextoBurgues: 'Tus tiendas venden miles de prendas. El público cree que el valor proviene de la marca y de los precios mágicos del mercado.',
+    opcionesObrero: [
+      {
+        texto: 'Endeudarte a tasas usurarias para comprarte un traje y aparentar estatus burgués.',
+        impactoDinero: -50,
+        impactoSalud: -15,
+        impactoConciencia: -30,
+        explicacionMarx: 'Fetichismo de la mercancía: las cosas materiales cobran vida propia y dominan las mentes de quienes las produjeron.',
+        conceptoClaveId: 'fetichismo'
+      },
+      {
+        texto: 'Explicar a tu comunidad que detrás de cada precio de mercado hay sangre y sudor no pagado.',
+        impactoDinero: 10,
+        impactoSalud: -5,
+        impactoConciencia: 50,
+        explicacionMarx: 'Desmitificación dialéctica: el valor no surge del mercado abstracto sino del trabajo abstracto humano cristalizado.',
+        conceptoClaveId: 'valor_trabajo'
+      }
+    ]
   },
-  alienacion_producto: {
-    id: 'alienacion_producto',
-    titulo: 'Alienación respecto al Producto',
-    definicion: 'El objeto fabricado con las manos del trabajador no le pertenece; se le enfrenta como un poder hostil, extraño e inalcanzable para su propio bolsillo.',
-    cita: '«El trabajador se vuelve tanto más pobre cuanta más riqueza produce... La desvalorización del mundo humano crece en razón directa del aumento de valor del mundo de las cosas.» — Manuscritos de 1844'
-  },
-  huelga_clase_para_si: {
-    id: 'huelga_clase_para_si',
-    titulo: 'De "Clase en Sí" a "Clase para Sí"',
-    definicion: 'Mientras los trabajadores compiten aislados entre sí, son solo una clase en sí (objeto pasivo de explotación). Al unirse y reconocer sus intereses históricos comunes frente al capital, se transforman en una clase para sí, sujeto consciente de su emancipación.',
-    cita: '«Esta masa es ya una clase frente al capital, pero no todavía para sí misma. En la lucha, esta masa se une y se constituye como clase para sí.» — Miseria de la Filosofía'
+  {
+    ronda: 5,
+    ano: 1871,
+    evento: 'La Gran Contradicción: Huelga General y la Comuna',
+    contextoObrero: 'La fábrica entra en crisis de sobreproducción. El patrón anuncia un recorte salarial del 50% y despidos masivos.',
+    contextoBurgues: 'El Estado envía a la policía para custodiar tus galpones y disolver asambleas ilegales.',
+    opcionesObrero: [
+      {
+        texto: 'Rogar compasión individual al patrón prometiendo no volver a quejarte nunca.',
+        impactoDinero: 5,
+        impactoSalud: -30,
+        impactoConciencia: -40,
+        explicacionMarx: 'Permaneces atrapado en la condición de Clase en Sí: una masa dividida y derrotada sin porvenir.',
+        conceptoClaveId: 'clase_en_si'
+      },
+      {
+        texto: 'Pagar el precio de la lucha: unirte a la Huelga General y tomar el control colectivo de la fábrica.',
+        impactoDinero: 100,
+        impactoSalud: 30,
+        impactoConciencia: 100,
+        explicacionMarx: '¡Victoria histórica! Nacimiento de la Clase para Sí: los trabajadores asumen la propiedad social de los medios de producción.',
+        conceptoClaveId: 'clase_para_si'
+      }
+    ]
   }
-}
+]
 
-function MarxVisualTycoon({ onComplete }: { onComplete?: () => void }) {
+function MarxInheritedInequalityGame({ onComplete }: { onComplete?: () => void }) {
   const [fullscreen, setFullscreen] = useState(false)
-  const [capital, setCapital] = useState(1200)
-  const [obreros, setObreros] = useState(5)
-  const [jornadaHoras, setJornadaHoras] = useState(10)
-  const [nivelMaquinaria, setNivelMaquinaria] = useState(1)
-  const [mercanciasStock, setMercanciasStock] = useState(0)
-  const [plusvaliaAcumulada, setPlusvaliaAcumulada] = useState(0)
-  const [nivelAlienacion, setNivelAlienacion] = useState(25)
-  const [tensionSocial, setTensionSocial] = useState(15)
-  const [conveyorOffset, setConveyorOffset] = useState(0)
-  const [huelgaDeclarada, setHuelgaDeclarada] = useState(false)
-  const [fabricaSocializada, setFabricaSocializada] = useState(false)
-  const [conceptosMostrados, setConceptosMostrados] = useState<string[]>([])
-  const [modalActivo, setModalActivo] = useState<ConceptoModal | null>(null)
+  const [rondaActual, setRondaActual] = useState(0)
 
-  const dispararConcepto = (clave: string) => {
-    if (!conceptosMostrados.includes(clave) && CONCEPTOS_TEORICOS[clave]) {
-      setConceptosMostrados(prev => [...prev, clave])
-      setModalActivo(CONCEPTOS_TEORICOS[clave])
+  // Medidores del jugador proletario
+  const [dineroObrero, setDineroObrero] = useState(25)
+  const [saludObrero, setSaludObrero] = useState(85)
+  const [concienciaClase, setConcienciaClase] = useState(10)
+
+  // Medidores acumulados del capitalista (automáticos)
+  const [capitalBurgues, setCapitalBurgues] = useState(25000)
+
+  // Control de modales explicativos profundos
+  const [modalConcepto, setModalConcepto] = useState<{ titulo: string; explicacion: string; cita: string } | null>(null)
+  const [conceptosVistos, setConceptosVistos] = useState<string[]>([])
+  const [juegoTerminado, setJuegoTerminado] = useState(false)
+
+  const turno = TURNOS_SIMULACION[rondaActual]
+
+  const tomarDecision = (opc: typeof TURNOS_SIMULACION[0]['opcionesObrero'][0]) => {
+    // Aplicar consecuencias
+    setDineroObrero(prev => prev + opc.impactoDinero)
+    setSaludObrero(prev => Math.max(5, Math.min(100, prev + opc.impactoSalud)))
+    setConcienciaClase(prev => Math.max(0, Math.min(100, prev + opc.impactoConciencia)))
+
+    // El capitalista se enriquece automáticamente por la estructura
+    setCapitalBurgues(prev => prev + (rondaActual + 1) * 12500)
+
+    // Mostrar modal explicativo profundo si no se vio
+    if (!conceptosVistos.includes(opc.conceptoClaveId)) {
+      setConceptosVistos(prev => [...prev, opc.conceptoClaveId])
+      setModalConcepto({
+        titulo: `Concepto Desbloqueado: ${opc.texto}`,
+        explicacion: opc.explicacionMarx,
+        cita: '«No es la conciencia del hombre la que determina su ser, sino, por el contrario, el ser social es lo que determina su conciencia.» — Prólogo a la Contribución a la Crítica de la Economía Política'
+      })
+    }
+
+    // Avanzar turno o terminar
+    if (rondaActual < TURNOS_SIMULACION.length - 1) {
+      setRondaActual(prev => prev + 1)
+    } else {
+      setJuegoTerminado(true)
     }
   }
 
-  useEffect(() => {
-    dispararConcepto('fuerza_trabajo')
-  }, [])
-
-  const precioVentaPrenda = 15
-  const costoSalarioPorObrero = 4
-
-  // Ticker de producción y animación visual de la cinta
-  useEffect(() => {
-    if (huelgaDeclarada || fabricaSocializada) return
-
-    const interval = setInterval(() => {
-      // Movimiento de la cinta
-      setConveyorOffset(prev => (prev + 1) % 4)
-
-      // Producción real
-      const factorProd = (jornadaHoras / 10) * nivelMaquinaria
-      const nuevasPrendas = Math.round(obreros * factorProd * 0.6)
-
-      setMercanciasStock(prev => prev + nuevasPrendas)
-
-      const valorGenerado = nuevasPrendas * precioVentaPrenda
-      const costoLaboral = obreros * costoSalarioPorObrero
-      const plusvaliaCiclo = Math.max(0, valorGenerado - costoLaboral)
-      setPlusvaliaAcumulada(prev => prev + plusvaliaCiclo)
-
-      // Crecimiento de Alienación
-      setNivelAlienacion(prev => {
-        const nuevo = Math.min(100, prev + (jornadaHoras > 10 ? 1.6 : 0.4))
-        if (nuevo >= 50) {
-          dispararConcepto('alienacion_producto')
-        }
-        return nuevo
-      })
-
-      // Crecimiento de Tensión de Huelga
-      setTensionSocial(prev => {
-        const incremento = jornadaHoras > 12 ? 3.8 : jornadaHoras > 10 ? 1.9 : 0.6
-        const nuevaTension = prev + incremento
-        if (nuevaTension >= 100) {
-          setHuelgaDeclarada(true)
-          dispararConcepto('huelga_clase_para_si')
-          return 100
-        }
-        return nuevaTension
-      })
-    }, 1100)
-
-    return () => clearInterval(interval)
-  }, [obreros, jornadaHoras, nivelMaquinaria, huelgaDeclarada, fabricaSocializada, conceptosMostrados])
-
-  const venderMercancias = () => {
-    if (mercanciasStock <= 0) return
-    const ingreso = mercanciasStock * precioVentaPrenda
-    setCapital(prev => prev + ingreso)
-    setMercanciasStock(0)
-    dispararConcepto('d_m_d')
+  const reiniciarSimulacion = () => {
+    setRondaActual(0)
+    setDineroObrero(25)
+    setSaludObrero(85)
+    setConcienciaClase(10)
+    setCapitalBurgues(25000)
+    setJuegoTerminado(false)
   }
-
-  const aumentarJornada = () => {
-    if (jornadaHoras >= 16) return
-    setJornadaHoras(prev => prev + 2)
-    setTensionSocial(prev => Math.min(100, prev + 18))
-    setNivelAlienacion(prev => Math.min(100, prev + 15))
-    dispararConcepto('plusvalia_absoluta')
-  }
-
-  const comprarMaquinaria = () => {
-    const costo = 450 * nivelMaquinaria
-    if (capital < costo) return
-    setCapital(prev => prev - costo)
-    setNivelMaquinaria(prev => prev + 1)
-    setNivelAlienacion(prev => Math.min(100, prev + 10))
-    dispararConcepto('plusvalia_relativa')
-  }
-
-  const contratarObrero = () => {
-    if (capital < 100) return
-    setCapital(prev => prev - 100)
-    setObreros(prev => prev + 1)
-  }
-
-  const resolverHuelga = () => {
-    setFabricaSocializada(true)
-    setHuelgaDeclarada(false)
-    setNivelAlienacion(0)
-    setTensionSocial(0)
-  }
-
-  const velocidadEngranaje = Math.max(1, 4 - nivelMaquinaria * 0.8)
 
   return (
     <div
@@ -1046,24 +1064,24 @@ function MarxVisualTycoon({ onComplete }: { onComplete?: () => void }) {
           : 'relative bg-stone-950 border border-stone-800 rounded-3xl p-6 lg:p-8 text-stone-100 shadow-2xl space-y-6'
       }
     >
-      {/* Encabezado */}
+      {/* Encabezado y controles */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-stone-800 pb-5">
         <div>
           <div className="flex items-center gap-2">
             <Badge className="bg-red-950/70 text-red-300 border-red-800/60">
-              <Factory className="size-3.5 mr-1" /> Simulador Histórico: Karl Marx
+              <Factory className="size-3.5 mr-1" /> Simulador: Desigualdad Heredada (Estilo Inherited Inequality)
             </Badge>
-            <span className="text-xs text-stone-500 font-mono">Londres · Siglo XIX</span>
+            <span className="text-xs text-stone-500 font-mono">Londres · {turno ? turno.ano : '1871'}</span>
           </div>
           <h2 className="text-2xl lg:text-3xl font-serif font-bold text-stone-100 mt-1.5">
-            Fábrica Textil: El Engranaje del Capital
+            {juegoTerminado ? 'Resolución Histórica del Conflicto de Clases' : turno.evento}
           </h2>
           <p className="text-xs text-stone-400 max-w-xl mt-1">
-            Gestioná la línea de montaje. Las decisiones de acumulación de plusvalía desatarán contradicciones materiales en vivo.
+            Comprobá en tiempo real cómo la estructura material de clases condiciona tu vida antes de cualquier decisión personal.
           </p>
         </div>
 
-        <div className="flex items-center gap-3 self-end sm:self-center">
+        <div className="flex items-center gap-3">
           <Button
             variant="outline"
             size="sm"
@@ -1081,275 +1099,148 @@ function MarxVisualTycoon({ onComplete }: { onComplete?: () => void }) {
             )}
           </Button>
 
-          <div className="bg-stone-900 border border-stone-800 rounded-2xl px-5 py-2.5 text-right">
-            <p className="text-[10px] uppercase tracking-widest text-stone-500 font-semibold">Capital Acumulado (D)</p>
-            <p className="text-2xl font-mono font-bold text-emerald-400 flex items-center justify-end">
-              <DollarSign className="size-5 inline" />{capital.toLocaleString('es-AR')}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* PLANTA DE LA FÁBRICA VISUAL (ESCENA ANIMADA) */}
-      <div className="relative w-full rounded-2xl border border-stone-800 bg-gradient-to-b from-stone-900/90 via-stone-950 to-black p-6 overflow-hidden shadow-inner">
-        {/* Caldera y Engranajes superiores */}
-        <div className="flex items-center justify-between border-b border-stone-800/60 pb-4 mb-5">
-          <div className="flex items-center gap-3">
-            <div className={`p-2.5 rounded-xl border ${tensionSocial > 70 ? 'bg-red-500/20 border-red-500 text-red-400 animate-pulse' : 'bg-stone-800 border-stone-700 text-amber-300'}`}>
-              <Flame className="size-5" />
-            </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-stone-400">Caldera Central de Vapor</p>
-              <p className="text-sm font-mono text-stone-200">
-                {huelgaDeclarada ? 'CALDERA APAGADA POR HUELGA' : `Presión: ${Math.round(tensionSocial)}% · Temperatura: ${jornadaHoras * 8}°C`}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Cog
-              className="size-7 text-stone-500"
-              style={{
-                animation: huelgaDeclarada ? 'none' : `spin ${velocidadEngranaje}s linear infinite`
-              }}
-            />
-            <Cog
-              className="size-5 text-amber-500/80 -ml-2 -mt-2"
-              style={{
-                animation: huelgaDeclarada ? 'none' : `spin ${velocidadEngranaje * 0.7}s linear infinite reverse`
-              }}
-            />
-            <span className="text-xs font-mono text-stone-400 hidden sm:inline ml-2">
-              Maquinaria a Vapor Nivel {nivelMaquinaria}
-            </span>
-          </div>
-        </div>
-
-        {/* Línea de montaje con operarios */}
-        <div className="space-y-3">
-          <div className="flex justify-between items-center text-xs text-stone-400">
-            <span className="font-semibold text-stone-300">Línea de Montaje ({obreros} trabajadores contratados):</span>
-            <span className="font-mono">
-              {huelgaDeclarada ? 'BRAZOS CAÍDOS' : nivelAlienacion > 60 ? 'Cansancio Crítico / Alienación Alta' : 'Ritmo Regular'}
-            </span>
-          </div>
-
-          {/* Grilla visual de operarios */}
-          <div className="flex flex-wrap gap-3 py-2">
-            {Array.from({ length: obreros }).map((_, idx) => (
-              <div
-                key={idx}
-                className={`flex flex-col items-center justify-center p-3 rounded-2xl border transition-all duration-300 ${
-                  huelgaDeclarada
-                    ? 'border-red-500 bg-red-950/40 text-red-200 scale-105'
-                    : nivelAlienacion > 60
-                    ? 'border-amber-600/70 bg-amber-950/20 text-amber-300'
-                    : 'border-stone-800 bg-stone-900/60 text-stone-300'
-                }`}
-              >
-                <Users className={`size-6 ${huelgaDeclarada ? 'text-red-400 animate-bounce' : nivelAlienacion > 60 ? 'text-amber-400' : 'text-sky-400'}`} />
-                <span className="text-[10px] font-mono mt-1 font-bold">Op #{idx + 1}</span>
-                <span className="text-[9px] text-stone-500">{huelgaDeclarada ? '¡En Huelga!' : `${jornadaHoras} hs`}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Cinta transportadora animada */}
-          <div className="relative mt-4 pt-2">
-            <p className="text-[11px] font-mono uppercase text-stone-500 tracking-wider mb-1 flex items-center justify-between">
-              <span>Cinta de transporte de mercancías producidas:</span>
-              <span className="text-indigo-400 font-bold">{mercanciasStock} prendas listas</span>
-            </p>
-
-            <div className="relative h-12 w-full bg-stone-900 border border-stone-800 rounded-xl overflow-hidden flex items-center px-4">
-              {/* Rieles de la cinta */}
-              <div
-                className="absolute inset-0 opacity-20 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:12px_12px]"
-                style={{
-                  transform: `translateX(${conveyorOffset * 3}px)`
-                }}
-              />
-
-              {/* Cajas moviéndose */}
-              <div className="flex items-center gap-6 z-10 w-full overflow-hidden">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className={`flex items-center gap-1.5 px-3 py-1 rounded-lg border text-xs font-mono transition-transform duration-300 ${
-                      huelgaDeclarada
-                        ? 'border-stone-800 bg-stone-950/60 text-stone-600'
-                        : 'border-indigo-500/50 bg-indigo-950/40 text-indigo-300'
-                    }`}
-                  >
-                    <Package className="size-3.5" />
-                    <span>$15</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Gráfico comparativo de Plusvalía vs Salario en vivo */}
-        <div className="mt-5 pt-4 border-t border-stone-800/60 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-          <div className="bg-black/30 p-3 rounded-xl border border-stone-800">
-            <div className="flex justify-between font-mono mb-1">
-              <span className="text-stone-400">Salario Pagado a la Fuerza de Trabajo:</span>
-              <span className="text-sky-300 font-bold">${obreros * 40} / día</span>
-            </div>
-            <Progress value={30} className="h-1.5 bg-stone-800" />
-            <p className="text-[10px] text-stone-500 mt-1">Cubre únicamente la canasta de subsistencia del obrero.</p>
-          </div>
-
-          <div className="bg-black/30 p-3 rounded-xl border border-stone-800">
-            <div className="flex justify-between font-mono mb-1">
-              <span className="text-stone-400">Plusvalía Apropiada por el Capital:</span>
-              <span className="text-emerald-400 font-bold">${plusvaliaAcumulada.toLocaleString('es-AR')}</span>
-            </div>
-            <Progress value={Math.min(100, (plusvaliaAcumulada / (obreros * 40 + plusvaliaAcumulada + 1)) * 100)} className="h-1.5 bg-stone-800" />
-            <p className="text-[10px] text-stone-500 mt-1">Trabajo excedente no remunerado extraído a la clase obrera.</p>
-          </div>
-        </div>
-      </div>
-
-      {/* MEDIDORES DIALÉCTICOS (ALIENACIÓN Y TENSIÓN) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-stone-900/40 border border-stone-800/80 rounded-2xl p-5">
-        <div className="space-y-2">
-          <div className="flex justify-between text-xs">
-            <span className="flex items-center gap-1.5 font-medium text-amber-300">
-              <Layers className="size-3.5" /> Nivel de Alienación de los Trabajadores
-            </span>
-            <span className="font-mono text-stone-400">{Math.round(nivelAlienacion)}%</span>
-          </div>
-          <Progress value={nivelAlienacion} className="h-2 bg-stone-800" />
-          <p className="text-[11px] text-stone-500">
-            {nivelAlienacion > 50
-              ? 'El producto se enfrenta al operario como un poder hostil e independiente.'
-              : 'El trabajo rutinario despoja al ser humano de su actividad libre y creativa.'}
-          </p>
-        </div>
-
-        <div className="space-y-2">
-          <div className="flex justify-between text-xs">
-            <span className="flex items-center gap-1.5 font-medium text-red-400">
-              <Flame className="size-3.5" /> Tensión Social (Camino a la Huelga General)
-            </span>
-            <span className="font-mono text-stone-400">{Math.round(tensionSocial)}%</span>
-          </div>
-          <Progress value={tensionSocial} className="h-2 bg-stone-800" />
-          <p className="text-[11px] text-stone-500">
-            {tensionSocial >= 80
-              ? '¡Asambleas obreras en marcha! Se avecina la paralización de las máquinas.'
-              : 'Descontento acumulado bajo la disciplina fabril.'}
-          </p>
-        </div>
-      </div>
-
-      {/* BOTONES DE DECISIÓN PATRONAL */}
-      {!huelgaDeclarada && !fabricaSocializada && (
-        <div className="space-y-3">
-          <p className="text-xs uppercase tracking-wider text-stone-400 font-semibold">
-            Decisiones de Acumulación Capitalista:
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            <Button
-              onClick={venderMercancias}
-              disabled={mercanciasStock <= 0}
-              className="bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs h-auto py-3.5 px-4 flex flex-col items-start gap-1 rounded-2xl text-left shadow-lg"
-            >
-              <span className="font-bold flex items-center gap-1.5">
-                <DollarSign className="size-4" /> Vender en Mercado (D - M - D')
-              </span>
-              <span className="text-[10px] text-emerald-100/80 font-normal">
-                Realizar valor de {mercanciasStock} prendas
-              </span>
-            </Button>
-
-            <Button
-              onClick={aumentarJornada}
-              disabled={jornadaHoras >= 16}
-              className="bg-amber-600 hover:bg-amber-500 text-white font-medium text-xs h-auto py-3.5 px-4 flex flex-col items-start gap-1 rounded-2xl text-left shadow-lg"
-            >
-              <span className="font-bold flex items-center gap-1.5">
-                <Clock className="size-4" /> Plusvalía Absoluta (+2 hs)
-              </span>
-              <span className="text-[10px] text-amber-100/80 font-normal">
-                Alargar la jornada sin subir sueldo
-              </span>
-            </Button>
-
-            <Button
-              onClick={comprarMaquinaria}
-              disabled={capital < 450 * nivelMaquinaria}
-              className="bg-sky-600 hover:bg-sky-500 text-white font-medium text-xs h-auto py-3.5 px-4 flex flex-col items-start gap-1 rounded-2xl text-left shadow-lg"
-            >
-              <span className="font-bold flex items-center gap-1.5">
-                <Cpu className="size-4" /> Plusvalía Relativa (${450 * nivelMaquinaria})
-              </span>
-              <span className="text-[10px] text-sky-100/80 font-normal">
-                Comprar telares a vapor
-              </span>
-            </Button>
-
-            <Button
-              onClick={contratarObrero}
-              disabled={capital < 100}
-              className="bg-stone-800 hover:bg-stone-700 text-stone-200 font-medium text-xs h-auto py-3.5 px-4 flex flex-col items-start gap-1 rounded-2xl text-left shadow-lg"
-            >
-              <span className="font-bold flex items-center gap-1.5">
-                <Users className="size-4" /> Contratar 1 Obrero ($100)
-              </span>
-              <span className="text-[10px] text-stone-400 font-normal">
-                Comprar más fuerza de trabajo
-              </span>
-            </Button>
-          </div>
-        </div>
-      )}
-
-      {/* ESTALLIDO DE HUELGA */}
-      {huelgaDeclarada && !fabricaSocializada && (
-        <div className="bg-red-950/50 border-2 border-red-500 rounded-3xl p-6 space-y-4 animate-in fade-in">
-          <div className="flex items-center gap-3">
-            <div className="p-3 bg-red-600 text-white rounded-2xl">
-              <AlertTriangle className="size-6" />
-            </div>
-            <div>
-              <Badge className="bg-red-600 text-white font-bold">¡CONTRADICCIÓN ANTAGÓNICA EXPLOTADA!</Badge>
-              <h3 className="text-xl font-bold font-serif text-red-200 mt-1">
-                Huelga General: Las Máquinas se Detuvieron
-              </h3>
-            </div>
-          </div>
-          <p className="text-sm text-stone-300 leading-relaxed">
-            La extracción insaciable de plusvalía colapsó la paciencia del taller. Los obreros rompieron la competencia individual y conformaron una <strong>Clase para Sí</strong>. Ya no piden migajas: exigen la gestión colectiva de la producción.
-          </p>
           <Button
-            onClick={resolverHuelga}
-            className="w-full bg-red-600 hover:bg-red-500 text-white font-medium py-6 rounded-2xl text-sm"
+            variant="ghost"
+            size="sm"
+            onClick={reiniciarSimulacion}
+            className="text-stone-400 hover:text-white"
           >
-            Aceptar la Socialización: Cooperativa de Productores Libres
+            <RotateCcw className="size-4 mr-1.5" /> Reiniciar
           </Button>
         </div>
+      </div>
+
+      {/* COMPARATIVA DUAL: CUNA PROLETARIA VS. CUNA BURGUESA */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Tu Personaje: Proletario */}
+        <div className="bg-stone-900/60 border-2 border-amber-500/30 rounded-2xl p-5 space-y-4">
+          <div className="flex items-center justify-between border-b border-stone-800 pb-2">
+            <span className="font-bold text-amber-300 text-sm flex items-center gap-1.5">
+              <Users className="size-4" /> Tu Vida: Proletario Desposeído
+            </span>
+            <span className="text-[10px] font-mono uppercase bg-amber-400/10 text-amber-300 px-2 py-0.5 rounded">
+              Solo vende fuerza de trabajo
+            </span>
+          </div>
+
+          <p className="text-xs text-stone-300 leading-relaxed italic">
+            "{turno?.contextoObrero}"
+          </p>
+
+          <div className="grid grid-cols-3 gap-2 pt-2 text-xs">
+            <div className="bg-black/30 p-2.5 rounded-xl border border-stone-800">
+              <div className="flex items-center gap-1 text-stone-400 text-[10px]">
+                <Coins className="size-3 text-amber-300" /> Ahorro Real
+              </div>
+              <p className="text-base font-mono font-bold text-stone-100 mt-1">${dineroObrero}</p>
+            </div>
+
+            <div className="bg-black/30 p-2.5 rounded-xl border border-stone-800">
+              <div className="flex items-center gap-1 text-stone-400 text-[10px]">
+                <Heart className="size-3 text-rose-400" /> Salud / Vida
+              </div>
+              <p className="text-base font-mono font-bold text-rose-300 mt-1">{saludObrero}%</p>
+            </div>
+
+            <div className="bg-black/30 p-2.5 rounded-xl border border-stone-800">
+              <div className="flex items-center gap-1 text-stone-400 text-[10px]">
+                <Briefcase className="size-3 text-sky-400" /> Conciencia
+              </div>
+              <p className="text-base font-mono font-bold text-sky-300 mt-1">{concienciaClase}%</p>
+            </div>
+          </div>
+        </div>
+
+        {/* El Otro: Burgués Dueño de Medios */}
+        <div className="bg-stone-900/30 border border-stone-800/80 rounded-2xl p-5 space-y-4 opacity-90">
+          <div className="flex items-center justify-between border-b border-stone-800 pb-2">
+            <span className="font-bold text-stone-300 text-sm flex items-center gap-1.5">
+              <Home className="size-4 text-emerald-400" /> Clase Burguesa: Dueño de Medios
+            </span>
+            <span className="text-[10px] font-mono uppercase bg-emerald-500/10 text-emerald-300 px-2 py-0.5 rounded">
+              Apropia plusvalía
+            </span>
+          </div>
+
+          <p className="text-xs text-stone-400 leading-relaxed italic">
+            "{turno?.contextoBurgues}"
+          </p>
+
+          <div className="grid grid-cols-2 gap-2 pt-2 text-xs">
+            <div className="bg-black/30 p-2.5 rounded-xl border border-stone-800">
+              <span className="text-stone-500 text-[10px]">Patrimonio Acumulado</span>
+              <p className="text-lg font-mono font-bold text-emerald-400 mt-1">${capitalBurgues.toLocaleString('es-AR')}</p>
+            </div>
+
+            <div className="bg-black/30 p-2.5 rounded-xl border border-stone-800">
+              <span className="text-stone-500 text-[10px]">Garantía Estatal</span>
+              <p className="text-sm font-mono font-bold text-stone-300 mt-1">Cortes y Policía a favor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ÁREA DE DECISIÓN Y EXPLICACIÓN FILOSÓFICA */}
+      {!juegoTerminado && turno && (
+        <div className="bg-stone-900/40 border border-stone-800 rounded-2xl p-6 space-y-4">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-semibold uppercase tracking-wider text-amber-300">
+              Dilema del Turno {turno.ronda} de 5
+            </span>
+            <span className="text-xs text-stone-500">¿Qué camino elegís ante la presión del sistema?</span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+            {turno.opcionesObrero.map((opc, i) => (
+              <button
+                key={i}
+                onClick={() => tomarDecision(opc)}
+                className="w-full text-left p-4 rounded-xl border border-stone-800 bg-stone-900/60 hover:border-amber-400/60 hover:bg-stone-900 transition flex flex-col justify-between gap-3 group"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-stone-800 text-xs font-mono font-bold group-hover:bg-amber-300 group-hover:text-stone-950 transition">
+                    0{i + 1}
+                  </span>
+                  <p className="text-sm text-stone-200 leading-snug">{opc.texto}</p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-stone-800/60 text-[11px] text-stone-500 font-mono">
+                  <span>Dinero: {opc.impactoDinero >= 0 ? `+$${opc.impactoDinero}` : `-$${Math.abs(opc.impactoDinero)}`}</span>
+                  <span>·</span>
+                  <span>Salud: {opc.impactoSalud >= 0 ? `+${opc.impactoSalud}%` : `${opc.impactoSalud}%`}</span>
+                  <span>·</span>
+                  <span>Conciencia: {opc.impactoConciencia >= 0 ? `+${opc.impactoConciencia}%` : `${opc.impactoConciencia}%`}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
       )}
 
-      {/* VICTORIA / FIN DE JUEGO */}
-      {fabricaSocializada && (
-        <div className="bg-emerald-950/50 border-2 border-emerald-500 rounded-3xl p-6 space-y-4 animate-in fade-in">
+      {/* ESTADO FINAL: LECCIÓN APRENDIDA */}
+      {juegoTerminado && (
+        <div className="bg-emerald-950/40 border-2 border-emerald-500/70 rounded-3xl p-6 space-y-4 animate-in fade-in">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-emerald-500 text-stone-950 rounded-2xl">
               <CheckCircle2 className="size-6" />
             </div>
             <div>
-              <Badge className="bg-emerald-500 text-stone-950 font-bold">DESAFÍO COMPLETADO (10/10)</Badge>
+              <Badge className="bg-emerald-500 text-stone-950 font-bold">SIMULACIÓN COMPLETADA (10/10)</Badge>
               <h3 className="text-2xl font-bold font-serif text-emerald-200 mt-1">
-                Producción Socializada y Trabajo Emancipado
+                Conclusión Dialéctica: El Esfuerzo no Vence a la Estructura
               </h3>
             </div>
           </div>
-          <p className="text-sm text-stone-300 leading-relaxed">
-            Se ha abolido la apropiación privada del excedente. El trabajo deja de ser una mercancía sacrificada para el lucro ajeno: las máquinas ahora reducen la fatiga humana y amplían el tiempo libre de toda la sociedad.
-          </p>
+
+          <div className="text-sm text-stone-300 space-y-3 leading-relaxed">
+            <p>
+              Durante 5 generaciones se demostró la tesis de Karl Marx: <strong>la desigualdad de cuna en el capitalismo no se revuelve por mérito individual</strong>. Mientras el obrero gastaba su salud para ganar $20, el dueño de los medios multiplicaba su fortuna sin mover una máquina, simplemente extrayendo el trabajo vivo ajeno.
+            </p>
+            <p className="p-4 bg-black/40 rounded-xl border border-emerald-500/30 text-xs text-emerald-300 italic">
+              «Los filósofos no han hecho más que interpretar de diversos modos el mundo, pero de lo que se trata es de transformarlo.» — Tesis XI sobre Feuerbach
+            </p>
+          </div>
+
           <div className="pt-2">
             <Button
               onClick={() => {
@@ -1364,31 +1255,16 @@ function MarxVisualTycoon({ onComplete }: { onComplete?: () => void }) {
         </div>
       )}
 
-      {/* REGISTRO DE CONCEPTOS INTEGRADOS */}
-      <div className="border-t border-stone-800/80 pt-4 flex flex-wrap items-center gap-2">
-        <span className="text-xs text-stone-400 font-semibold mr-1">Conceptos integrados:</span>
-        {conceptosMostrados.map(key => (
-          <Badge
-            key={key}
-            variant="outline"
-            onClick={() => setModalActivo(CONCEPTOS_TEORICOS[key])}
-            className="cursor-pointer border-red-500/40 bg-red-950/20 text-red-300 hover:bg-red-900/40 text-xs py-1 px-2.5 transition"
-          >
-            <BookOpen className="size-3 mr-1" /> {CONCEPTOS_TEORICOS[key]?.titulo}
-          </Badge>
-        ))}
-      </div>
-
-      {/* VENTANA EMERGENTE (POPUP FILOSÓFICO - 1 SOLA VEZ POR CONCEPTO) */}
-      {modalActivo && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
+      {/* MODAL EMERGENTE EXPLICATIVO (APARECE CON CADA DECISIÓN) */}
+      {modalConcepto && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm animate-in fade-in">
           <div className="bg-stone-900 border-2 border-red-500/80 rounded-3xl max-w-lg w-full p-6 text-stone-100 shadow-2xl space-y-4">
             <div className="flex items-center justify-between border-b border-stone-800 pb-3">
-              <Badge className="bg-red-600 text-white">Concepto Clave Revelado</Badge>
+              <Badge className="bg-red-600 text-white">Concepto Materialista Revelado</Badge>
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={() => setModalActivo(null)}
+                onClick={() => setModalConcepto(null)}
                 className="text-stone-400 hover:text-white"
               >
                 <X className="size-5" />
@@ -1396,19 +1272,19 @@ function MarxVisualTycoon({ onComplete }: { onComplete?: () => void }) {
             </div>
 
             <h3 className="text-xl font-serif font-bold text-red-200">
-              {modalActivo.titulo}
+              {modalConcepto.titulo}
             </h3>
 
             <p className="text-sm text-stone-300 leading-relaxed">
-              {modalActivo.definicion}
+              {modalConcepto.explicacion}
             </p>
 
-            <blockquote className="border-l-2 border-red-400/60 pl-4 py-2 bg-black/30 rounded-r text-xs text-stone-400 italic">
-              {modalActivo.cita}
+            <blockquote className="border-l-2 border-red-400/60 pl-4 py-2 bg-black/40 rounded-r text-xs text-stone-400 italic">
+              {modalConcepto.cita}
             </blockquote>
 
             <Button
-              onClick={() => setModalActivo(null)}
+              onClick={() => setModalConcepto(null)}
               className="w-full bg-red-600 hover:bg-red-500 text-white font-medium rounded-xl py-2.5"
             >
               Comprendido, continuar la simulación
@@ -1452,7 +1328,7 @@ function Results({
             Conceptos clave validados en este módulo:
           </p>
           <div className="flex flex-col gap-4">
-            {author.questions.slice(0, 6).map((q, i) => (
+            {author.questions.slice(0, 6).map((q) => (
               <div key={q.q} className="flex gap-3 text-sm rounded-xl border border-stone-800/80 bg-stone-950/40 p-4">
                 <div className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-emerald-400/15 text-emerald-300">
                   <Check className="size-3" />
